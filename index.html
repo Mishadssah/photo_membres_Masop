@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASOP - Maison de Soins Psychologiques</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center space-x-3">
+                    <img src="logo_masop_rev2.png" alt="Logo MASOP" class="h-12 w-auto">
+                    <div>
+                        <span class="text-2xl font-bold text-teal-700 block">MASOP</span>
+                        <span class="text-sm text-gray-600">Maison de Soins Psychologiques</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-teal-700 px-3 py-2 text-sm font-medium hover:text-teal-500">Accueil</a>
+                        <a href="#about" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Qui sommes-nous ?</a>
+                        <a href="#services" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Nos services</a>
+                        <a href="#actions" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Nos actions</a>
+                        <a href="#team" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Notre équipe</a>
+                        <a href="#donate" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Faire un don</a>
+                        <a href="#contact" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Contact</a>
+                        <a href="#gallery" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Galerie</a>
+                        <a href="reports.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Rapports</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-teal-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-teal-700 hover:text-teal-500">Accueil</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Qui sommes-nous ?</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Nos services</a>
+                <a href="#actions" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Nos actions</a>
+                <a href="#team" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Notre équipe</a>
+                <a href="#donate" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Faire un don</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Contact</a>
+                <a href="#gallery" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Galerie</a>
+                <a href="reports.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Rapports</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 hero-gradient min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">MASOP : Votre bien-être psychologique, notre priorité.</h1>
+                    <p class="text-xl text-gray-700 mb-8">Un soutien psychologique accessible à tous, sans peur et sans jugement.</p>
+                    <a href="#services" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">Découvrir nos services</a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="images/gallery/photo_activite_terrain_janvier_2026.jpeg" 
+                         alt="Groupe MASOP avec enfants et dame souriante" 
+                         class="rounded-lg shadow-xl w-full max-w-md object-cover h-96">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Qui sommes-nous ?</h2>
+                <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
+            </div>
+            
+            <div class="md:flex md:space-x-8">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="images/gallery/photo_activite_terrain_janvier_2026_1.jpeg" 
+                         alt="Illustration de téléconsultation psychologique" 
+                         class="rounded-lg shadow-lg w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Notre histoire</h3>
+                    <p class="text-gray-600 mb-6">Fondée en 2016 à Delmas, Haïti, la Maison de Soins Psychologiques (MASOP) est une organisation à but non lucratif engagée dans la promotion de la santé mentale, l'éducation, la lutte contre la violence et la recherche.</p>
+                    
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Notre mission</h3>
+                    <p class="text-gray-600 mb-6">Nous nous engageons à mettre les soins psychologiques à la portée de tous et à soutenir la communauté haïtienne dans son ensemble. Notre approche est inclusive, respectueuse et adaptée aux besoins spécifiques de chaque individu.</p>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-teal-500">
+                        <p class="text-gray-700 italic">"Une pensée pour le bien-être de tous!!!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nos services</h2>
+                <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Des services psychologiques adaptés à vos besoins</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-teal-600 mb-4">
+                        <i class="fas fa-users text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Programme Vallorepps</h3>
+                    <p class="text-gray-600 mb-4">Prise en charge psychologique en groupe ou individuelle, utilisant des méthodes comme la TCC (Thérapie Cognitive Comportementale) et la thérapie humaniste.</p>
+                    <p class="text-gray-600">Nous offrons également la possibilité de téléconsultation pour plus de flexibilité.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-teal-600 mb-4">
+                        <i class="fas fa-female text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Campagne CSFDC</h3>
+                    <p class="text-gray-600">Campagne de santé spécifiquement conçue pour les femmes détenues en milieu carcéral, visant à améliorer leur bien-être mental et leur réinsertion sociale.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-teal-600 mb-4">
+                        <i class="fas fa-book text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Département R&F</h3>
+                    <p class="text-gray-600">Gestion de l'information et organisation de formations pour les professionnels de santé et le grand public sur des thèmes liés à la santé mentale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Actions Section -->
+    <section id="actions" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nos actions passées</h2>
+                <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Nos engagements pour la santé mentale en Haïti</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Action 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="text-teal-600 mb-3">
+                        <i class="fas fa-calendar-alt text-2xl"></i>
+                        <span class="ml-2 font-semibold">10 octobre 2021</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Journée mondiale de la santé mentale</h3>
+                    <p class="text-gray-600 mb-4">Conférence sur le thème du bien-être mental dans le contexte haïtien contemporain.</p>
+                    <button onclick="openActivity('sante-mentale')" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md text-sm transition duration-300 w-full">
+                        Voir les photos
+                    </button>
+                </div>
+                
+                <!-- Action 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="text-teal-600 mb-3">
+                        <i class="fas fa-calendar-alt text-2xl"></i>
+                        <span class="ml-2 font-semibold">14 novembre 2021</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Journée mondiale contre le harcèlement</h3>
+                    <p class="text-gray-600 mb-4">Campagne "Timoun 2000 yo : entre préoccupations et explications" visant à sensibiliser sur le harcèlement des jeunes.</p>
+                    <button onclick="openActivity('harcelement')" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md text-sm transition duration-300 w-full">
+                        Voir les photos
+                    </button>
+                </div>
+                
+                <!-- Action 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="text-teal-600 mb-3">
+                        <i class="fas fa-calendar-alt text-2xl"></i>
+                        <span class="ml-2 font-semibold">23 juin 2022</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Conférence sur les VBG</h3>
+                    <p class="text-gray-600 mb-4">Événement majeur sur "Les violences basées sur le genre (VBG)" avec des experts locaux et internationaux.</p>
+                    <button onclick="openActivity('vbg')" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md text-sm transition duration-300 w-full">
+                        Voir les photos
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modales pour les activités -->
+            <!-- Modale Santé Mentale -->
+            <div id="activitySanteMentale" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50">
+                <div class="bg-white rounded-lg w-full max-w-4xl p-6 relative">
+                    <button onclick="closeActivity('sante-mentale')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Journée mondiale de la santé mentale</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <img src="images/gallery/photo_formation_agent_protection_1.jpeg" alt="Groupe MASOP - Santé mentale" class="rounded-lg shadow-md w-full h-48 object-cover">
+                        <img src="images/gallery/photo_formation_agent_protection_2.jpeg" alt="Groupe MASOP - Santé mentale" class="rounded-lg shadow-md w-full h-48 object-cover">
+                        <img src="images/gallery/photo_remise_certificat.jpeg" alt="Groupe MASOP - Santé mentale" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modale Harcèlement -->
+            <div id="activityHarcelement" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50">
+                <div class="bg-white rounded-lg w-full max-w-4xl p-6 relative">
+                    <button onclick="closeActivity('harcelement')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Journée mondiale contre le harcèlement</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <img src="images/gallery/photo_activite_terrain_janvier_2026.jpeg" alt="Groupe MASOP - Harcèlement" class="rounded-lg shadow-md w-full h-48 object-cover">
+                        <img src="images/gallery/photo_activite_terrain_janvier_2026_1.jpeg" alt="Groupe MASOP - Harcèlement" class="rounded-lg shadow-md w-full h-48 object-cover">
+                        <img src="images/gallery/photo_formation_agent_protection_1.jpeg" alt="Session Tikozri MASOP" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modale VBG -->
+            <div id="activityVbg" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50">
+                <div class="bg-white rounded-lg w-full max-w-4xl p-6 relative">
+                    <button onclick="closeActivity('vbg')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Conférence sur les VBG</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <img src="images/gallery/photo_formation_agent_protection_2.jpeg" alt="Groupe MASOP - VBG" class="rounded-lg shadow-md w-full h-48 object-cover">
+                        <img src="images/gallery/photo_remise_certificat.jpeg" alt="Groupe MASOP - VBG" class="rounded-lg shadow-md w-full h-48 object-cover">
+                        <img src="images/gallery/photo_activite_terrain_janvier_2026.jpeg" alt="Équipe MASOP" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="text-2xl font-medium text-gray-700 italic">"Une pensée pour le bien-être de tous!!!"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Notre équipe</h2>
+                <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Le Conseil d'Administration de MASOP</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md team-card transition duration-300">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-100">
+                        <img src="images/team/UlrickEdouardPresidentMasop.svg" 
+                             alt="Portrait de Ulrick EDOUARD" 
+                             class="w-full h-full object-cover object-center">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-1">Ulrick EDOUARD</h3>
+                    <p class="text-center text-teal-600 font-medium mb-4">Président</p>
+                    <div class="flex flex-col items-center space-y-3">
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-teal-500">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-teal-500">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <button onclick="openBio('ulrick')" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md text-sm transition duration-300">
+                            Voir la biographie
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Modal Ulrick -->
+                <div id="bioUlrick" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50">
+                    <div class="bg-white rounded-lg max-w-2xl p-6 relative">
+                        <button onclick="closeBio('ulrick')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Ulrick EDOUARD - Une vision, un impact</h3>
+                        <div class="prose max-w-none">
+                            <p class="text-gray-600 mb-4">Le co-fondateur de Masop.</p>
+                            <p class="text-gray-600 mb-4">Ulrick Edouard a une conviction inébranlable : le bien-être mental est le fondement de toute société saine. C'est cette conviction qui l'a poussé, avec d'autres membres fondateurs, à créer la Maison de soins psychologiques (Masop), une organisation dédiée à combler un besoin crucial en Haïti.</p>
+                            <p class="text-gray-600 mb-4">Avec plus de 20 ans d'expérience dans le développement communautaire, Ulrick a mené des initiatives de grande envergure au sein de partenariats stratégiques et de collaborations avec des organisations de confiance comme la FOSREF, l'UNICEF, le PSI et le VDH. Son expertise, forgée sur le terrain, lui donne une compréhension profonde des défis et des solutions. En tant que Responsable régional du PNCS, il a démontré sa capacité à gérer des programmes qui changent la vie de milliers de bénéficiaires.</p>
+                            <p class="text-gray-600 mb-4">Aujourd'hui, il utilise cette expérience pour construire une solution durable et professionnelle. En se perfectionnant en analyse de données et en gestion de projets, il s'assure que Masop aura un impact maximal et mesurable.</p>
+                            <p class="text-gray-600 mb-4">Masop n'est pas seulement une maison de soins ; c'est un mouvement qui promeut la résilience et la guérison. En soutenant Masop, vous investissez dans une vision où la santé mentale est accessible à tous.</p>
+                            <p class="text-gray-600 italic">Une pensée pour le bien-être de tous !</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md team-card transition duration-300">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-100">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+                             alt="Rachelle PYRAM" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-1">Rachelle PYRAM</h3>
+                    <p class="text-center text-teal-600 font-medium mb-4">Psychologue</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-teal-500">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-teal-500">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md team-card transition duration-300">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-100">
+                        <img src="images/team/EsrherSecretaireMasop.svg" 
+                             alt="Esther PYRAM" 
+                             class="w-full h-full object-cover object-center">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-1">Esther PYRAM</h3>
+                    <p class="text-center text-teal-600 font-medium mb-4">Secrétaire</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-teal-500">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-teal-500">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md team-card transition duration-300">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-100">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+                             alt="Naomie PYRAM" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-1">Naomie PYRAM</h3>
+                    <p class="text-center text-teal-600 font-medium mb-4">Membre du Conseil</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-teal-500">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-teal-500">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md team-card transition duration-300">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-100">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+                             alt="Steven OIM" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-1">Steven OIM</h3>
+                    <p class="text-center text-teal-600 font-medium mb-4">Membre du Conseil</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-teal-500">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-teal-500">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="py-20 bg-teal-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold sm:text-4xl">Faire un don</h2>
+                <div class="mt-4 h-1 w-20 bg-white mx-auto"></div>
+                <p class="mt-4 max-w-2xl text-xl mx-auto">Soutenez notre mission pour permettre à la MASOP de continuer ses actions en faveur de la santé mentale en Haïti.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg text-gray-800">
+                    <h3 class="text-2xl font-bold mb-4">Paiement national</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 border border-gray-200 rounded-lg donation-option transition duration-300">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-mobile-alt text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">MonCash</h4>
+                                <p class="text-sm text-gray-600">+509 4748-7078</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 border border-gray-200 rounded-lg donation-option transition duration-300">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-money-bill-wave text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">NatCash</h4>
+                                <p class="text-sm text-gray-600">+509 4460-5613</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-lg text-gray-800">
+                    <h3 class="text-2xl font-bold mb-4">Paiement international</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 border border-gray-200 rounded-lg donation-option transition duration-300">
+                            <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                                <i class="fab fa-paypal text-yellow-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">PayPal</h4>
+                                <p class="text-sm text-gray-600">maisondesoinspsychologiques@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 border border-gray-200 rounded-lg donation-option transition duration-300">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="far fa-credit-card text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Carte de crédit</h4>
+                                <p class="text-sm text-gray-600">Paiement sécurisé via notre plateforme</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="bg-white text-teal-700 hover:bg-gray-100 font-bold py-4 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Faire un don maintenant
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Contactez-nous</h2>
+                <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Nous sommes à votre écoute pour toute question ou demande de renseignement.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Nos coordonnées</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-teal-600 mt-1 mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600">9, Rue Ethéard, Delmas 39, Port-au-Prince, Haïti</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-teal-600 mt-1 mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600">maisondesoinspsychologiques@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-teal-600 mt-1 mr-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600">+509 4748-7078</p>
+                                    <p class="text-gray-600">+509 4460-5613</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Horaires d'ouverture</h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex justify-between py-2 border-b border-gray-200">
+                                <span class="text-gray-600">Lundi - Vendredi</span>
+                                <span class="font-medium">8:00 - 17:00</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-gray-600">Samedi</span>
+                                <span class="font-medium">9:00 - 13:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Nom complet</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="mt-16 rounded-lg overflow-hidden shadow-lg">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.041208755303!2d-72.3028389247879!3d18.53346438255898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMyJzAwLjUiTiA3MsKwMTgnMDYuOSJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nos actions en images</h2>
+                <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Galerie organisée par mois — sélectionnez un mois pour filtrer les photos</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 space-y-4 md:space-y-0">
+                <div class="flex space-x-2 overflow-auto">
+                    <button data-filter="all" class="filter-btn bg-teal-600 text-white px-4 py-2 rounded-md text-sm font-medium shadow hover:bg-teal-700 focus:outline-none" aria-pressed="true">Tout afficher <span id="count-all" class="ml-2 inline-block bg-white text-teal-700 text-xs font-semibold px-2 py-0.5 rounded">0</span></button>
+                    <button data-filter="2025-12" class="filter-btn bg-white text-teal-700 border border-teal-200 px-4 py-2 rounded-md text-sm font-medium shadow-sm hover:bg-teal-50 focus:outline-none">Décembre 2025 <span id="count-2025-12" class="ml-2 inline-block bg-teal-600 text-white text-xs font-semibold px-2 py-0.5 rounded">0</span></button>
+                    <button data-filter="2026-01" class="filter-btn bg-white text-teal-700 border border-teal-200 px-4 py-2 rounded-md text-sm font-medium shadow-sm hover:bg-teal-50 focus:outline-none">Janvier 2026 <span id="count-2026-01" class="ml-2 inline-block bg-teal-600 text-white text-xs font-semibold px-2 py-0.5 rounded">0</span></button>
+                    <button data-filter="2026-02" class="filter-btn bg-white text-teal-700 border border-teal-200 px-4 py-2 rounded-md text-sm font-medium shadow-sm hover:bg-teal-50 focus:outline-none">Février 2026 <span id="count-2026-02" class="ml-2 inline-block bg-teal-600 text-white text-xs font-semibold px-2 py-0.5 rounded">0</span></button>
+                    <button data-filter="2026-03" class="filter-btn bg-white text-teal-700 border border-teal-200 px-4 py-2 rounded-md text-sm font-medium shadow-sm hover:bg-teal-50 focus:outline-none">Mars 2026 <span id="count-2026-03" class="ml-2 inline-block bg-teal-600 text-white text-xs font-semibold px-2 py-0.5 rounded">0</span></button>
+                </div>
+                <div class="text-sm text-gray-600">Affichage : <span id="currentMonthLabel" class="font-semibold">Tout</span></div>
+            </div>
+
+            <div id="galleryGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <!-- Décembre 2025 - Formation des agents -->
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2025-12" data-title="Formation agents — Module 1" data-date="Dec 10, 2025">
+                    <img src="images/gallery/photo_formation_agent_protection_1.jpeg" alt="Formation agents" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Formation agents — Module 1</div>
+                        <div class="text-xs text-gray-500">Décembre 2025 • 1 photo</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2025-12" data-title="Formation agents — Module 2" data-date="Dec 11, 2025">
+                    <img src="images/gallery/photo_formation_agent_protection_2.jpeg" alt="Formation agents" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Formation agents — Module 2</div>
+                        <div class="text-xs text-gray-500">Décembre 2025 • Remise certificats</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2025-12" data-title="Remise de certificats" data-date="Dec 12, 2025">
+                    <img src="images/gallery/photo_remise_certificat.jpeg" alt="Remise certificats" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Remise de certificats</div>
+                        <div class="text-xs text-gray-500">Décembre 2025</div>
+                    </figcaption>
+                </figure>
+
+                <!-- Janvier 2026 - Activités de terrain -->
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Activité terrain — Site Béré" data-date="Jan 29, 2026">
+                    <img src="images/gallery/photo_activite_terrain_janvier_2026.jpeg" alt="Site Béré" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Activité terrain — Site Béré</div>
+                        <div class="text-xs text-gray-500">29 Janvier 2026</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Activité terrain — MTPTC" data-date="Jan 30, 2026">
+                    <img src="images/gallery/photo_activite_terrain_janvier_2026.jpeg" alt="Site MTPTC" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Activité terrain — MTPTC</div>
+                        <div class="text-xs text-gray-500">30 Janvier 2026</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Activité terrain — MAST" data-date="Jan 30, 2026">
+                    <img src="images/gallery/photo_activite_terrain_janvier_2026.jpeg" alt="Site MAST" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Activité terrain — MAST</div>
+                        <div class="text-xs text-gray-500">30 Janvier 2026</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Activité terrain — ENRE" data-date="Jan 29, 2026">
+                    <img src="images/gallery/photo_activite_terrain_janvier_2026.jpeg" alt="École ENRE" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Activité terrain — ENRE</div>
+                        <div class="text-xs text-gray-500">29 Janvier 2026</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Activité terrain — IMJMC" data-date="Jan 29, 2026">
+                    <img src="images/gallery/photo_activite_terrain_janvier_2026.jpeg" alt="Inst. IMJMC" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Activité terrain — IMJMC</div>
+                        <div class="text-xs text-gray-500">29 Janvier 2026</div>
+                    </figcaption>
+                </figure>
+
+                <!-- Autres photos (associées à Janvier par défaut) -->
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Groupe MASOP 1" data-date="Jan 2026">
+                    <img src="images/gallery/photo_activite_terrain_janvier_2026_1.jpeg" alt="Groupe MASOP" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Groupe MASOP 1</div>
+                        <div class="text-xs text-gray-500">Janvier 2026</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Groupe MASOP 2" data-date="Jan 2026">
+                    <img src="images/gallery/photo_formation_agent_protection_1.jpeg" alt="Groupe MASOP" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Groupe MASOP 2</div>
+                        <div class="text-xs text-gray-500">Janvier 2026</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Groupe MASOP 3" data-date="Jan 2026">
+                    <img src="images/gallery/photo_formation_agent_protection_2.jpeg" alt="Groupe MASOP" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Groupe MASOP 3</div>
+                        <div class="text-xs text-gray-500">Janvier 2026</div>
+                    </figcaption>
+                </figure>
+
+                <!-- Placeholder pour mois futurs -->
+                <div id="emptyPlaceholder" class="hidden col-span-full text-center py-12 text-gray-500">Aucune photo pour ce mois pour le moment.</div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center p-4 z-50">
+            <div class="relative max-w-4xl w-full">
+                <button id="lightboxClose" class="absolute right-0 top-0 text-white text-2xl p-2">&times;</button>
+                <img id="lightboxImage" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-md">
+                <div id="lightboxCaption" class="mt-2 text-white text-sm text-center"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">MASOP</h3>
+                    <p class="text-gray-400">Maison de Soins Psychologiques - Votre bien-être psychologique, notre priorité.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Accueil</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">Qui sommes-nous ?</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Nos services</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Programme Vallorepps</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Campagne CSFDC</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Département R&F</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <a href="#donate" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-4 py-2 rounded-lg text-sm">
+                            Faire un don
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2026 Maison de Soins Psychologiques (MASOP). Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

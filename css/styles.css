@@ -1,0 +1,39 @@
+/* Custom styles for MASOP website */
+
+.hero-gradient {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.donation-option:hover {
+    border-color: #14b8a6;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery specific styles */
+.gallery-item {
+    transition: transform 250ms ease, opacity 250ms ease;
+}
+.gallery-item.hide {
+    opacity: 0;
+    transform: scale(0.96);
+    pointer-events: none;
+}
+#lightbox {
+    display: none;
+}
+#lightbox.show {
+    display: flex;
+}
+#lightboxClose {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 640px) {
+    .gallery-item img { height: 10rem; }
+}

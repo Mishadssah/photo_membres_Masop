@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+~$*
+
+# Editor folders
+.vscode/
+.idea/
+
+# Node / build
+node_modules/
+dist/
+build/
+
+# Logs
+npm-debug.log*
+*.log
+
+# Env
+.env
+
+# Temporary files
+*.tmp
+*.bak
+
+# Images or assets that should not be committed (if any secrets are stored) - keep by default
+# /images/private/

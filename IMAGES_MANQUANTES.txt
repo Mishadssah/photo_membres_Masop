@@ -1,0 +1,32 @@
+Rapport des images manquantes — ÉTAT APRÈS MODIFICATIONS
+Date: 2026-02-03
+
+Résumé: Les références d'images identifiées comme manquantes ont été corrigées automatiquement selon vos règles. Les remplacements sont listés ci‑dessous et les placeholders d'équipe ont été créés.
+
+Actions réalisées :
+- Création de placeholders SVG dans `images/team` :
+  • `UlrickEdouardPresidentMasop.svg` (initiales UE)
+  • `EsrherSecretaireMasop.svg` (initiales EP)
+
+- Fichiers modifiés :
+  • `index.html`  — 25 remplacements (images manquantes remplacées / noms normalisés)
+  • `reports.html` — 11 remplacements (images manquantes remplacées / logo)
+  • `js/main.js`   — 2 modifications (lightbox : passage et usage d'un paramètre `alt`)
+
+Principales normes appliquées :
+- Photos de formation → `images/gallery/photo_formation_agent_protection_1.jpeg` ou `_2.jpeg` selon le contexte.
+- Activités de terrain / sites → `images/gallery/photo_activite_terrain_janvier_2026.jpeg` (ou `_1.jpeg` pour variété).
+- Logo remplacé par → `logo_masop_rev2.png`.
+- Normalisation des noms (espaces → underscores).
+
+Validation :
+- Toutes les références d'images dans `index.html` et `reports.html` pointent maintenant vers des fichiers présents dans le dépôt (`images/gallery/` ou `images/team/`).
+- Les placeholders SVG ont été ajoutés et s'affichent si vous ouvrez `index.html` localement.
+
+Prochaines étapes recommandées :
+1) Vérification visuelle locale : ouvrez `index.html` et `reports.html` pour valider l'affichage et les légendes du lightbox (contrôle rapide). ✅
+2) Fournir les photos réelles de l'équipe pour remplacer les SVG placeholders lorsque disponibles. ✅
+3) Si vous souhaitez d'autres mappings (par ex. des images spécifiques pour certains événements), fournissez le mapping et je l'appliquerai. 💡
+
+---
+Rapport mis à jour automatiquement après application des changements demandés. Si vous voulez, je peux committer les modifications dans git et créer un PR, ou revenir sur certaines modifications sur demande.
