@@ -18,6 +18,24 @@ scrollToTopBtn.addEventListener('click', function() {
     });
 });
 
+// Scroll animations for sections
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in-section').forEach(section => {
+    observer.observe(section);
+});
+
 // Mobile menu toggle
 document.getElementById('menu-toggle').addEventListener('click', function() {
     const mobileMenu = document.getElementById('mobile-menu');
