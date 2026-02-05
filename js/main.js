@@ -1,5 +1,23 @@
 // MASOP Website JavaScript
 
+// Scroll to Top Button
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.remove('hidden');
+    } else {
+        scrollToTopBtn.classList.add('hidden');
+    }
+});
+
+scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
 // Mobile menu toggle
 document.getElementById('menu-toggle').addEventListener('click', function() {
     const mobileMenu = document.getElementById('mobile-menu');
@@ -141,32 +159,90 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxCounter = document.getElementById('lightboxCounter');
     const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    
+    let currentImageIndex = 0;
+    let visibleItems = [];
 
-    function openLightbox(src, title, alt){
+    function updateVisibleItems() {
+        // Get all gallery items that are currently visible (not hidden by filters)
+        visibleItems = items.filter(item => !item.classList.contains('hidden'));
+    }
+
+    function openLightbox(src, title, alt, index){
+        updateVisibleItems();
+        currentImageIndex = visibleItems.findIndex(item => {
+            const img = item.querySelector('img');
+            return img.src === src;
+        });
+        
         lightboxImage.src = src;
         lightboxImage.alt = alt || title || '';
         lightboxCaption.textContent = title || '';
+        updateCounter();
         lightbox.classList.add('show');
     }
+    
+    function updateCounter() {
+        if (visibleItems.length > 0) {
+            lightboxCounter.textContent = `Photo ${currentImageIndex + 1} sur ${visibleItems.length}`;
+        }
+    }
+
     function closeLightbox(){
         lightbox.classList.remove('show');
         lightboxImage.src = '';
         lightboxCaption.textContent = '';
+        lightboxCounter.textContent = '';
+    }
+
+    function showImage(index) {
+        if (visibleItems.length === 0) return;
+        
+        // Wrap around
+        if (index < 0) index = visibleItems.length - 1;
+        if (index >= visibleItems.length) index = 0;
+        
+        currentImageIndex = index;
+        const item = visibleItems[index];
+        const img = item.querySelector('img');
+        const title = item.dataset.title + ' — ' + item.dataset.date;
+        
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightboxCaption.textContent = title;
+        updateCounter();
     }
 
     items.forEach(i => i.addEventListener('click', function(){
         const img = this.querySelector('img');
         const title = this.dataset.title + ' — ' + this.dataset.date;
-        openLightbox(img.src, title, img.alt);
+        openLightbox(img.src, title, img.alt, items.indexOf(this));
     }));
 
     lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', function(e) {
+        e.stopPropagation();
+        showImage(currentImageIndex - 1);
+    });
+    lightboxNext.addEventListener('click', function(e) {
+        e.stopPropagation();
+        showImage(currentImageIndex + 1);
+    });
+    
     lightbox.addEventListener('click', function(e){
         if(e.target === lightbox) closeLightbox();
     });
+    
     document.addEventListener('keydown', function(e){
-        if(e.key === 'Escape') closeLightbox();
+        if (!lightbox.classList.contains('show')) return;
+        
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showImage(currentImageIndex - 1);
+        if (e.key === 'ArrowRight') showImage(currentImageIndex + 1);
     });
 
 })();

@@ -657,9 +657,19 @@
         <!-- Lightbox -->
         <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center p-4 z-50">
             <div class="relative max-w-4xl w-full">
-                <button id="lightboxClose" class="absolute right-0 top-0 text-white text-2xl p-2">&times;</button>
+                <button id="lightboxClose" class="absolute right-0 top-0 text-white text-2xl p-2 hover:text-gray-300 z-10">&times;</button>
+                
+                <!-- Navigation Arrows -->
+                <button id="lightboxPrev" class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 md:-translate-x-16 text-white text-4xl p-2 hover:text-gray-300 hover:scale-110 transition-transform duration-200 z-10" title="Image précédente">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="lightboxNext" class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-12 md:translate-x-16 text-white text-4xl p-2 hover:text-gray-300 hover:scale-110 transition-transform duration-200 z-10" title="Image suivante">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
                 <img id="lightboxImage" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-md">
                 <div id="lightboxCaption" class="mt-2 text-white text-sm text-center"></div>
+                <div id="lightboxCounter" class="mt-2 text-white text-xs text-center text-gray-300"></div>
             </div>
         </div>
     </section>
@@ -717,6 +727,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="fixed bottom-8 right-8 bg-teal-600 hover:bg-teal-700 text-white rounded-full p-3 hidden shadow-lg transition-all duration-300 hover:scale-110 z-40" title="Retour au haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="js/main.js"></script>
 </body>
