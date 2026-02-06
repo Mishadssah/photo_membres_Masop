@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Répertoires privés
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /.env
+
+# Fichiers à ne pas indexer
+Disallow: /*?*
+Disallow: *.pdf$
+Disallow: */search*
+Disallow: */admin*
+
+# Crawl-delay pour éviter surcharge
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://masop.ht/sitemap.xml
+
+# Robots spécifiques
+User-agent: Googlebot
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandexbot
+Allow: /

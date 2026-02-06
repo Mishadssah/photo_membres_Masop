@@ -264,3 +264,94 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 
 })();
+
+// Contact form submission handler (Formspree integration)
+document.addEventListener('DOMContentLoaded', function(){
+    const contactForm = document.getElementById('contactForm');
+    const contactStatus = document.getElementById('contactStatus');
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        const action = contactForm.getAttribute('action');
+        // show loading
+        contactStatus.classList.remove('hidden');
+        contactStatus.classList.remove('text-green-600','text-red-600');
+        contactStatus.textContent = 'Envoi en cours...';
+
+        const formData = new FormData(contactForm);
+
+        fetch(action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                contactStatus.classList.add('text-green-600');
+                contactStatus.textContent = 'Merci — votre message a été envoyé.';
+                contactForm.reset();
+            } else {
+                response.json().then(data => {
+                    contactStatus.classList.add('text-red-600');
+                    if (data && data.errors) {
+                        contactStatus.textContent = data.errors.map(err => err.message).join(', ') || 'Erreur lors de l\'envoi.';
+                    } else {
+                        contactStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
+                    }
+                }).catch(() => {
+                    contactStatus.classList.add('text-red-600');
+                    contactStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
+                });
+            }
+        }).catch(() => {
+            contactStatus.classList.add('text-red-600');
+            contactStatus.textContent = 'Erreur réseau. Vérifiez votre connexion.';
+        });
+    });
+
+    // CPS enrollment form handler
+    const cpsForm = document.getElementById('cpsForm');
+    const cpsStatus = document.getElementById('cpsStatus');
+    if (cpsForm) {
+        cpsForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            const action = cpsForm.getAttribute('action');
+            cpsStatus.classList.remove('hidden');
+            cpsStatus.classList.remove('text-green-600','text-red-600');
+            cpsStatus.textContent = 'Envoi en cours...';
+
+            const formData = new FormData(cpsForm);
+
+            fetch(action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    cpsStatus.classList.add('text-green-600');
+                    cpsStatus.textContent = 'Merci — votre demande a été envoyée. Nous vous contacterons sous peu.';
+                    cpsForm.reset();
+                } else {
+                    response.json().then(data => {
+                        cpsStatus.classList.add('text-red-600');
+                        if (data && data.errors) {
+                            cpsStatus.textContent = data.errors.map(err => err.message).join(', ') || 'Erreur lors de l\'envoi.';
+                        } else {
+                            cpsStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
+                        }
+                    }).catch(() => {
+                        cpsStatus.classList.add('text-red-600');
+                        cpsStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
+                    });
+                }
+            }).catch(() => {
+                cpsStatus.classList.add('text-red-600');
+                cpsStatus.textContent = 'Erreur réseau. Vérifiez votre connexion.';
+            });
+        });
+    }
+});
