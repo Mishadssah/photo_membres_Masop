@@ -53,7 +53,7 @@
                 "addressCountry": "HT"
             },
             "telephone": "+509-4748-7078",
-            "email": "maisondesoinspsychologiques@gmail.com",
+            "email": "contact@masop.care",
             "foundingDate": "2016",
             "sameAs": [
                 "https://facebook.com/MASOP",
@@ -431,7 +431,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold">PayPal</h4>
-                                <p class="text-sm text-gray-600">maisondesoinspsychologiques@gmail.com</p>
+                                <p class="text-sm text-gray-600">contact@masop.care</p>
                             </div>
                         </div>
                         <div class="flex items-center p-4 border border-gray-200 rounded-lg donation-option transition duration-300">
@@ -561,7 +561,7 @@
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <p class="text-gray-600">maisondesoinspsychologiques@gmail.com</p>
+                                    <p class="text-gray-600">contact@masop.care</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -1081,13 +1081,64 @@
     <section id="testimonials" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Ce qu'on dit de nous</h2>
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Témoignages</h2>
                 <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
-                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Témoignages de nos partenaires et bénéficiaires</p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Partagez votre expérience avec MASOP ci-dessous.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimony 1 -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-teal-50 p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Vos témoignages</h3>
+                    <p class="text-gray-600 mb-4">Merci de partager votre retour, cela aide notre communauté à construire confiance et impact.</p>
+                    <div id="testimony-list" class="space-y-4">
+                        <div class="p-4 bg-white rounded-lg border border-gray-200 text-gray-700">
+                            <p class="italic">"Aucun témoignage pour l'instant. Soyez le premier à partager votre expérience !"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Déposer un témoignage</h3>
+                    <form id="testimonyForm" class="space-y-4">
+                        <div>
+                            <label for="testimonialName" class="block text-sm font-medium text-gray-700">Votre nom</label>
+                            <input type="text" id="testimonialName" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
+                        </div>
+                        <div>
+                            <label for="testimonialMessage" class="block text-sm font-medium text-gray-700">Votre témoignage</label>
+                            <textarea id="testimonialMessage" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-teal-600 text-white py-3 rounded-md hover:bg-teal-700 transition">Envoyer</button>
+                        <div id="testimonialStatus" class="mt-2 text-sm text-center hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('testimonyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('testimonialName').value.trim();
+            const message = document.getElementById('testimonialMessage').value.trim();
+            if (!name || !message) return;
+
+            const testimonialList = document.getElementById('testimony-list');
+            const card = document.createElement('div');
+            card.className = 'p-4 bg-white rounded-lg border border-gray-200';
+            card.innerHTML = `<p class="text-gray-700">"${message}"</p><p class="mt-2 text-sm font-semibold text-gray-900">${name}</p>`;
+            testimonialList.prepend(card);
+
+            document.getElementById('testimonialStatus').textContent = 'Merci pour votre témoignage !';
+            document.getElementById('testimonialStatus').classList.remove('hidden', 'text-red-500');
+            document.getElementById('testimonialStatus').classList.add('text-green-600');
+
+            event.target.reset();
+        });
+    </script>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
                 <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
                     <div class="flex items-center mb-4">
                         <div class="flex text-yellow-400">

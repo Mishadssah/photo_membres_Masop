@@ -159,7 +159,7 @@ Remplacer la balise `<title>` et ajouter après:
     "addressCountry": "HT"
   },
   "telephone": "+509-4748-7078",
-  "email": "maisondesoinspsychologiques@gmail.com"
+  "email": "contact@masop.care"
 }
 </script>
 
@@ -186,12 +186,12 @@ Google verra votre site comme **PROFESSIONNEL** ✅
 ### Étape 1: Créer un compte
 1. Aller à **https://formspree.io**
 2. S'inscrire GRATUITEMENT
-3. Email: `maisondesoinspsychologiques@gmail.com`
+3. Email: `contact@masop.care`
 
 ### Étape 2: Créer un formulaire
 1. Nouvelle form
 2. Nom: "Contact MASOP"
-3. Email: `maisondesoinspsychologiques@gmail.com`
+3. Email: `contact@masop.care`
 4. Copier l'ID généré: ex. `YOUR_FORM_ID`
 
 ### Étape 3: Ajouter au formulaire contact

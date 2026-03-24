@@ -93,7 +93,7 @@ Créer un fichier `sitemap.xml`:
 
 1. Aller à https://formspree.io
 2. S'inscrire gratuitement
-3. Créer nouveau form pour `maisondesoinspsychologiques@gmail.com`
+3. Créer nouveau form pour `contact@masop.care`
 4. Copier le code fourni
 5. Modifier le formulaire contact dans `index.html`:
 
