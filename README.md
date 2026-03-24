@@ -179,7 +179,7 @@ Les contributions sont bienvenues ! Pour contribuer :
 
 **MASOP - Maison de Soins Psychologiques**
 - **Email** : contact@masop.care
-- **Téléphone** : +509 4748-7078 (MonCash)
+- **Téléphone** : +509 41957895 (MonCash)
 - **Adresse** : Delmas, Port-au-Prince, Haïti
 - **Site Web** : [masop.org](http://masop.org)
 
