@@ -105,11 +105,58 @@
 
 @media (max-width: 640px) {
     .gallery-item img { height: 10rem; }
-    
+
     #lightboxPrev,
     #lightboxNext {
         width: 40px;
         height: 40px;
         font-size: 1.25rem;
+    }
+}
+
+/* Projects section styles */
+.rapport-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rapport-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 128, 128, 0.15);
+}
+
+.stat-card {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-tab.active {
+    background-color: rgb(13, 148, 136);
+    color: white;
+}
+
+.project-tab {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-section.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .rapport-card > div:first-child {
+        flex-direction: column;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-card div:first-child {
+        font-size: 1.75rem;
     }
 }

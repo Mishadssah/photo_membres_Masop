@@ -283,9 +283,9 @@
 
             <!-- Modales pour les activités -->
             <!-- Modale Santé Mentale -->
-            <div id="activitySanteMentale" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50">
+            <div id="activitySanteMentale" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50" role="dialog" aria-labelledby="modal-title-sante" aria-modal="true">
                 <div class="bg-white rounded-lg w-full max-w-4xl p-6 relative">
-                    <button onclick="closeActivity('sante-mentale')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <button onclick="closeActivity('sante-mentale')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Fermer la modale">
                         <i class="fas fa-times text-xl"></i>
                     </button>
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Journée mondiale de la santé mentale</h3>
@@ -298,9 +298,9 @@
             </div>
 
             <!-- Modale Harcèlement -->
-            <div id="activityHarcelement" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50">
+            <div id="activityHarcelement" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50" role="dialog" aria-labelledby="modal-title-harcelement" aria-modal="true">
                 <div class="bg-white rounded-lg w-full max-w-4xl p-6 relative">
-                    <button onclick="closeActivity('harcelement')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <button onclick="closeActivity('harcelement')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Fermer la modale">
                         <i class="fas fa-times text-xl"></i>
                     </button>
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Journée mondiale contre le harcèlement</h3>
@@ -313,9 +313,9 @@
             </div>
 
             <!-- Modale VBG -->
-            <div id="activityVbg" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50">
+            <div id="activityVbg" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50" role="dialog" aria-labelledby="modal-title-vbg" aria-modal="true">
                 <div class="bg-white rounded-lg w-full max-w-4xl p-6 relative">
-                    <button onclick="closeActivity('vbg')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <button onclick="closeActivity('vbg')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Fermer la modale">
                         <i class="fas fa-times text-xl"></i>
                     </button>
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Conférence sur les VBG</h3>
@@ -368,9 +368,9 @@
                 </div>
 
                 <!-- Modal Ulrick -->
-                <div id="bioUlrick" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50">
+                <div id="bioUlrick" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50" role="dialog" aria-labelledby="modal-title-ulrick" aria-modal="true">
                     <div class="bg-white rounded-lg max-w-2xl p-6 relative">
-                        <button onclick="closeBio('ulrick')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                        <button onclick="closeBio('ulrick')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Fermer la biographie">
                             <i class="fas fa-times text-xl"></i>
                         </button>
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Ulrick EDOUARD - Une vision, un impact</h3>
@@ -452,12 +452,12 @@
                 <h3 class="text-2xl font-bold text-gray-900 text-center mb-6">Dons par QR code</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
                     <div class="bg-white p-6 rounded-lg shadow-md text-center border border-gray-200">
-                        <img src="images/gallery/qr_moncash.png" alt="QR code MonCash" class="mx-auto h-48 w-48 object-contain mb-4">
+                        <img src="images/gallery/qr_moncash.png" alt="QR code MonCash" class="mx-auto h-48 w-48 object-contain mb-4" onerror="this.onerror=null;this.src='images/gallery/qr_placeholder.png';this.alt='QR code MonCash (image manquante)';">
                         <p class="font-semibold text-gray-700">MonCash</p>
                         <p class="text-sm text-gray-500">Scannez pour donner via MonCash</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md text-center border border-gray-200">
-                        <img src="images/gallery/qr_natcash.png" alt="QR code NatCash" class="mx-auto h-48 w-48 object-contain mb-4">
+                        <img src="images/gallery/qr_natcash.png" alt="QR code NatCash" class="mx-auto h-48 w-48 object-contain mb-4" onerror="this.onerror=null;this.src='images/gallery/qr_placeholder.png';this.alt='QR code NatCash (image manquante)';">
                         <p class="font-semibold text-gray-700">NatCash</p>
                         <p class="text-sm text-gray-500">Scannez pour donner via NatCash</p>
                     </div>
@@ -495,8 +495,8 @@
                 </div>
 
                 <div>
-                    <!-- CPS form: replace REPLACE_WITH_CPS_FORM_ID with your Formspree ID -->
-                    <form id="cpsForm" action="https://formspree.io/f/REPLACE_WITH_CPS_FORM_ID" method="POST" class="space-y-4 bg-gray-50 p-6 rounded-lg">
+                    <!-- CPS form: replace YOUR_CPS_FORMSPREE_ID with your actual Formspree ID -->
+                    <form id="cpsForm" action="https://formspree.io/f/YOUR_CPS_FORMSPREE_ID" method="POST" class="space-y-4 bg-gray-50 p-6 rounded-lg">
                         <div>
                             <label for="school_name" class="block text-sm font-medium text-gray-700">Nom de l'établissement</label>
                             <input type="text" id="school_name" name="school_name" required class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
@@ -609,9 +609,9 @@
                 </div>
                 
                 <div>
-                    <!-- Contact form: configured to use Formspree. Replace REPLACE_WITH_FORM_ID with your Formspree ID.
+                    <!-- Contact form: configured to use Formspree. Replace YOUR_CONTACT_FORMSPREE_ID with your actual Formspree ID.
                          Recommended recipient: contact@masop.org or info@masop.org -->
-                    <form id="contactForm" class="space-y-6" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+                    <form id="contactForm" class="space-y-6" action="https://formspree.io/f/YOUR_CONTACT_FORMSPREE_ID" method="POST">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700">Nom complet</label>
                                 <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
@@ -764,6 +764,31 @@
                     <figcaption class="p-3 bg-white">
                         <div class="text-sm font-semibold text-gray-800">Groupe MASOP 3</div>
                         <div class="text-xs text-gray-500">Janvier 2026</div>
+                    </figcaption>
+                </figure>
+
+                <!-- Mars 2026 - Journée internationale des droits des femmes -->
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-03" data-title="Équipe 8 mars 2026" data-date="Mar 8, 2026">
+                    <img src="images/gallery/photo_team_8_mars_2026.jpg" alt="Équipe MASOP - 8 mars 2026" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Équipe 8 mars 2026</div>
+                        <div class="text-xs text-gray-500">Mars 2026</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-03" data-title="Femmes en lutte pour le droit" data-date="Mar 8, 2026">
+                    <img src="images/gallery/photo_femmes_lutte_droit_8_mars_2026.jpg" alt="Femmes en lutte pour leurs droits - 8 mars 2026" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Femmes en lutte pour le droit</div>
+                        <div class="text-xs text-gray-500">Mars 2026</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-03" data-title="Sensibilisation 8 mars" data-date="Mar 8, 2026">
+                    <img src="images/gallery/photo_sensibilisation_8_mars_2026.jpg" alt="Session de sensibilisation 8 mars 2026" class="w-full h-48 object-cover">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Sensibilisation 8 mars</div>
+                        <div class="text-xs text-gray-500">Mars 2026</div>
                     </figcaption>
                 </figure>
 
@@ -1044,8 +1069,8 @@
         });
     </script>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
                 <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
                     <div class="flex items-center mb-4">
                         <div class="flex text-yellow-400">
@@ -1453,54 +1478,6 @@
             </div>
         </div>
     </section>
-
-<style>
-    .rapport-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .rapport-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 20px 25px -5px rgba(0, 128, 128, 0.15);
-    }
-
-    .stat-card {
-        transition: all 0.3s ease;
-    }
-
-    .stat-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .project-tab.active {
-        background-color: rgb(13, 148, 136);
-        color: white;
-    }
-
-    .project-tab {
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .project-section.hidden {
-        display: none;
-    }
-
-    @media (max-width: 768px) {
-        .rapport-card > div:first-child {
-            flex-direction: column;
-        }
-
-        .stat-card {
-            padding: 1rem;
-        }
-
-        .stat-card div:first-child {
-            font-size: 1.75rem;
-        }
-    }
-</style>
 
 <script>
 function switchTab(tabName) {
