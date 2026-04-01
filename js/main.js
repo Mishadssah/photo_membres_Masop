@@ -355,3 +355,47 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 });
+
+// Donation payment options handler
+function openPaymentLink(method) {
+    const messages = {
+        moncash: {
+            message: "Numéro MonCash à utiliser: 50938582420",
+            action: () => {
+                navigator.clipboard.writeText('50938582420').then(() => {
+                    const notification = document.createElement('div');
+                    notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-pulse';
+                    notification.textContent = '✓ Numéro copié dans le presse-papiers';
+                    document.body.appendChild(notification);
+                    setTimeout(() => notification.remove(), 3000);
+                });
+            }
+        },
+        natcash: {
+            message: "Numéro NatCash à utiliser: 50941820102",
+            action: () => {
+                navigator.clipboard.writeText('50941820102').then(() => {
+                    const notification = document.createElement('div');
+                    notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-pulse';
+                    notification.textContent = '✓ Numéro copié dans le presse-papiers';
+                    document.body.appendChild(notification);
+                    setTimeout(() => notification.remove(), 3000);
+                });
+            }
+        },
+        paypal: {
+            action: () => {
+                window.open('https://paypal.me/MASOPHT', '_blank');
+            }
+        },
+        transfer: {
+            action: () => {
+                window.location.href = 'mailto:contact@masop.care?subject=Information sur virement bancaire&body=Bonjour,%0A%0AJe suis intéressé(e) par faire un virement bancaire à MASOP. Pourriez-vous m\'envoyer les informations de compte?%0A%0AMerci';
+            }
+        }
+    };
+
+    if (messages[method]) {
+        messages[method].action();
+    }
+}
