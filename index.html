@@ -75,6 +75,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
+    <button id="scrollToTopBtn" class="hidden fixed bottom-24 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 focus:outline-none" aria-label="Retour en haut">
+        <i class="fas fa-chevron-up"></i>
+    </button>
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1358,7 +1361,7 @@
                             <i class="fa-brands fa-instagram text-2xl"></i>
                         </a>
                     </div>
-                    <a href="#don" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-bold">Faire un don</a>
+                    <a href="#donate" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-bold">Faire un don</a>
                 </div>
             </div>
             <hr class="border-gray-800 mb-8">
@@ -1370,6 +1373,7 @@
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
+    <script src="js/main.js"></script>
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
