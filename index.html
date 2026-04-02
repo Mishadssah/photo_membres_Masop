@@ -48,8 +48,8 @@
             "description": "Organisation haïtienne dédiée à la santé mentale, protection de l'enfance et prévention de la violence",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "9, Rue Ethéard, Delmas 39",
-                "addressLocality": "Port-au-Prince",
+                "streetAddress": "Bas Vivi Mitchell 14 #29, Pétion-Ville, Haïti",
+                "addressLocality": "Pétion-Ville",
                 "addressCountry": "HT"
             },
             "telephone": "+509-41957895",
@@ -282,6 +282,20 @@
                         Voir les photos
                     </button>
                 </div>
+
+                <div class="fade-in-section bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="text-teal-600 mb-3">
+                        <i class="fas fa-calendar-alt text-2xl"></i>
+                        <span class="ml-2 font-semibold">26 novembre 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">MASOP au Festival 4 Chemins</h3>
+                    <h4 class="text-md font-semibold text-teal-600 mb-3">Conférence 'Pawòl Tifi - Ki rèv pou tout fi'</h4>
+                    <p class="text-gray-600 mb-4">Le 26 novembre, notre Président a animé une conférence sur 'Le rêve des petites filles et les Violences Basées sur le Genre (VBG)'. Un échange puissant pour protéger nos filles et soutenir leur santé mentale.</p>
+                    <p class="text-gray-700 italic font-semibold">"Construisons le mental haïtien afin de mieux reconstruire le pays."</p>
+                    <button onclick="openActivity('festival4chemins')" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md text-sm transition duration-300 w-full mt-4">
+                        Voir les photos
+                    </button>
+                </div>
             </div>
 
             <!-- Modales pour les activités -->
@@ -329,6 +343,21 @@
                     </div>
                 </div>
             </div>
+
+            <div id="activityFestival4chemins" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden flex items-center justify-center p-4 z-50" role="dialog" aria-labelledby="modal-title-festival" aria-modal="true">
+                <div class="bg-white rounded-lg w-full max-w-4xl p-6 relative">
+                    <button onclick="closeActivity('festival4chemins')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Fermer la modale">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">MASOP au Festival 4 Chemins (26 Nov 2025)</h3>
+                    <h4 class="text-lg font-semibold text-teal-600 mb-4">Pawòl Tifi - Ki rèv pou tout fi</h4>
+                    <p class="text-gray-700 mb-4">Conférence sur le thème : Pawòl Tifi - Ki rèv pou tout fi. Focus sur la protection des petites filles et la lutte contre les VBG. Un échange porteur pour donner du pouvoirà nos filles et soutenir leur santé mentale.</p>
+                    <p class="text-gray-700 italic font-semibold text-center mb-6">"Construisons le mental haïtien afin de mieux reconstruire le pays."</p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <img src="images/gallery/festival_4_chemins_26_nov_2025.jpg" alt="Festival 4 Chemins - 26 Nov 2025" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    </div>
+                </div>
+            </div>
             
             <div class="mt-16 text-center">
                 <p class="text-2xl font-medium text-gray-700 italic">"Construisons le mental haïtien afin de mieux reconstruire le pays."</p>
@@ -345,9 +374,9 @@
                 <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Direction de MASOP</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="flex justify-center">
                 <!-- Team Member: only Ulrick retained -->
-                <div class="bg-white p-6 rounded-lg shadow-md team-card transition duration-300">
+                <div class="bg-white p-6 rounded-lg shadow-md team-card transition duration-300 w-full md:w-1/2 lg:w-1/3">
                     <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-teal-100">
                         <img src="images/team/UlrickEdouardPresidentMasop.jpeg" 
                              alt="Portrait de Ulrick EDOUARD - Président du Conseil d'Administration MASOP" 
@@ -600,8 +629,8 @@
                                     <i class="fas fa-phone"></i>
                                 </div>
                                 <div>
-                                    <p class="text-gray-600">50938582420 (MonCash)</p>
-                                    <p class="text-gray-600">50941820102 (NatCash)</p>
+                                    <p class="text-gray-600">+509 3796-2464</p>
+                                    <p class="text-gray-600">+509 4195-7895</p>
                                 </div>
                             </div>
                         </div>
@@ -684,6 +713,7 @@
                 <div class="flex space-x-2 overflow-auto">
                     <button data-filter="all" class="filter-btn bg-teal-600 text-white px-4 py-2 rounded-md text-sm font-medium shadow hover:bg-teal-700 focus:outline-none" aria-pressed="true">Tout afficher <span id="count-all" class="ml-2 inline-block bg-white text-teal-700 text-xs font-semibold px-2 py-0.5 rounded">0</span></button>
                     <button data-filter="2025-12" class="filter-btn bg-white text-teal-700 border border-teal-200 px-4 py-2 rounded-md text-sm font-medium shadow-sm hover:bg-teal-50 focus:outline-none">Décembre 2025 <span id="count-2025-12" class="ml-2 inline-block bg-teal-600 text-white text-xs font-semibold px-2 py-0.5 rounded">0</span></button>
+                    <button data-filter="2025-11" class="filter-btn bg-white text-teal-700 border border-teal-200 px-4 py-2 rounded-md text-sm font-medium shadow-sm hover:bg-teal-50 focus:outline-none">Novembre 2025 <span id="count-2025-11" class="ml-2 inline-block bg-teal-600 text-white text-xs font-semibold px-2 py-0.5 rounded">0</span></button>
                     <button data-filter="2026-01" class="filter-btn bg-white text-teal-700 border border-teal-200 px-4 py-2 rounded-md text-sm font-medium shadow-sm hover:bg-teal-50 focus:outline-none">Janvier 2026 <span id="count-2026-01" class="ml-2 inline-block bg-teal-600 text-white text-xs font-semibold px-2 py-0.5 rounded">0</span></button>
                     <button data-filter="2026-02" class="filter-btn bg-white text-teal-700 border border-teal-200 px-4 py-2 rounded-md text-sm font-medium shadow-sm hover:bg-teal-50 focus:outline-none">Février 2026 <span id="count-2026-02" class="ml-2 inline-block bg-teal-600 text-white text-xs font-semibold px-2 py-0.5 rounded">0</span></button>
                     <button data-filter="2026-03" class="filter-btn bg-white text-teal-700 border border-teal-200 px-4 py-2 rounded-md text-sm font-medium shadow-sm hover:bg-teal-50 focus:outline-none">Mars 2026 <span id="count-2026-03" class="ml-2 inline-block bg-teal-600 text-white text-xs font-semibold px-2 py-0.5 rounded">0</span></button>
@@ -714,6 +744,14 @@
                     <figcaption class="p-3 bg-white">
                         <div class="text-sm font-semibold text-gray-800">Remise de certificats</div>
                         <div class="text-xs text-gray-500">Décembre 2025</div>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2025-11" data-title="Festival 4 Chemins" data-date="Nov 26, 2025">
+                    <img src="images/gallery/festival_4_chemins_26_nov_2025.jpg" alt="MASOP au Festival 4 Chemins" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                    <figcaption class="p-3 bg-white">
+                        <div class="text-sm font-semibold text-gray-800">Festival 4 Chemins</div>
+                        <div class="text-xs text-gray-500">Novembre 2025</div>
                     </figcaption>
                 </figure>
 
@@ -810,91 +848,6 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">MASOP</h3>
-                    <p class="text-gray-400">Maison de Soins Psychologiques - Santé mentale & protection en Haïti.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contacts</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Bas Vivi Mitchell 14 #29, Pétion-Ville, Haïti</li>
-                        <li>Téléphone : +509 3796-2464</li>
-                        <li>Téléphone : +509 4195-7895</li>
-                        <li>Email : <a href="mailto:contact@masop.care" class="text-teal-400 hover:text-teal-300">contact@masop.care</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Réseaux sociaux</h4>
-                    <div class="flex space-x-4">
-                        <a href="https://x.com/MasopHaiti" target="_blank" rel="noopener" class="text-gray-400 hover:text-white" aria-label="X (Twitter)">
-                            <i class="fab fa-x-twitter fa-2x"></i>
-                        </a>
-                        <a href="https://www.instagram.com/infomasop/" target="_blank" rel="noopener" class="text-gray-400 hover:text-white" aria-label="Instagram">
-                            <i class="fab fa-instagram fa-2x"></i>
-                        </a>
-                    </div>
-                    <div class="mt-6">
-                        <a href="#donate" class="inline-block bg-teal-500 hover:bg-teal-400 text-white font-semibold px-5 py-2 rounded-lg text-sm">
-                            Faire un don
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                <p>© 2026 MASOP - Tous droits réservés | Réalisé par Mi-DAS Agency</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn" class="fixed bottom-8 right-8 bg-teal-600 hover:bg-teal-700 text-white rounded-full p-3 hidden shadow-lg transition-all duration-300 hover:scale-110 z-40" title="Retour au haut">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script src="js/main.js"></script>
-
-    <!-- Réalisations Récentes Section -->
-    <section id="realisations-recentes" class="py-20 bg-gradient-to-b from-teal-50 to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Journée Internationale des Droits des Femmes au Camp JMC</h2>
-                <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
-                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Sensibilisation et accompagnement psychologique de plus de 50 femmes allaitantes et déplacées. Focus sur la protection et la résilience en période de crise.</p>
-                <p class="mt-4 max-w-2xl text-teal-600 font-bold text-lg mx-auto">"DWA FANM YO" - Construisons le mental haïtien afin de mieux reconstruire le pays.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <img src="images/gallery/photo groupe 8 mars 2026.jpg" alt="Équipe MASOP - 8 mars 2026" class="rounded-lg shadow-lg w-full h-64 object-cover">
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">DWA FANM YO - Équipe</h3>
-                        <p class="text-gray-600">Photo d'équipe MASOP avec pancartes lors de la Journée Internationale des Droits des Femmes.</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <img src="images/gallery/photo_femmes_lutte_droit_8_mars_2026.jpg.jpg" alt="Femmes en lutte pour leurs droits - 8 mars 2026" class="rounded-lg shadow-lg w-full h-64 object-cover">
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Femmes en mobilisation</h3>
-                        <p class="text-gray-600">Plus de 50 femmes allaitantes et déplacées engagées dans la sensibilisation et la défense de leurs droits.</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <img src="images/gallery/photo 8 mars 2026 .jpg" alt="Session de sensibilisation 8 mars 2026" class="rounded-lg shadow-lg w-full h-64 object-cover">
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Sensibilisation psychologique</h3>
-                        <p class="text-gray-600">Ateliers psycho-éducatifs au Camp JMC, axés sur la protection et la résilience en période de crise.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Projet REPI Section -->
     <section id="repi-project" class="py-20 bg-gradient-to-b from-white to-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -983,124 +936,35 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-white">
+    <section id="testimonials" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Témoignages</h2>
                 <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
-                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Partagez votre expérience avec MASOP ci-dessous.</p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Les retours de ceux qui ont bénéficié de nos services</p>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-teal-50 p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Témoignages</h3>
-                    <p class="text-gray-600 mb-4">Nos actions sont portées par les mots de nos bénéficiaires. Exemple d'espace dédié :</p>
-                    <div id="testimony-list" class="space-y-4">
-                        <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm flex items-start space-x-4">
-                            <i class="fas fa-quote-left text-teal-500 text-3xl"></i>
-                            <p class="text-gray-700">Emplacement réservé pour un futur témoignage...</p>
-                        </div>
-                        <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm flex items-start space-x-4">
-                            <i class="fas fa-quote-left text-teal-500 text-3xl"></i>
-                            <p class="text-gray-700">Emplacement réservé pour un futur témoignage...</p>
-                        </div>
-                        <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm flex items-start space-x-4">
-                            <i class="fas fa-quote-left text-teal-500 text-3xl"></i>
-                            <p class="text-gray-700">Emplacement réservé pour un futur témoignage...</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Déposer un témoignage</h3>
-                    <form id="testimonyForm" class="space-y-4">
-                        <div>
-                            <label for="testimonialName" class="block text-sm font-medium text-gray-700">Votre nom</label>
-                            <input type="text" id="testimonialName" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
-                        </div>
-                        <div>
-                            <label for="testimonialMessage" class="block text-sm font-medium text-gray-700">Votre témoignage</label>
-                            <textarea id="testimonialMessage" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-teal-600 text-white py-3 rounded-md hover:bg-teal-700 transition">Envoyer</button>
-                        <div id="testimonialStatus" class="mt-2 text-sm text-center hidden"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        document.getElementById('testimonyForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('testimonialName').value.trim();
-            const message = document.getElementById('testimonialMessage').value.trim();
-            if (!name || !message) return;
-
-            const testimonialList = document.getElementById('testimony-list');
-            const card = document.createElement('div');
-            card.className = 'p-4 bg-white rounded-lg border border-gray-200';
-            card.innerHTML = `<p class="text-gray-700">"${message}"</p><p class="mt-2 text-sm font-semibold text-gray-900">${name}</p>`;
-            testimonialList.prepend(card);
-
-            document.getElementById('testimonialStatus').textContent = 'Merci pour votre témoignage !';
-            document.getElementById('testimonialStatus').classList.remove('hidden', 'text-red-500');
-            document.getElementById('testimonialStatus').classList.add('text-green-600');
-
-            event.target.reset();
-        });
-    </script>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-gray-50">
-                <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 text-lg italic mb-4">"MASOP a transformé ma vision de la santé mentale. L'équipe est professionnelle, empathique et vraiment dédiée à faire la différence. Les formations reçues sont de qualité excellente."</p>
-                    <div class="border-t border-gray-300 pt-4">
-                        <p class="font-semibold text-gray-800">Jean-Michel Duvigneaud</p>
-                        <p class="text-sm text-teal-600">Directeur ONG - Port-au-Prince</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimony 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-quote-left text-teal-500 text-3xl flex-shrink-0"></i>
+                        <p class="text-gray-700 text-lg italic">Emplacement réservé pour un futur témoignage...</p>
                     </div>
                 </div>
 
                 <!-- Testimony 2 -->
-                <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 text-lg italic mb-4">"Les initiatives de MASOP sur la protection de l'enfance sont essentielles. Leurs agents de protection sont bien formés et appliquent des pratiques fondées sur les meilleures normes internationales."</p>
-                    <div class="border-t border-gray-300 pt-4">
-                        <p class="font-semibold text-gray-800">Marie-Josée Pierre</p>
-                        <p class="text-sm text-teal-600">Directrice d'École - Delmas</p>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-quote-left text-teal-500 text-3xl flex-shrink-0"></i>
+                        <p class="text-gray-700 text-lg italic">Emplacement réservé pour un futur témoignage...</p>
                     </div>
                 </div>
 
                 <!-- Testimony 3 -->
-                <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 text-lg italic mb-4">"Après la formation avec MASOP, notre implémentation des programmes VBG a radicalement amélioré. Ulrick et son équipe font vraiment la différence au terrain. Recommandé vivement!"</p>
-                    <div class="border-t border-gray-300 pt-4">
-                        <p class="font-semibold text-gray-800">Robert Mathieu</p>
-                        <p class="text-sm text-teal-600">Coordinateur Projet International</p>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-quote-left text-teal-500 text-3xl flex-shrink-0"></i>
+                        <p class="text-gray-700 text-lg italic">Emplacement réservé pour un futur témoignage...</p>
                     </div>
                 </div>
             </div>
@@ -1459,46 +1323,45 @@
         </div>
     </section>
 
-<script>
-function switchTab(tabName) {
-    // Hide all sections
-    const sections = document.querySelectorAll('.project-section');
-    sections.forEach(section => {
-        section.classList.add('hidden');
-    });
-    
-    // Remove active class from all tabs
-    const tabs = document.querySelectorAll('.project-tab');
-    tabs.forEach(tab => {
-        tab.classList.remove('active', 'bg-teal-600', 'text-white', 'hover:bg-teal-700');
-        tab.classList.add('text-teal-600', 'border-2', 'border-teal-600', 'bg-white', 'hover:bg-teal-50');
-    });
-    
-    // Show selected section
-    const selectedSection = document.getElementById('section-' + tabName);
-    if (selectedSection) {
-        selectedSection.classList.remove('hidden');
-    }
-    
-    // Activate selected tab
-    const selectedTab = document.getElementById('tab-' + tabName);
-    if (selectedTab) {
-        selectedTab.classList.add('active', 'bg-teal-600', 'text-white', 'hover:bg-teal-700');
-        selectedTab.classList.remove('text-teal-600', 'border-2', 'border-teal-600', 'bg-white', 'hover:bg-teal-50');
-    }
-}
+    <footer class="bg-gray-900 text-white pt-12 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-teal-500">MASOP</h3>
+                    <p class="text-gray-400">Maison de Soins Psychologiques - Santé mentale & protection en Haïti.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contacts</h3>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2 text-teal-500"></i> Bas Vivi Mitchell 14 #29, Pétion-Ville, Haïti</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2 text-teal-500"></i> +509 3796-2464 / 4195-7895</p>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2 text-teal-500"></i> contact@masop.care</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Suivez-nous</h3>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="https://x.com/MasopHaiti" target="_blank" class="hover:text-teal-500"><i class="fa-brands fa-x-twitter text-2xl"></i></a>
+                        <a href="https://www.instagram.com/infomasop/" target="_blank" class="hover:text-teal-500"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                    </div>
+                    <a href="#don" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-bold">Faire un don</a>
+                </div>
+            </div>
+            <hr class="border-gray-800 mb-8">
+            <p class="text-center text-gray-500 text-sm">© 2026 MASOP - Tous droits réservés | Réalisé par Mi-DAS Agency</p>
+        </div>
+    </footer>
 
-<!-- Tawk.to live chat -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69cd545c4cdcf71c377f4aea/1jl5132a0';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-</body>
-</html>
+    <a href="https://wa.me/50937962464" class="fixed bottom-24 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 z-50 flex items-center justify-center" target="_blank">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement('script'),s0=document.getElementsByTagName('script')[0];
+    s1.async=true; s1.src='https://embed.tawk.to/69cd545c4cdcf71c377f4aea/1jl5132a0';
+    s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    </body>
+    </html>
