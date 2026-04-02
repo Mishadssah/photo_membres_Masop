@@ -117,6 +117,13 @@ footer {
 .fade-in-section:nth-child(3) { transition-delay: 200ms; }
 .fade-in-section:nth-child(4) { transition-delay: 300ms; }
 
+#services,
+#actions {
+    opacity: 1 !important;
+    transform: none !important;
+    display: block !important;
+}
+
 @media (max-width: 640px) {
     .gallery-item img { height: 10rem; }
 
