@@ -39,7 +39,9 @@ document.querySelectorAll('.fade-in-section').forEach(section => {
 // Mobile menu toggle
 document.getElementById('menu-toggle').addEventListener('click', function() {
     const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('hidden');
+    const isHidden = mobileMenu.classList.toggle('hidden');
+    mobileMenu.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
+    this.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
 });
 
 // Activity modals
@@ -405,3 +407,201 @@ function openPaymentLink(method) {
         messages[method].action();
     }
 }
+
+function switchTab(tab) {
+    const tabs = ['ongoing', 'past', 'future'];
+    tabs.forEach(section => {
+        const sectionEl = document.getElementById('section-' + section);
+        const tabBtn = document.getElementById('tab-' + section);
+        if (sectionEl) {
+            if (section === tab) {
+                sectionEl.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    sectionEl.classList.remove('opacity-0');
+                    sectionEl.classList.add('opacity-100');
+                });
+            } else {
+                sectionEl.classList.remove('opacity-100');
+                sectionEl.classList.add('opacity-0');
+                setTimeout(() => {
+                    if (sectionEl.classList.contains('opacity-0')) {
+                        sectionEl.classList.add('hidden');
+                    }
+                }, 500);
+            }
+        }
+        if (tabBtn) {
+            if (section === tab) {
+                tabBtn.classList.add('active');
+                tabBtn.classList.remove('bg-white', 'text-teal-600', 'border', 'border-teal-600');
+                tabBtn.classList.add('bg-teal-600', 'text-white');
+                tabBtn.setAttribute('aria-pressed', 'true');
+            } else {
+                tabBtn.classList.remove('active');
+                tabBtn.classList.remove('bg-teal-600', 'text-white');
+                tabBtn.classList.add('bg-white', 'text-teal-600', 'border', 'border-teal-600');
+                tabBtn.setAttribute('aria-pressed', 'false');
+            }
+        }
+    });
+}
+
+// CPS school logo upload and gallery handling
+(function(){
+    const logoDropZone = document.getElementById('logoDropZone');
+    const logoInput = document.getElementById('logoInput');
+    const logoPreview = document.getElementById('logoPreview');
+    const previewImg = document.getElementById('previewImg');
+    const logoFileName = document.getElementById('logoFileName');
+    const schoolLogoForm = document.getElementById('schoolLogoForm');
+    const cpsGalleryGrid = document.getElementById('cpsGalleryGrid');
+    const emptyGalleryMessage = document.getElementById('emptyGalleryMessage');
+
+    if (!logoDropZone || !logoInput || !logoPreview || !previewImg || !logoFileName || !schoolLogoForm || !cpsGalleryGrid || !emptyGalleryMessage) return;
+
+    function updateGalleryVisibility() {
+        const displayedItems = cpsGalleryGrid.querySelectorAll('.gallery-item');
+        emptyGalleryMessage.classList.toggle('hidden', displayedItems.length > 0);
+    }
+
+    function handleFile(file) {
+        if (!file || !file.type.startsWith('image/')) return;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            previewImg.src = e.target.result;
+            logoFileName.textContent = file.name;
+            logoPreview.classList.remove('hidden');
+        };
+        reader.readAsDataURL(file);
+    }
+
+    logoDropZone.addEventListener('click', () => logoInput.click());
+
+    logoDropZone.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        logoDropZone.classList.add('border-teal-500', 'bg-teal-50');
+    });
+
+    logoDropZone.addEventListener('dragleave', () => {
+        logoDropZone.classList.remove('border-teal-500', 'bg-teal-50');
+    });
+
+    logoDropZone.addEventListener('drop', (event) => {
+        event.preventDefault();
+        logoDropZone.classList.remove('border-teal-500', 'bg-teal-50');
+        const file = event.dataTransfer.files[0];
+        if (file) {
+            logoInput.files = event.dataTransfer.files;
+            handleFile(file);
+        }
+    });
+
+    logoInput.addEventListener('change', function() {
+        const file = this.files[0];
+        handleFile(file);
+    });
+
+    schoolLogoForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const schoolName = document.getElementById('schoolNameLogo').value.trim();
+        const schoolEmail = document.getElementById('schoolEmailLogo').value.trim();
+        const file = logoInput.files[0];
+
+        if (!schoolName || !schoolEmail || !file) {
+            alert('Veuillez indiquer le nom de l\'établissement, l\'email et un logo à télécharger.');
+            return;
+        }
+
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item bg-white rounded-lg shadow-md p-4 text-center flex flex-col items-center justify-center min-h-40 hover:shadow-xl transition duration-300';
+
+        const img = document.createElement('img');
+        img.src = previewImg.src;
+        img.alt = schoolName + ' logo';
+        img.className = 'w-full h-24 object-contain mb-4';
+        galleryItem.appendChild(img);
+
+        const title = document.createElement('p');
+        title.className = 'font-semibold text-gray-800';
+        title.textContent = schoolName;
+        galleryItem.appendChild(title);
+
+        const email = document.createElement('p');
+        email.className = 'text-sm text-gray-500';
+        email.textContent = schoolEmail;
+        galleryItem.appendChild(email);
+
+        cpsGalleryGrid.insertBefore(galleryItem, cpsGalleryGrid.firstChild);
+        updateGalleryVisibility();
+
+        schoolLogoForm.reset();
+        logoPreview.classList.add('hidden');
+        previewImg.src = '';
+        logoFileName.textContent = '';
+    });
+
+    updateGalleryVisibility();
+})();
+
+(function(){
+    const chatToggleBtn = document.getElementById('chatToggleBtn');
+    const chatPanel = document.getElementById('chat-panel');
+    const chatCloseBtn = document.getElementById('chatCloseBtn');
+    const chatForm = document.getElementById('chatForm');
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+
+    if (!chatToggleBtn || !chatPanel || !chatCloseBtn || !chatForm || !chatInput || !chatMessages) return;
+
+    const botResponses = [
+        { keywords: ['bonjour', 'salut', 'hello'], answer: 'Bonjour ! Je suis l’assistant MASOP. Comment puis-je vous aider aujourd’hui ?' },
+        { keywords: ['cps', 'enrôlement', 'inscription', 'école', 'établissement'], answer: 'Le programme CPS aide les écoles à protéger les élèves. Je peux vous orienter vers le formulaire d’enrôlement.' },
+        { keywords: ['formation', 'formations', 'cadre', 'technique'], answer: 'MASOP propose des formations pour renforcer les cadres sur la santé mentale, la protection de l’enfance et la prévention des VBG.' },
+        { keywords: ['festival', 'chemins', 'pawòl tifi', '22ème'], answer: 'Au Festival 4 Chemins, Ulrick EDOUARD a parlé du thème « Ki rèv pou tout fi - Pawòl Tifi ». Il a mis l’accent sur la protection des rêves des jeunes filles et la lutte contre les VBG.' },
+        { keywords: ['8 mars', 'femmes', 'allaitantes', 'camp'], answer: 'Le 8 mars 2026, MASOP a soutenu plus de 50 femmes allaitantes au Camp Jean Marie Vincent à Pétion-Ville.' },
+        { keywords: ['contact', 'email', 'téléphone', 'appeler'], answer: 'Vous pouvez nous contacter au +509 3796-2464 ou via contact@masop.care.' },
+        { keywords: ['don', 'donner', 'faire un don'], answer: 'Merci de votre intérêt pour soutenir MASOP. Le bouton Faire un don est disponible dans le pied de page et sur la page d’accueil.' }
+    ];
+
+    function addMessage(text, fromBot) {
+        const messageEl = document.createElement('div');
+        messageEl.className = fromBot ? 'rounded-2xl bg-teal-100 p-3 text-gray-800 self-start max-w-full break-words' : 'rounded-2xl bg-gray-100 p-3 text-gray-800 self-end max-w-full break-words';
+        messageEl.textContent = text;
+        chatMessages.appendChild(messageEl);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function findResponse(query) {
+        const normalized = query.toLowerCase();
+        for (const item of botResponses) {
+            if (item.keywords.some(keyword => normalized.includes(keyword))) {
+                return item.answer;
+            }
+        }
+        return 'Je suis là pour vous aider. Pouvez-vous préciser votre question sur MASOP, le CPS ou nos actions ?';
+    }
+
+    chatToggleBtn.addEventListener('click', () => {
+        const isHidden = chatPanel.classList.toggle('hidden');
+        chatToggleBtn.setAttribute('aria-expanded', !isHidden);
+        if (!isHidden) {
+            chatInput.focus();
+        }
+    });
+
+    chatCloseBtn.addEventListener('click', () => {
+        chatPanel.classList.add('hidden');
+        chatToggleBtn.setAttribute('aria-expanded', 'false');
+    });
+
+    chatForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const message = chatInput.value.trim();
+        if (!message) return;
+        addMessage(message, false);
+        chatInput.value = '';
+        const response = findResponse(message);
+        setTimeout(() => addMessage(response, true), 500);
+    });
+})();

@@ -94,10 +94,10 @@
                         <a href="#home" class="text-teal-700 px-3 py-2 text-sm font-medium hover:text-teal-500">Accueil</a>
                         <a href="#about" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Qui sommes-nous ?</a>
                         <a href="#services" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Nos services</a>
-                        <a href="#actions" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Nos actions</a>
+                        <a href="#activites" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Nos actions</a>
                         <a href="#repi-project" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Projet REPI</a>
                         <a href="#testimonials" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Témoignages</a>
-                        <a href="#projects" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Nos projets</a>
+                        <a href="#projets" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Nos projets</a>
                                                 <a href="#cps-enrollment" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">CPS - Enrôlement</a>
                         <a href="#team" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Notre équipe</a>
                         <a href="#donate" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Faire un don</a>
@@ -107,7 +107,7 @@
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button id="menu-toggle" class="text-gray-600 hover:text-teal-500 focus:outline-none">
+                    <button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-teal-500 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -116,15 +116,15 @@
             </div>
         </div>
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        <div id="mobile-menu" aria-hidden="true" class="hidden md:hidden bg-white shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="block px-3 py-2 text-base font-medium text-teal-700 hover:text-teal-500">Accueil</a>
                 <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Qui sommes-nous ?</a>
                 <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Nos services</a>
-                <a href="#actions" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Nos actions</a>
+                <a href="#activites" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Nos actions</a>
                                 <a href="#repi-project" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Projet REPI</a>
                                 <a href="#testimonials" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Témoignages</a>
-                                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Nos projets</a>
+                                <a href="#projets" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Nos projets</a>
                                                 <a href="#cps-enrollment" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">CPS - Enrôlement</a>
                 <a href="#team" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Notre équipe</a>
                 <a href="#donate" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Faire un don</a>
@@ -238,6 +238,7 @@
         </div>
     </section>
 
+    <div id="activites" class="sr-only"></div>
     <!-- Past Actions Section -->
     <section id="actions" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -293,9 +294,9 @@
                         <i class="fas fa-calendar-alt text-2xl"></i>
                         <span class="ml-2 font-semibold">26 novembre 2025</span>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">MASOP au Festival 4 Chemins</h3>
-                    <h4 class="text-md font-semibold text-teal-600 mb-3">Conférence 'Pawòl Tifi - Ki rèv pou tout fi'</h4>
-                    <p class="text-gray-600 mb-4">Le 26 novembre, notre Président a animé une conférence sur 'Le rêve des petites filles et les Violences Basées sur le Genre (VBG)'. Un échange puissant pour protéger nos filles et soutenir leur santé mentale.</p>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">MASOP au 22ème Festival 4 Chemins</h3>
+                    <h4 class="text-md font-semibold text-teal-600 mb-3">Ulrick EDOUARD - Ki rèv pou tout fi / Pawòl Tifi</h4>
+                    <p class="text-gray-600 mb-4">Le 26 novembre 2025, Ulrick EDOUARD, Président de MASOP, a pris la parole comme intervenant principal sur le thème "Ki rèv pou tout fi - Pawòl Tifi". Cette intervention a souligné l'accompagnement des jeunes filles, la protection de leurs rêves et la sensibilisation contre les VBG.</p>
                     <p class="text-gray-700 italic font-semibold">"Construisons le mental haïtien afin de mieux reconstruire le pays."</p>
                     <button onclick="openActivity('festival4chemins')" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md text-sm transition duration-300 w-full mt-4">
                         Voir les photos
@@ -355,7 +356,7 @@
                     <button onclick="closeActivity('festival4chemins')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Fermer la modale">
                         <i class="fas fa-times text-xl"></i>
                     </button>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">MASOP au Festival 4 Chemins (26 Nov 2025)</h3>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">MASOP au 22ème Festival 4 Chemins (26 Nov 2025)</h3>
                     <h4 class="text-lg font-semibold text-teal-600 mb-4">Pawòl Tifi - Ki rèv pou tout fi</h4>
                     <p class="text-gray-700 mb-4">Conférence sur le thème : Pawòl Tifi - Ki rèv pou tout fi. Focus sur la protection des petites filles et la lutte contre les VBG. Un échange porteur pour donner du pouvoir à nos filles et soutenir leur santé mentale.</p>
                     <p class="text-gray-700 italic font-semibold text-center mb-6">"Construisons le mental haïtien afin de mieux reconstruire le pays."</p>
@@ -424,6 +425,33 @@
                             <p class="text-gray-600 italic">Construisons le mental haïtien afin de mieux reconstruire le pays.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mars-2026" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">8 Mars 2026</h2>
+                <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Investir en faveur des femmes : accélérer le rythme.</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-teal-100">
+                        <h3 class="text-2xl font-bold text-gray-900">Action de terrain</h3>
+                        <p class="text-gray-600 mt-4">Soutien direct à plus de 50 femmes allaitantes au Camp Jean Marie Vincent à Pétion-Ville. Une mobilisation concrète pour renforcer leur santé, leur dignité et leur confiance.</p>
+                        <p class="text-gray-600 mt-4"><strong>Thème mondial 2026 :</strong> « Investir en faveur des femmes : accélérer le rythme ».</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-teal-100">
+                        <h3 class="text-2xl font-bold text-gray-900">Détermination</h3>
+                        <p class="text-gray-600 mt-4">Les femmes ont répété le thème de l'année comme un véritable cri de détermination, pour affirmer leur droit à un avenir meilleur et plus sûr.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-200">
+                    <img src="images/gallery/photo_femmes_lutte_droit_8_mars_2026.jpg.jpg" alt="Femme en lutte 8 mars 2026" class="rounded-3xl w-full h-full object-cover">
+                    <p class="mt-4 text-sm text-gray-500">Légende Photo 'Femme en lutte' : Ce cliché montre le moment où les femmes répétaient le thème de l'année comme un véritable cri de détermination.</p>
                 </div>
             </div>
         </div>
@@ -602,6 +630,71 @@
             </div>
         </div>
     </section>
+
+    <!-- CPS Enrolled Schools Section -->
+    <section id="cps-schools" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Écoles Enrollées - Programme CPS</h2>
+                <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Rejoignez la communauté croissante d'établissements engagés pour la protection psychologique scolaire en Haïti</p>
+            </div>
+
+            <!-- Upload Section for School Logos -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Télécharger le logo de votre établissement</h3>
+                <div class="max-w-2xl mx-auto">
+                    <div class="border-2 border-dashed border-teal-300 rounded-lg p-8 text-center hover:border-teal-500 transition duration-300 cursor-pointer" id="logoDropZone">
+                        <div class="mb-4">
+                            <i class="fas fa-cloud-upload-alt text-5xl text-teal-500 mb-4"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Déposer votre logo ici</h4>
+                        <p class="text-gray-600 mb-4">ou</p>
+                        <input type="file" id="logoInput" accept="image/*" class="hidden" />
+                        <button type="button" onclick="document.getElementById('logoInput').click()" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Parcourir les fichiers
+                        </button>
+                        <p class="text-xs text-gray-500 mt-4">PNG, JPG, GIF jusqu'à 5MB. Dimensión recommandée : 300x300px</p>
+                    </div>
+                    <div id="logoPreview" class="mt-4 hidden">
+                        <img id="previewImg" src="" alt="Logo preview" class="h-40 mx-auto rounded-lg shadow-md">
+                        <p id="logoFileName" class="text-sm text-gray-600 text-center mt-2"></p>
+                    </div>
+                    
+                    <form id="schoolLogoForm" class="mt-6 space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nom de l'établissement</label>
+                            <input type="text" id="schoolNameLogo" placeholder="Ex: École Primaire Saint-Joseph" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-teal-500 focus:border-teal-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email de contact</label>
+                            <input type="email" id="schoolEmailLogo" placeholder="directeur@ecole.ht" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-teal-500 focus:border-teal-500" required>
+                        </div>
+                        <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-lg transition duration-300">
+                            <i class="fas fa-upload mr-2"></i>Télécharger le logo
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Gallery of Enrolled Schools -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Établissements Partenaires</h3>
+                <div id="cpsGalleryGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    <!-- Schools will be dynamically loaded or displayed here -->
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center flex flex-col items-center justify-center min-h-40 hover:shadow-xl transition duration-300">
+                        <i class="fas fa-plus text-4xl text-teal-300 mb-2"></i>
+                        <p class="text-sm text-gray-600">Votre établissement</p>
+                    </div>
+                </div>
+                
+                <div id="emptyGalleryMessage" class="text-center py-12">
+                    <p class="text-gray-600 text-lg">Aucun établissement ajouté pour le moment. Commencez en téléchargeant le logo de votre école !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -771,30 +864,6 @@
                 </figure>
 
                 <!-- Janvier 2026 - Activités de terrain -->
-                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Activité terrain — Site Béré" data-date="Jan 29, 2026">
-                    <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">Photo à venir</div>
-                    <figcaption class="p-3 bg-white">
-                        <div class="text-sm font-semibold text-gray-800">Activité terrain — Site Béré</div>
-                        <div class="text-xs text-gray-500">29 Janvier 2026</div>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Activité terrain — MTPTC" data-date="Jan 30, 2026">
-                    <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">Photo à venir</div>
-                    <figcaption class="p-3 bg-white">
-                        <div class="text-sm font-semibold text-gray-800">Activité terrain — MTPTC</div>
-                        <div class="text-xs text-gray-500">30 Janvier 2026</div>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Activité terrain — MAST" data-date="Jan 30, 2026">
-                    <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">Photo à venir</div>
-                    <figcaption class="p-3 bg-white">
-                        <div class="text-sm font-semibold text-gray-800">Activité terrain — MAST</div>
-                        <div class="text-xs text-gray-500">30 Janvier 2026</div>
-                    </figcaption>
-                </figure>
-
                 <figure class="gallery-item bg-white rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105 cursor-pointer" data-month="2026-01" data-title="Activité terrain — ENRE" data-date="Jan 29, 2026">
                     <img src="images/gallery/REPI_Visite_Site_ENRE_IMJMC_Delmas_06-09jan2026.jpeg" alt="Visite site ENRE - Activité terrain janvier 2026" class="w-full h-48 object-cover" loading="lazy" decoding="async">
                     <figcaption class="p-3 bg-white">
@@ -957,6 +1026,44 @@
                 <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Témoignages</h2>
                 <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
                 <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Les retours de ceux qui ont bénéficié de nos services</p>
+                <div class="mt-6 text-yellow-500 text-3xl">★★★★★</div>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Formations</h3>
+                    <p class="text-gray-600 mb-4">Renforcement technique des cadres : supervision, gestion de cas, évaluation psychosociale et intervention de terrain pour les équipes MASOP.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Modules sur la protection de l'enfance et la prévention des VBG</li>
+                        <li>Techniques de coordination et d'accompagnement sur le terrain</li>
+                        <li>Approches axées sur le renforcement des compétences des cadres</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Partagez votre témoignage</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="testimonial-name" class="block text-sm font-medium text-gray-700">Nom</label>
+                            <input id="testimonial-name" type="text" class="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-teal-500 focus:ring-teal-500" placeholder="Votre nom">
+                        </div>
+                        <div>
+                            <label for="testimonial-rating" class="block text-sm font-medium text-gray-700">Note</label>
+                            <select id="testimonial-rating" class="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-teal-500 focus:ring-teal-500">
+                                <option value="">Sélectionnez une note</option>
+                                <option>★★★★★</option>
+                                <option>★★★★</option>
+                                <option>★★★</option>
+                                <option>★★</option>
+                                <option>★</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="testimonial-message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="testimonial-message" rows="4" class="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-teal-500 focus:ring-teal-500" placeholder="Votre message"></textarea>
+                        </div>
+                        <p class="text-xs text-gray-500">Votre témoignage sera soumis à modération avant publication.</p>
+                        <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-lg transition duration-300">Envoyer le témoignage</button>
+                    </form>
+                </div>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Testimony 1 -->
@@ -986,30 +1093,66 @@
         </div>
     </section>
 
+    <section id="formations" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Formations</h2>
+                <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Renforcement technique des cadres pour une intervention de terrain plus structurée, professionnelle et durable.</p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Objectifs</h3>
+                    <p class="text-gray-700 mb-4">Former les cadres MASOP sur la coordination, la gestion de cas, le suivi psychosocial et l’accompagnement stratégique des bénéficiaires.</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-3">
+                        <li>Dynamiser l’action de terrain avec des outils fiables.</li>
+                        <li>Renforcer les compétences sur les questions de VBG.</li>
+                        <li>Structurer l’évaluation et la supervision des équipes.</li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Contenu</h3>
+                    <p class="text-gray-700 mb-4">Modules ciblés pour les cadres : protection de l’enfance, prévention VBG, communication de crise et leadership opérationnel.</p>
+                    <p class="text-gray-700">Cette formation vise à faire des cadres des référents techniques capables de piloter des interventions de haute qualité.</p>
+                </div>
+                <div class="bg-gradient-to-br from-cyan-50 to-teal-50 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Impact</h3>
+                    <p class="text-gray-700 mb-4">Une équipe formée et aguerrie permet de mieux protéger les rêves des jeunes filles, de réduire les risques VBG et de garantir des réponses durables.</p>
+                    <p class="text-gray-700">Une approche professionnelle qui renforce la confiance des communautés et améliore l’impact de MASOP sur le terrain.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
+    <section id="projets" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nos Projets</h2>
                 <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
                 <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Découvrez nos initiatives passées, actuelles et à venir au service de la santé mentale en Haïti</p>
+                <div class="mt-6">
+                    <a href="#home" class="inline-flex items-center justify-center px-5 py-3 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition duration-300">
+                        <i class="fas fa-arrow-up mr-2"></i>Retour en haut
+                    </a>
+                </div>
             </div>
 
             <!-- Tabs Navigation -->
             <div class="flex justify-center mb-12 space-x-4 flex-wrap gap-4">
-                <button onclick="switchTab('ongoing')" id="tab-ongoing" class="project-tab active px-6 py-3 rounded-lg font-semibold text-white bg-teal-600 hover:bg-teal-700 transition duration-300">
+                <button onclick="switchTab('ongoing')" id="tab-ongoing" aria-pressed="true" class="project-tab active px-6 py-3 rounded-lg font-semibold text-white bg-teal-600 hover:bg-teal-700 transition duration-300">
                     <i class="fas fa-spinner mr-2"></i>Projets en cours
                 </button>
-                <button onclick="switchTab('past')" id="tab-past" class="project-tab px-6 py-3 rounded-lg font-semibold text-teal-600 border-2 border-teal-600 bg-white hover:bg-teal-50 transition duration-300">
+                <button onclick="switchTab('past')" id="tab-past" aria-pressed="false" class="project-tab px-6 py-3 rounded-lg font-semibold text-teal-600 border-2 border-teal-600 bg-white hover:bg-teal-50 transition duration-300">
                     <i class="fas fa-check-circle mr-2"></i>Projets passés
                 </button>
-                <button onclick="switchTab('future')" id="tab-future" class="project-tab px-6 py-3 rounded-lg font-semibold text-teal-600 border-2 border-teal-600 bg-white hover:bg-teal-50 transition duration-300">
+                <button onclick="switchTab('future')" id="tab-future" aria-pressed="false" class="project-tab px-6 py-3 rounded-lg font-semibold text-teal-600 border-2 border-teal-600 bg-white hover:bg-teal-50 transition duration-300">
                     <i class="fas fa-rocket mr-2"></i>Projets futurs
                 </button>
             </div>
 
             <!-- Ongoing Projects -->
-            <div id="section-ongoing" class="project-section">
+            <div id="section-ongoing" class="project-section transition-opacity duration-500 ease-in-out opacity-100">
                 <div class="grid md:grid-cols-2 gap-8 mb-8">
                     <!-- REPI Project -->
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
@@ -1066,7 +1209,7 @@
                                 <div class="flex items-start">
                                     <i class="fas fa-graduation-cap text-blue-600 mr-3 mt-1"></i>
                                     <div>
-                                        <p class="font-semibold text-gray-700">8 agents formés</p>
+                                        <p class="font-semibold text-gray-700">12 agents de terrain formés</p>
                                         <p class="text-sm text-gray-600">Certification module protection</p>
                                     </div>
                                 </div>
@@ -1078,16 +1221,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-300">
+                            <a href="#repi-project" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-300">
                                 En savoir plus
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Past Projects -->
-            <div id="section-past" class="project-section hidden">
+            <div id="section-past" class="project-section transition-opacity duration-500 ease-in-out opacity-0 hidden">
                 <div class="grid md:grid-cols-2 gap-8 mb-8">
                     <!-- Formation Agents December 2025 -->
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
@@ -1212,7 +1355,7 @@
             </div>
 
             <!-- Future Projects -->
-            <div id="section-future" class="project-section hidden">
+            <div id="section-future" class="project-section transition-opacity duration-500 ease-in-out opacity-0 hidden">
                 <div class="grid md:grid-cols-2 gap-8 mb-8">
                     <!-- Expansion REPI -->
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-teal-200 hover:shadow-xl transition duration-300">
@@ -1354,10 +1497,10 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">Suivez-nous</h3>
                     <div class="flex space-x-6 mt-4">
-                        <a href="https://x.com/MasopHaiti" target="_blank" class="text-white hover:text-teal-400 transition-all">
+                        <a href="https://x.com/MasopHaiti" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
                             <i class="fa-brands fa-x-twitter text-2xl"></i>
                         </a>
-                        <a href="https://www.instagram.com/infomasop/" target="_blank" class="text-white hover:text-teal-400 transition-all">
+                        <a href="https://www.instagram.com/infomasop/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
                             <i class="fa-brands fa-instagram text-2xl"></i>
                         </a>
                     </div>
@@ -1369,9 +1512,41 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/50937962464" class="fixed bottom-24 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 z-50 flex items-center justify-center" target="_blank">
-        <i class="fab fa-whatsapp text-3xl"></i>
-    </a>
+    <div id="support-actions" class="fixed bottom-6 left-6 z-50 flex flex-col items-start space-y-3">
+        <button id="chatToggleBtn" aria-expanded="false" class="inline-flex items-center gap-3 bg-teal-600 text-white px-4 py-3 rounded-full shadow-2xl hover:bg-teal-700 focus:outline-none">
+            <i class="fas fa-comments"></i>
+            <span>Chatbot</span>
+        </button>
+        <a href="https://wa.me/50937962464" class="inline-flex items-center justify-center gap-2 bg-green-500 text-white px-4 py-3 rounded-full shadow-2xl hover:bg-green-600 focus:outline-none" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <span>WhatsApp</span>
+        </a>
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-4 py-3 rounded-full shadow-2xl hover:bg-gray-800 focus:outline-none">
+            <i class="fas fa-envelope text-lg"></i>
+            <span>Contact</span>
+        </a>
+    </div>
+
+    <div id="chat-widget" class="fixed bottom-20 left-6 z-50 flex flex-col items-start">
+        <div id="chat-panel" class="hidden w-80 max-w-sm bg-white shadow-2xl rounded-3xl overflow-hidden border border-gray-200 mb-4">
+            <div class="flex items-center justify-between bg-teal-600 px-4 py-3">
+                <div class="text-white font-semibold">Assistant MASOP</div>
+                <button id="chatCloseBtn" aria-label="Fermer le chat" class="text-white hover:text-teal-200">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chatMessages" class="h-72 overflow-y-auto p-4 space-y-3 bg-gray-50 text-sm text-gray-700">
+                <div class="rounded-2xl bg-teal-100 p-3 text-gray-800">Bonjour ! Je suis là pour vous aider avec MASOP. Posez votre question.</div>
+            </div>
+            <form id="chatForm" class="border-t border-gray-200 px-4 py-3">
+                <label for="chatInput" class="sr-only">Message</label>
+                <div class="flex gap-2">
+                    <input id="chatInput" type="text" placeholder="Écrivez un message..." class="w-full rounded-full border border-gray-300 px-4 py-2 focus:outline-none focus:border-teal-500" autocomplete="off">
+                    <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white rounded-full px-4 py-2">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
     <script type="text/javascript">
