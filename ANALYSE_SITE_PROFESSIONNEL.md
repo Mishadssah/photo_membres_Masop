@@ -110,7 +110,7 @@
 - ⚠️ Pas de statistiques d'impact
 - ⚠️ Pas de logos de trust seals
 - ⚠️ Biographies équipe sans photos réelles (avatars SVG)
-- ✅ Historique depuis 2016 visible
+- ✅ Historique depuis 2021 visible
 - ✅ Adresses de contact claires
 
 ### 🎯 Conversion & CTA (5/10) - **FAIBLE**

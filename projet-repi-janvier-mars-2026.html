@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet REPI – Janvier-Mars 2026 | MASOP</title>
+    <meta name="description" content="Projet REPI de MASOP (janvier-mars 2026) : contexte d'intervention, centres collectifs, chiffres cles, actions menees et perspectives.">
+    <style>
+        :root {
+            --bg: #f5f8f7;
+            --surface: #ffffff;
+            --text: #1f2937;
+            --muted: #4b5563;
+            --accent: #1f7a6b;
+            --accent-soft: #e8f4f1;
+            --line: #dbe5e3;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background: linear-gradient(180deg, #f9fcfb 0%, var(--bg) 100%);
+            line-height: 1.65;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.88);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar-inner {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0.8rem 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            padding: 0.7rem 1.1rem;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+            box-shadow: 0 8px 18px rgba(31, 122, 107, 0.2);
+        }
+
+        .back-btn:hover,
+        .back-btn:focus-visible {
+            background: #166457;
+            transform: translateY(-1px);
+            outline: none;
+        }
+
+        .hero {
+            padding: 3.2rem 0 2rem;
+        }
+
+        .kicker {
+            display: inline-block;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border: 1px solid #cbe4df;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0.35rem 0.8rem;
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            margin: 0.85rem 0 0.5rem;
+            font-size: clamp(1.75rem, 4vw, 2.7rem);
+            line-height: 1.2;
+            color: #0f3f37;
+        }
+
+        .subtitle {
+            margin: 0;
+            color: var(--muted);
+            font-size: clamp(1rem, 2.2vw, 1.2rem);
+            font-weight: 600;
+        }
+
+        .section {
+            margin: 1.4rem 0;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 1.2rem;
+        }
+
+        .section h2 {
+            margin: 0 0 0.65rem;
+            color: #0f3f37;
+            font-size: 1.35rem;
+        }
+
+        .section p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .centers-grid {
+            margin-top: 0.75rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.7rem;
+        }
+
+        .center-item {
+            background: #f9fbfb;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 0.8rem;
+            color: #334155;
+        }
+
+        .center-item strong {
+            display: block;
+            color: #0f3f37;
+            margin-bottom: 0.2rem;
+        }
+
+        .total-card {
+            margin-top: 0.75rem;
+            background: #f0f8f6;
+            border: 1px solid #c7dfd9;
+            border-radius: 12px;
+            padding: 0.9rem;
+            font-weight: 700;
+            color: #0f3f37;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.9rem;
+            margin-top: 0.75rem;
+        }
+
+        .stat {
+            background: linear-gradient(180deg, #ffffff 0%, #f4fbf9 100%);
+            border: 1px solid #d5e8e3;
+            border-radius: 14px;
+            padding: 1rem 0.8rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: clamp(1.5rem, 3.8vw, 2.2rem);
+            line-height: 1.1;
+            color: var(--accent);
+            font-weight: 800;
+            margin-bottom: 0.35rem;
+        }
+
+        .stat-label {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .quote {
+            background: #f6fbff;
+            border-left: 4px solid #4f9ccf;
+            padding: 1rem;
+            border-radius: 10px;
+            color: #244056;
+            font-style: italic;
+        }
+
+        .actions-list {
+            margin: 0;
+            padding-left: 1.1rem;
+            color: var(--muted);
+        }
+
+        .actions-list li + li {
+            margin-top: 0.5rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 0.85rem;
+        }
+
+        figure {
+            margin: 0;
+            background: #fafdfc;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 0.65rem;
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 10px;
+            height: auto;
+        }
+
+        figcaption {
+            margin-top: 0.55rem;
+            color: #425466;
+            font-size: 0.92rem;
+        }
+
+        .footer-back {
+            text-align: center;
+            padding: 1.3rem 0 2.6rem;
+        }
+
+        @media (max-width: 920px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .centers-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero {
+                padding-top: 2.1rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <a href="index.html" class="back-btn" aria-label="Retour à l'accueil">&larr; Retour à l'accueil</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="kicker">Rapport d'intervention</span>
+            <h1>Projet REPI – Ranfòse Espwa Pwoteksyon ak Enklizyon</h1>
+            <p class="subtitle">Janvier - Mars 2026</p>
+        </section>
+
+        <section class="section" aria-labelledby="contexte-title">
+            <h2 id="contexte-title">Contexte</h2>
+            <p>MASOP intervient dans 7 centres collectifs de la Zone Métropolitaine de Port-au-Prince (ZMPP), couvrant 6 515 ménages et 15 177 individus déplacés. Les activités combinent sensibilisation générale et sensibilisation par ciblage sur les thèmes suivants : violences basées sur le genre (VBG), planning familial, méthodes de contraception, droits des enfants et protection de l'enfance.</p>
+        </section>
+
+        <section class="section" aria-labelledby="centres-title">
+            <h2 id="centres-title">Centres collectifs couverts</h2>
+            <div class="centers-grid">
+                <div class="center-item">
+                    <strong>École Nationale République de l'Equateur</strong>
+                    776 ménages, 2 996 individus
+                </div>
+                <div class="center-item">
+                    <strong>Espas Lwazi pou Timoun</strong>
+                    352 ménages, 669 individus
+                </div>
+                <div class="center-item">
+                    <strong>Institution Mixte Jean Marie Cesar</strong>
+                    1 531 ménages, 438 individus
+                </div>
+                <div class="center-item">
+                    <strong>MTPTC</strong>
+                    2 100 ménages, 5 798 individus
+                </div>
+                <div class="center-item">
+                    <strong>Église Évangélique Baptiste de Bérée</strong>
+                    500 ménages, 803 individus
+                </div>
+                <div class="center-item">
+                    <strong>École Nationale Pierre Labitrie</strong>
+                    700 ménages, 2 800 individus
+                </div>
+                <div class="center-item">
+                    <strong>MAST</strong>
+                    556 ménages, 1 673 individus
+                </div>
+            </div>
+            <div class="total-card">TOTAL : 6 515 ménages, 15 177 individus</div>
+        </section>
+
+        <section class="section" aria-labelledby="chiffres-title">
+            <h2 id="chiffres-title">Chiffres clés</h2>
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-number">496</span>
+                    <span class="stat-label">femmes bénéficiaires</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">230</span>
+                    <span class="stat-label">enfants accompagnés (0-17 ans)</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">centres collectifs</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15 177</span>
+                    <span class="stat-label">individus couverts</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="temoignage-title">
+            <h2 id="temoignage-title">Témoignage de terrain</h2>
+            <p class="quote">"Des mères nous ont confié ne pas savoir comment vivre après ce que leur fille a subi. Des femmes qui n'ont été aidées par aucune instance. Le travail continue."</p>
+        </section>
+
+        <section class="section" aria-labelledby="actions-title">
+            <h2 id="actions-title">Actions menées</h2>
+            <ul class="actions-list">
+                <li>Sensibilisation des femmes sur VBG, planning familial et contraception</li>
+                <li>Activités ludiques et éducatives pour les enfants sur leurs droits</li>
+                <li>Accompagnement psychologique individuel pour les victimes de viol</li>
+            </ul>
+        </section>
+
+        <section class="section" aria-labelledby="photos-title">
+            <h2 id="photos-title">Photos du projet</h2>
+            <div class="gallery-grid">
+                <figure>
+                    <img src="images/gallery/photo_activite_terrain_janvier_2026.jpeg" alt="Sensibilisation sur le terrain en janvier 2026">
+                    <figcaption>Sensibilisation sur le terrain - janvier 2026</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/gallery/Eglise_Évangélique_Baptiste_de_Bérée_sensibilisation_sur_le_planning_familial.jpg" alt="Sensibilisation au planning familial à l'Église Baptiste de Bérée">
+                    <figcaption>Sensibilisation au planning familial – Église Baptiste de Bérée – janvier 2026</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/gallery/Camps_Ecole_Nationale_ République_de_ lEquateur_sensibilisation_sur_le_respect_des_droits_des_enfants.jpg" alt="Sensibilisation sur les droits des enfants à l'École Nationale République de l'Equateur">
+                    <figcaption>Sensibilisation sur les droits des enfants – École Nationale République de l'Equateur</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/gallery/8_mars_2026_distribution_collation.jpg" alt="Journée internationale des droits des femmes le 8 mars 2026">
+                    <figcaption>Journée internationale des droits des femmes – 8 mars 2026 – Distribution de collations</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/gallery/8_mars_2026_sensibilisation_journee_internationale_droits_des_femmes.jpg" alt="Sensibilisation lors de la Journée internationale des droits des femmes le 8 mars 2026">
+                    <figcaption>Sensibilisation – Journée internationale des droits des femmes – 8 mars 2026</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/gallery/photo 8 mars 2026 .jpg" alt="Activité du 8 mars 2026 avec les participantes">
+                    <figcaption>Activité du 8 mars 2026 avec les participantes</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/gallery/photo_femmes_lutte_droit_8_mars_2026.jpg.jpg" alt="Femmes mobilisées pour leurs droits lors du 8 mars 2026">
+                    <figcaption>Femmes mobilisées pour leurs droits – 8 mars 2026</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/gallery/photo groupe 8 mars 2026.jpg" alt="Équipe d'intervention de MASOP lors de l'activité du 8 mars 2026">
+                    <figcaption>Équipe d'intervention de MASOP – 8 mars 2026</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/gallery/REPI_Sensibilisation_IMJMC_Groupe_Filles_06-09jan2026.jpeg" alt="Sensibilisation des adolescentes à l'Institut Marie Jeanne César">
+                    <figcaption>Sensibilisation des adolescentes – Institut Marie Jeanne César – janvier 2026</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="limitations-title">
+            <h2 id="limitations-title">Limitations</h2>
+            <p>MASOP intervient spécifiquement sur le bien-être psychologique. Nos ressources sont limitées en raison des demandes d'accès aux moyens de subsistance, au système de santé et suivi approprié.</p>
+        </section>
+
+        <section class="section" aria-labelledby="perspectives-title">
+            <h2 id="perspectives-title">Perspectives</h2>
+            <p>MASOP compte continuer ses interventions à travers nos visites et suivis psychologiques en faveur des déplacés jusqu'à leur rétablissement.</p>
+        </section>
+
+        <div class="footer-back">
+            <a href="index.html" class="back-btn" aria-label="Retour à l'accueil en bas de page">&larr; Retour à l'accueil</a>
+        </div>
+    </main>
+</body>
+</html>

@@ -7,7 +7,7 @@
 
 ## 📖 À propos du projet
 
-**MASOP** (Maison de Soins Psychologiques) est une organisation à but non lucratif haïtienne fondée en 2016 et basée à Delmas, Haïti. Cette plateforme web présente les services, actions et équipe de MASOP, dédiée à la promotion de la santé mentale, l'éducation psychologique, et la lutte contre la violence.
+**MASOP** (Maison de Soins Psychologiques) est une organisation à but non lucratif haïtienne fondée en 2021 et basée à Delmas, Haïti. Cette plateforme web présente les services, actions et équipe de MASOP, dédiée à la promotion de la santé mentale, l'éducation psychologique, et la lutte contre la violence.
 
 ### 🎯 Mission
 
