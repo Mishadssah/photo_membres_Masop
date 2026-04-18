@@ -289,12 +289,31 @@
                         <span class="ml-2 font-semibold">26 novembre 2025</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">MASOP au 22ème Festival 4 Chemins</h3>
-                    <h4 class="text-md font-semibold text-teal-600 mb-3">Ulrick EDOUARD - Ki rèv pou tout fi / Pawòl Tifi</h4>
                     <p class="text-gray-600 mb-4">Le 26 novembre 2025, Ulrick EDOUARD, Président de MASOP, a pris la parole comme intervenant principal sur le thème "Ki rèv pou tout fi - Pawòl Tifi". Cette intervention a souligné l'accompagnement des jeunes filles, la protection de leurs rêves et la sensibilisation contre les VBG.</p>
                     <p class="text-gray-700 italic font-semibold">"Construisons le mental haïtien afin de mieux reconstruire le pays."</p>
                     <button onclick="openActivity('festival4chemins')" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md text-sm transition duration-300 w-full mt-4">
                         Voir les photos
                     </button>
+                </div>
+            </div>
+
+            <!-- Action 5 : 8 mars 2026 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="grid md:grid-cols-3 gap-0">
+                    <div class="md:col-span-1">
+                        <img src="images/gallery/8_mars_2026_distribution_collation.jpg" alt="Journée des droits des femmes 2026" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="md:col-span-2 p-6 md:p-8">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm font-semibold">8 mars 2026</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Journée internationale des droits des femmes 2026</h3>
+                        <p class="text-teal-600 font-medium mb-3 italic">"Kò mwen, dwa mwen, rezilyans fanm deplase yo"</p>
+                        <p class="text-gray-600 mb-4">Le 8 mars 2026, MASOP a organisé une journée de réflexion au centre collectif Camps IMJMC. Plus d'une centaine de personnes ont participé. Les femmes ont répété le thème comme un véritable cri de détermination pour affirmer leur droit à un avenir meilleur et plus sûr.</p>
+                        <button onclick="openActivity('activity8mars')" class="inline-flex items-center text-teal-600 hover:text-teal-700 font-medium">
+                            Voir les photos <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -360,7 +379,43 @@
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Modale 8 mars 2026 -->
+            <div id="activity8mars" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden overflow-y-auto">
+                <div class="min-h-screen p-4 flex items-center justify-center">
+                    <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                        <div class="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
+                            <h3 class="text-xl font-bold text-gray-800">Journée internationale des droits des femmes – 8 mars 2026</h3>
+                            <button onclick="closeActivity('activity8mars')" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-4 italic">"Kò mwen, dwa mwen, rezilyans fanm deplase yo" – Camps IMJMC, ZMPP</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-2">
+                                    <img src="images/gallery/8_mars_2026_distribution_collation.jpg" alt="Distribution collation 8 mars" class="w-full rounded-lg shadow">
+                                    <p class="text-sm text-gray-500 text-center">Distribution de collations – 8 mars 2026</p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <img src="images/gallery/photo_femmes_lutte_droit_8_mars_2026.jpg.jpg" alt="Femmes en lutte 8 mars" class="w-full rounded-lg shadow">
+                                    <p class="text-sm text-gray-500 text-center">Femmes répétant le thème "Kò mwen, dwa mwen" – 8 mars 2026</p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <img src="images/gallery/photo groupe 8 mars 2026.jpg" alt="Groupe 8 mars" class="w-full rounded-lg shadow">
+                                    <p class="text-sm text-gray-500 text-center">Équipe MASOP – Intervention au Camps IMJMC – 8 mars 2026</p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <img src="images/gallery/8_mars_2026_sensibilisation_journee_internationale_droits_des_femmes.jpg" alt="Sensibilisation 8 mars" class="w-full rounded-lg shadow">
+                                    <p class="text-sm text-gray-500 text-center">Sensibilisation sur les droits des femmes – Camps IMJMC</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="mt-16 text-center">
                 <p class="text-2xl font-medium text-gray-700 italic">"Construisons le mental haïtien afin de mieux reconstruire le pays."</p>
             </div>
@@ -962,27 +1017,27 @@
                             <p class="text-teal-50"><strong>Ranfòse Espwa Pwoteksyon ak Enklizyon</strong></p>
                         </div>
                         <div class="p-6">
-                            <p class="text-gray-700 mb-4">Sensibilisation sur la protection de l'enfance, la violence basée sur le genre, la santé reproductive et le WASH auprès des adolescentes dans 4 sites de déplacement de Port-au-Prince.</p>
+                            <p class="text-gray-700 mb-4">Sensibilisation sur la protection de l'enfance, la violence basée sur le genre, le planning familial et la santé reproductive auprès des femmes et enfants déplacés dans 7 centres collectifs de la ZMPP.</p>
                             <div class="space-y-3 mb-4">
                                 <div class="flex items-start">
                                     <i class="fas fa-map-pin text-teal-600 mr-3 mt-1"></i>
                                     <div>
-                                        <p class="font-semibold text-gray-700">4 sites d'intervention</p>
-                                        <p class="text-sm text-gray-600">Pierre Labitrie, ENRE, IMJMC, Espace Lwazi</p>
+                                        <p class="font-semibold text-gray-700">7 centres collectifs (ZMPP)</p>
+                                        <p class="text-sm text-gray-600">ENRE, IMJMC, Espas Lwazi, MTPTC, Pierre Labitrie, Église de Bérée, MAST</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
                                     <i class="fas fa-users text-teal-600 mr-3 mt-1"></i>
                                     <div>
-                                        <p class="font-semibold text-gray-700">76+ adolescentes sensibilisées</p>
-                                        <p class="text-sm text-gray-600">9 ENA identifiés pour prise en charge</p>
+                                        <p class="font-semibold text-gray-700">496 femmes bénéficiaires</p>
+                                        <p class="text-sm text-gray-600">230 enfants accompagnés (0–17 ans)</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
                                     <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
                                     <div>
                                         <p class="font-semibold text-gray-700">Statut</p>
-                                        <p class="text-sm text-green-600 font-medium">En phase d'expansion</p>
+                                        <p class="text-sm text-green-600 font-medium">Actif — Jan–Mars 2026</p>
                                     </div>
                                 </div>
                             </div>

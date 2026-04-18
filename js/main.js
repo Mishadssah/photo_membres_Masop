@@ -60,6 +60,9 @@ function openActivity(activity) {
         case 'festival4chemins':
             modalId = 'activityFestival4chemins';
             break;
+        case 'activity8mars':
+            modalId = 'activity8mars';
+            break;
         default:
             return;
     }
@@ -80,6 +83,9 @@ function closeActivity(activity) {
             break;
         case 'festival4chemins':
             modalId = 'activityFestival4chemins';
+            break;
+        case 'activity8mars':
+            modalId = 'activity8mars';
             break;
         default:
             return;
