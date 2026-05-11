@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet REPI – Janvier-Mars 2026 | MASOP</title>
     <meta name="description" content="Projet REPI de MASOP (janvier-mars 2026) : contexte d'intervention, centres collectifs, chiffres cles, actions menees et perspectives.">
+    <link rel="stylesheet" href="css/styles.css">
+        <script>window.tailwind={config:{corePlugins:{preflight:false}}};</script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #f5f8f7;
+            --bg: #f9fafb;
             --surface: #ffffff;
             --text: #1f2937;
             --muted: #4b5563;
-            --accent: #1f7a6b;
-            --accent-soft: #e8f4f1;
-            --line: #dbe5e3;
+            --accent: #0d9488;
+            --accent-hover: #0f766e;
+            --accent-soft: #f0fdfa;
+            --line: #e5e7eb;
         }
 
         * {
@@ -24,13 +29,19 @@
             margin: 0;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text);
-            background: linear-gradient(180deg, #f9fcfb 0%, var(--bg) 100%);
+            background: var(--bg);
             line-height: 1.65;
         }
 
         .container {
-            width: min(1100px, 92%);
+            width: min(1280px, 100%);
             margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        main.container {
+            padding-top: 8rem;
+            padding-bottom: 3rem;
         }
 
         .topbar {
@@ -55,22 +66,21 @@
             background: var(--accent);
             color: #fff;
             font-weight: 600;
-            padding: 0.7rem 1.1rem;
-            border-radius: 10px;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
             border: 1px solid transparent;
-            transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
-            box-shadow: 0 8px 18px rgba(31, 122, 107, 0.2);
+            transition: background 180ms ease;
         }
 
         .back-btn:hover,
         .back-btn:focus-visible {
-            background: #166457;
-            transform: translateY(-1px);
+            background: var(--accent-hover);
             outline: none;
         }
 
         .hero {
-            padding: 3.2rem 0 2rem;
+            padding: 0;
+            margin-bottom: 1.5rem;
         }
 
         .kicker {
@@ -87,30 +97,45 @@
 
         h1 {
             margin: 0.85rem 0 0.5rem;
-            font-size: clamp(1.75rem, 4vw, 2.7rem);
-            line-height: 1.2;
-            color: #0f3f37;
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            color: #1f2937;
+            font-weight: 700;
         }
 
         .subtitle {
             margin: 0;
             color: var(--muted);
-            font-size: clamp(1rem, 2.2vw, 1.2rem);
-            font-weight: 600;
+            font-size: 1rem;
+            font-weight: 400;
         }
 
         .section {
             margin: 1.4rem 0;
             background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 1.2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        .section:nth-of-type(odd) {
+            background: #ffffff;
+        }
+
+        .section:nth-of-type(even) {
+            background: #f9fafb;
+        }
+
+        .section[aria-labelledby="temoignage-title"] {
+            background: #f0fdfa;
         }
 
         .section h2 {
             margin: 0 0 0.65rem;
-            color: #0f3f37;
-            font-size: 1.35rem;
+            color: #1f2937;
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            font-weight: 700;
         }
 
         .section p {
@@ -126,27 +151,27 @@
         }
 
         .center-item {
-            background: #f9fbfb;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            padding: 0.8rem;
-            color: #334155;
+            background: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            color: var(--muted);
         }
 
         .center-item strong {
             display: block;
-            color: #0f3f37;
-            margin-bottom: 0.2rem;
+            color: #1f2937;
+            margin-bottom: 0.45rem;
         }
 
         .total-card {
             margin-top: 0.75rem;
-            background: #f0f8f6;
-            border: 1px solid #c7dfd9;
-            border-radius: 12px;
+            background: #f0fdfa;
+            border: 1px solid #99f6e4;
+            border-radius: 0.5rem;
             padding: 0.9rem;
             font-weight: 700;
-            color: #0f3f37;
+            color: #1f2937;
         }
 
         .stats-grid {
@@ -157,11 +182,12 @@
         }
 
         .stat {
-            background: linear-gradient(180deg, #ffffff 0%, #f4fbf9 100%);
-            border: 1px solid #d5e8e3;
-            border-radius: 14px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
             padding: 1rem 0.8rem;
             text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
         }
 
         .stat-number {
@@ -180,11 +206,11 @@
         }
 
         .quote {
-            background: #f6fbff;
-            border-left: 4px solid #4f9ccf;
-            padding: 1rem;
-            border-radius: 10px;
-            color: #244056;
+            background: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            color: var(--muted);
             font-style: italic;
         }
 
@@ -207,10 +233,11 @@
 
         figure {
             margin: 0;
-            background: #fafdfc;
-            border: 1px solid var(--line);
-            border-radius: 14px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
             padding: 0.65rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
         }
 
         figure img {
@@ -260,11 +287,56 @@
     </style>
 </head>
 <body>
-    <header class="topbar">
-        <div class="container topbar-inner">
-            <a href="index.html" class="back-btn" aria-label="Retour à l'accueil">&larr; Retour à l'accueil</a>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50" style="top:0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center space-x-3 no-underline">
+                    <img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo">
+                    <div>
+                        <span class="text-2xl font-bold text-teal-700 block">MASOP</span>
+                        <span class="text-sm text-gray-600">Maison de Soins Psychologiques</span>
+                    </div>
+                </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html#about" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">À propos</a>
+                        <a href="index.html#services" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Services</a>
+                        <a href="index.html#activites" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Actions</a>
+                        <a href="projet-repi-janvier-mars-2026.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Projet REPI</a>
+                        <a href="temoignages.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Témoignages</a>
+                        <a href="index.html#gallery" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Galerie</a>
+                        <a href="index.html#team" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Équipe</a>
+                        <a href="index.html#donate" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Don</a>
+                        <a href="index.html#contact" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Contact</a>
+                        <a href="reports.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Rapports</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-teal-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
-    </header>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" aria-hidden="true" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html#about" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">À propos</a>
+                <a href="index.html#services" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Services</a>
+                <a href="index.html#activites" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Actions</a>
+                <a href="projet-repi-janvier-mars-2026.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Projet REPI</a>
+                <a href="temoignages.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Témoignages</a>
+                <a href="index.html#gallery" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Galerie</a>
+                <a href="index.html#team" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Équipe</a>
+                <a href="index.html#donate" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Don</a>
+                <a href="index.html#contact" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Contact</a>
+                <a href="reports.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Rapports</a>
+            </div>
+        </div>
+    </nav>
 
     <main class="container">
         <section class="hero">
@@ -283,31 +355,38 @@
             <div class="centers-grid">
                 <div class="center-item">
                     <strong>École Nationale République de l'Equateur</strong>
-                    776 ménages, 2 996 individus
+                    Ménages : 776<br>
+                    Individus : 2 996
                 </div>
                 <div class="center-item">
                     <strong>Espas Lwazi pou Timoun</strong>
-                    352 ménages, 669 individus
+                    Ménages : 352<br>
+                    Individus : 669
                 </div>
                 <div class="center-item">
                     <strong>Institution Mixte Jean Marie Cesar</strong>
-                    1 531 ménages, 438 individus
+                    Ménages : 1 531<br>
+                    Individus : 438
                 </div>
                 <div class="center-item">
                     <strong>MTPTC</strong>
-                    2 100 ménages, 5 798 individus
+                    Ménages : 2 100<br>
+                    Individus : 5 798
                 </div>
                 <div class="center-item">
                     <strong>Église Évangélique Baptiste de Bérée</strong>
-                    500 ménages, 803 individus
+                    Ménages : 500<br>
+                    Individus : 803
                 </div>
                 <div class="center-item">
                     <strong>École Nationale Pierre Labitrie</strong>
-                    700 ménages, 2 800 individus
+                    Ménages : 700<br>
+                    Individus : 2 800
                 </div>
                 <div class="center-item">
                     <strong>MAST</strong>
-                    556 ménages, 1 673 individus
+                    Ménages : 556<br>
+                    Individus : 1 673
                 </div>
             </div>
             <div class="total-card">TOTAL : 6 515 ménages, 15 177 individus</div>
@@ -430,8 +509,44 @@
         </section>
 
         <div class="footer-back">
-            <a href="index.html" class="back-btn" aria-label="Retour à l'accueil en bas de page">&larr; Retour à l'accueil</a>
-        </div>
     </main>
+    <footer class="bg-gray-900 text-white pt-12 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-teal-500">MASOP</h3>
+                    <p class="text-gray-400">Maison de Soins Psychologiques - Santé mentale &amp; protection en Haïti.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contacts</h3>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2 text-teal-500"></i> Bas Vivi Mitchell 14 #29, Pétion-Ville, Haïti</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2 text-teal-500"></i> +509 3796-2464 / 4195-7895</p>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2 text-teal-500"></i> contact@masop.care</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Suivez-nous</h3>
+                    <div class="flex space-x-6 mt-4">
+                        <a href="https://x.com/MasopHaiti" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
+                            <i class="fa-brands fa-x-twitter text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/infomasop/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
+                            <i class="fa-brands fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                    <a href="index.html#donate" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-bold mt-4 inline-block">Faire un don</a>
+                </div>
+            </div>
+            <hr class="border-gray-800 mb-8">
+            <p class="text-center text-gray-500 text-sm">© 2026 MASOP - Tous droits réservés | Réalisé par Mi-DAS Agency</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileMenu.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
+            this.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+        });
+    </script>
 </body>
 </html>
