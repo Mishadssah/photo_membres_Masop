@@ -1,0 +1,643 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos actions | MASOP</title>
+    <meta name="description" content="Nos actions MASOP : activités passées avec filtres par année et par thème.">
+    <link rel="stylesheet" href="css/styles.css">
+        <script>window.tailwind={config:{corePlugins:{preflight:false}}};</script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #f9fafb;
+            --surface: #ffffff;
+            --text: #1f2937;
+            --muted: #4b5563;
+            --accent: #0d9488;
+            --accent-hover: #0f766e;
+            --accent-soft: #f0fdfa;
+            --line: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.65;
+        }
+
+        .container {
+            width: min(1280px, 100%);
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        main.container {
+            padding-top: 8rem;
+            padding-bottom: 3rem;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.88);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar-inner {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0.8rem 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            border: 1px solid transparent;
+            transition: background 180ms ease;
+        }
+
+        .back-btn:hover,
+        .back-btn:focus-visible {
+            background: var(--accent-hover);
+            outline: none;
+        }
+
+        .hero {
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .kicker {
+            display: inline-block;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border: 1px solid #cbe4df;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0.35rem 0.8rem;
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            margin: 0.85rem 0 0.5rem;
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            color: #1f2937;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .section {
+            margin: 1.4rem 0;
+            background: var(--surface);
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        .section:nth-of-type(odd) {
+            background: #ffffff;
+        }
+
+        .section:nth-of-type(even) {
+            background: #f9fafb;
+        }
+
+        .section[aria-labelledby="temoignage-title"] {
+            background: #f0fdfa;
+        }
+
+        .section h2 {
+            margin: 0 0 0.65rem;
+            color: #1f2937;
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            font-weight: 700;
+        }
+
+        .section p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .centers-grid {
+            margin-top: 0.75rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.7rem;
+        }
+
+        .center-item {
+            background: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            color: var(--muted);
+        }
+
+        .center-item strong {
+            display: block;
+            color: #1f2937;
+            margin-bottom: 0.45rem;
+        }
+
+        .total-card {
+            margin-top: 0.75rem;
+            background: #f0fdfa;
+            border: 1px solid #99f6e4;
+            border-radius: 0.5rem;
+            padding: 0.9rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.9rem;
+            margin-top: 0.75rem;
+        }
+
+        .stat {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1rem 0.8rem;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: clamp(1.5rem, 3.8vw, 2.2rem);
+            line-height: 1.1;
+            color: var(--accent);
+            font-weight: 800;
+            margin-bottom: 0.35rem;
+        }
+
+        .stat-label {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .quote {
+            background: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        .actions-list {
+            margin: 0;
+            padding-left: 1.1rem;
+            color: var(--muted);
+        }
+
+        .actions-list li + li {
+            margin-top: 0.5rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 0.85rem;
+        }
+
+        .action-card > img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 260ms ease, filter 260ms ease;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .action-card {
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 10px 24px -14px rgba(15, 23, 42, 0.25);
+            transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+        }
+
+        .action-card:hover {
+            transform: translateY(-3px);
+            border-color: #99f6e4;
+            box-shadow: 0 16px 30px -16px rgba(13, 148, 136, 0.35);
+        }
+
+        .action-card:hover > img {
+            transform: scale(1.015);
+            filter: contrast(1.03) saturate(1.04);
+        }
+
+        .action-card img {
+            cursor: zoom-in;
+        }
+
+        .photo-lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+            z-index: 70;
+        }
+
+        .photo-lightbox.open {
+            display: flex;
+        }
+
+        .photo-lightbox img {
+            max-width: min(1120px, 95vw);
+            max-height: 86vh;
+            width: auto;
+            height: auto;
+            border-radius: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 30px 70px -25px rgba(0, 0, 0, 0.9);
+        }
+
+        .photo-lightbox .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 42px;
+            height: 42px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            border-radius: 999px;
+            font-size: 1.1rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .photo-lightbox .close-btn:hover {
+            background: rgba(255, 255, 255, 0.22);
+        }
+
+        figure {
+            margin: 0;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.65rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 10px;
+            height: auto;
+        }
+
+        figcaption {
+            margin-top: 0.55rem;
+            color: #425466;
+            font-size: 0.92rem;
+        }
+
+        .footer-back {
+            text-align: center;
+            padding: 1.3rem 0 2.6rem;
+        }
+
+        @media (max-width: 920px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .centers-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero {
+                padding-top: 2.1rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50" style="top:0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center space-x-3 no-underline">
+                    <img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo">
+                    <div>
+                        <span class="text-2xl font-bold text-teal-700 block">MASOP</span>
+                        <span class="text-sm text-gray-600">Maison de Soins Psychologiques</span>
+                    </div>
+                </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="a-propos.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">À propos</a>
+                        <a href="services.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Services</a>
+                        <a href="nos-actions.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Actions</a>
+                        <a href="projet-repi-janvier-mars-2026.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Projet REPI</a>
+                        <a href="temoignages.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Témoignages</a>
+                        <a href="galerie.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Galerie</a>
+                        <a href="equipe.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Équipe</a>
+                        <a href="don.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Don</a>
+                        <a href="contact.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Contact</a>
+                        <a href="reports.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Rapports</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-teal-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" aria-hidden="true" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="a-propos.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">À propos</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Services</a>
+                <a href="nos-actions.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Actions</a>
+                <a href="projet-repi-janvier-mars-2026.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Projet REPI</a>
+                <a href="temoignages.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Témoignages</a>
+                <a href="galerie.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Galerie</a>
+                <a href="equipe.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Équipe</a>
+                <a href="don.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Don</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Contact</a>
+                <a href="reports.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Rapports</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-4">Nos actions</h1>
+                <p class="text-center text-gray-600 mb-8">Toutes nos activités passées. Filtrez par année ou par thème.</p>
+
+                <!-- FILTRES -->
+                <div class="flex flex-wrap justify-center gap-3 mb-12">
+                    <button class="filter-btn active px-4 py-2 bg-teal-600 text-white rounded-full" data-filter="all">Toutes</button>
+                    <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-800 rounded-full" data-filter="2026">2026</button>
+                    <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-800 rounded-full" data-filter="2025">2025</button>
+                    <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-800 rounded-full" data-filter="2024">2024</button>
+                </div>
+
+                <!-- CONTENEUR DES CARTES -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="actions-container">
+                    
+
+                    <!-- 2026 -->
+                    <div class="action-card bg-white rounded-lg shadow-md overflow-hidden" data-year="2026" data-type="repi">
+                        <img src="images/gallery/REPI_Sensibilisation_IMJMC_Groupe_Filles_06-09jan2026.jpeg" alt="Sensibilisation REPI auprès de groupes de filles" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-4">
+                            <p class="text-sm text-teal-600 font-semibold">Janvier - Mars 2026</p>
+                            <h3 class="text-xl font-bold">Projet REPI</h3>
+                            <p class="text-gray-600 mt-2">Sensibilisations sur VBG, planning familial, droits des enfants dans 7 centres collectifs.</p>
+                            <a href="projet-repi-janvier-mars-2026.html" class="inline-block mt-3 text-teal-600 hover:text-teal-800">Voir les détails</a>
+                        </div>
+                    </div>
+                    <div class="action-card bg-white rounded-lg shadow-md overflow-hidden" data-year="2026" data-type="femmes">
+                        <img src="images/gallery/photo_femmes_lutte_droit_8_mars_2026.jpg" alt="Intervention MASOP auprès des femmes" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-4">
+                            <p class="text-sm text-teal-600 font-semibold">Mars 2026</p>
+                            <h3 class="text-xl font-bold">Journée internationale des droits des femmes</h3>
+                            <p class="text-gray-600 mt-2">Thème : "Kè mwen, dwa mwen, rezilyans fanm deplase yo". Plus de 100 participants.</p>
+                        </div>
+                    </div>
+                    <div class="action-card bg-white rounded-lg shadow-md overflow-hidden" data-year="2026" data-type="formation">
+                        <img src="images/gallery/formation_prevention_suicide_equipe_avril_2026.jpeg" alt="Formation OIM en équipe sur la prévention du suicide" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-4">
+                            <p class="text-sm text-teal-600 font-semibold">Avril 2026</p>
+                            <h3 class="text-xl font-bold">Formation OIM - Prévention du suicide</h3>
+                            <p class="text-gray-600 mt-2">Renforcement de capacités sur les Premiers Secours Psychologiques (PSP).</p>
+                        </div>
+                    </div>
+                    <div class="action-card bg-white rounded-lg shadow-md overflow-hidden" data-year="2026" data-type="formation">
+                        <img src="images/gallery/photo_formation_agent_protection_1.jpeg" alt="Formation CPS pour agents de protection" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-4">
+                            <p class="text-sm text-teal-600 font-semibold">Avril - Mai 2026</p>
+                            <h3 class="text-xl font-bold">Programme CPS - Formation continue</h3>
+                            <p class="text-gray-600 mt-2">Renforcement de capacités des promoteurs en santé mentale dans les écoles. Formation en cours.</p>
+                        </div>
+                    </div>
+                    <div class="action-card bg-white rounded-lg shadow-md overflow-hidden" data-year="2026" data-type="repi">
+                        <img src="images/gallery/photo_activite_terrain_janvier_2026.jpeg" alt="Intervention terrain MASOP auprès des communautés déplacées" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-4">
+                            <p class="text-sm text-teal-600 font-semibold">Janvier 2026</p>
+                            <h3 class="text-xl font-bold">Intervention de terrain</h3>
+                            <p class="text-gray-600 mt-2">Activités de proximité et orientation psychosociale sur site avec les équipes MASOP.</p>
+                        </div>
+                    </div>
+                    <div class="action-card bg-white rounded-lg shadow-md overflow-hidden" data-year="2026" data-type="femmes">
+                        <img src="images/gallery/photo_8_mars_2026.jpg" alt="Mobilisation communautaire autour des droits des femmes" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-4">
+                            <p class="text-sm text-teal-600 font-semibold">Mars 2026</p>
+                            <h3 class="text-xl font-bold">Mobilisation communautaire</h3>
+                            <p class="text-gray-600 mt-2">Sensibilisation collective autour des droits, de la protection et du bien-être psychosocial des femmes.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2025 -->
+                    <div class="action-card bg-white rounded-lg shadow-md overflow-hidden" data-year="2025" data-type="formation">
+                        <img src="images/gallery/panel_masop_4chemins_22festival_pawoltifi.jpg" alt="Panel MASOP au Festival 4 Chemins" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-4">
+                            <p class="text-sm text-teal-600 font-semibold">Novembre 2025</p>
+                            <h3 class="text-xl font-bold">Festival 4 Chemins</h3>
+                            <p class="text-gray-600 mt-2">MASOP au festival sur la santé mentale et le soutien psychosocial.</p>
+                        </div>
+                    </div>
+                    <div class="action-card bg-white rounded-lg shadow-md overflow-hidden" data-year="2025" data-type="formation">
+                        <img src="images/gallery/intervention_president_masop_22festival_4chemins.jpg" alt="Intervention du président de MASOP au Festival 4 Chemins" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-4">
+                            <p class="text-sm text-teal-600 font-semibold">Novembre 2025</p>
+                            <h3 class="text-xl font-bold">Festival 4 Chemins - Intervention</h3>
+                            <p class="text-gray-600 mt-2">Prise de parole institutionnelle sur la santé mentale et l'accompagnement psychosocial.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div class="action-card bg-white rounded-lg shadow-md overflow-hidden" data-year="2024" data-type="femmes">
+                        <img src="images/gallery/photoGroupeMasop.1.jpg" alt="Sensibilisation sur le VBG avec les filles, 2024" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-4">
+                            <p class="text-sm text-teal-600 font-semibold">2024</p>
+                            <h3 class="text-xl font-bold">Sensibilisation VBG avec les filles</h3>
+                            <p class="text-gray-600 mt-2">Séance de sensibilisation sur les violences basées sur le genre auprès d’un groupe de jeunes filles, animée par MASOP en 2024.</p>
+                        </div>
+                    </div>
+                    <div class="action-card bg-white rounded-lg shadow-md overflow-hidden" data-year="2024" data-type="formation">
+                        <img src="images/gallery/photoGroupeMasop.2.jpg" alt="Participation communautaire de jeunes filles, 2024" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-4">
+                            <p class="text-sm text-teal-600 font-semibold">2024</p>
+                            <h3 class="text-xl font-bold">Participation communautaire</h3>
+                            <p class="text-gray-600 mt-2">Mobilisation et engagement d’un large groupe de jeunes filles lors d’une activité MASOP en 2024.</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <!-- BOUTON RETOUR -->
+                <div class="text-center mt-12">
+                    <a href="index.html" class="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition duration-300">
+                        Retour à l'accueil
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+
+        <div id="photo-lightbox" class="photo-lightbox" aria-hidden="true">
+            <button type="button" class="close-btn" id="lightbox-close" aria-label="Fermer l'image">×</button>
+            <img id="lightbox-image" src="" alt="Agrandissement photo d'action MASOP">
+        </div>
+
+        <!-- JavaScript pour les filtres -->
+        <script>
+            const buttons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.action-card');
+            
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Mise a jour des classes actives
+                    buttons.forEach(b => {
+                        b.classList.remove('active', 'bg-teal-600', 'text-white');
+                        b.classList.add('bg-gray-200', 'text-gray-800');
+                    });
+                    btn.classList.add('active', 'bg-teal-600', 'text-white');
+                    btn.classList.remove('bg-gray-200', 'text-gray-800');
+                    
+                    const filter = btn.dataset.filter;
+                    
+                    cards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = card.dataset.year === filter ? '' : 'none';
+                        }
+                    });
+                });
+            });
+
+            const lightbox = document.getElementById('photo-lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const galleryImages = document.querySelectorAll('#actions-container img');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImage.src = img.src;
+                    lightboxImage.alt = img.alt || 'Photo d\'action MASOP';
+                    lightbox.classList.add('open');
+                    lightbox.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                lightboxImage.src = '';
+                document.body.style.overflow = '';
+            }
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (event) => {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+                    closeLightbox();
+                }
+            });
+        </script>
+    </main>
+    <footer class="bg-gray-900 text-white pt-12 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-teal-500">MASOP</h3>
+                    <p class="text-gray-400">Maison de Soins Psychologiques - Santé mentale &amp; protection en Haïti.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contacts</h3>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2 text-teal-500"></i> Bas Vivi Mitchell 14 #29, Pétion-Ville, Haïti</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2 text-teal-500"></i> +509 3796-2464 / 4195-7895</p>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2 text-teal-500"></i> contact@masop.care</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Suivez-nous</h3>
+                    <div class="flex space-x-6 mt-4">
+                        <a href="https://x.com/MasopHaiti" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
+                            <i class="fa-brands fa-x-twitter text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/infomasop/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
+                            <i class="fa-brands fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                    <a href="don.html" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-bold mt-4 inline-block">Faire un don</a>
+                </div>
+            </div>
+            <hr class="border-gray-800 mb-8">
+            <p class="text-center text-gray-500 text-sm">© 2026 MASOP - Tous droits réservés | Réalisé par Mi-DAS Agency</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileMenu.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
+            this.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+        });
+    </script>
+</body>
+</html>
+

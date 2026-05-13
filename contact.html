@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | MASOP</title>
+    <meta name="description" content="Contactez MASOP pour toute demande d'information ou de collaboration.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <button id="scrollToTopBtn" class="hidden fixed bottom-24 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 focus:outline-none" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></button>
+    <nav class="fixed w-full bg-white shadow-md z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between h-20 items-center"><a href="index.html" class="flex-shrink-0 flex items-center space-x-3 no-underline"><img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo"><div><span class="text-2xl font-bold text-teal-700 block">MASOP</span><span class="text-sm text-gray-600">Maison de Soins Psychologiques</span></div></a><div class="hidden md:block"><div class="ml-10 flex items-baseline space-x-4"><a href="a-propos.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">A propos</a><a href="services.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Services</a><a href="nos-actions.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Actions</a><a href="galerie.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Galerie</a><a href="equipe.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Equipe</a><a href="don.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Don</a><a href="contact.html" class="text-teal-700 px-3 py-2 text-sm font-medium">Contact</a></div></div><div class="md:hidden"><button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-teal-500 focus:outline-none"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div></div></div><div id="mobile-menu" aria-hidden="true" class="hidden md:hidden bg-white shadow-lg"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="contact.html" class="block px-3 py-2 text-base font-medium text-teal-700">Contact</a><a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Services</a><a href="nos-actions.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Actions</a><a href="don.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Don</a></div></div></nav>
+
+    <main class="flex-1 pt-24 pb-16">
+        <section class="py-12 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Contactez-nous</h1>
+                    <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Nous sommes a votre ecoute pour toute question ou demande de renseignement.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <div class="mb-8">
+                            <h2 class="text-xl font-bold text-gray-800 mb-4">Nos coordonnees</h2>
+                            <div class="space-y-4">
+                                <p class="text-gray-600"><i class="fas fa-map-marker-alt mr-2 text-teal-600"></i> Bas Vivi Mitchell 14 #29, Petion-Ville, Haiti</p>
+                                <p class="text-gray-600"><i class="fas fa-envelope mr-2 text-teal-600"></i> contact@masop.care</p>
+                                <p class="text-gray-600"><i class="fas fa-phone mr-2 text-teal-600"></i> +509 3796-2464 / +509 4195-7895</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Horaires d'ouverture</h3>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="flex justify-between py-2 border-b border-gray-200"><span class="text-gray-600">Lundi - Vendredi</span><span class="font-medium">8:00 - 17:00</span></div>
+                                <div class="flex justify-between py-2"><span class="text-gray-600">Samedi</span><span class="font-medium">9:00 - 13:00</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <form id="contactForm" class="space-y-6" action="https://formspree.io/f/xyzgwprl" method="POST">
+                            <div><label for="name" class="block text-sm font-medium text-gray-700">Nom complet</label><input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                            <div><label for="email" class="block text-sm font-medium text-gray-700">Email</label><input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                            <div><label for="phone" class="block text-sm font-medium text-gray-700">Telephone (optionnel)</label><input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
+                            <div><label for="message" class="block text-sm font-medium text-gray-700">Message</label><textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500" placeholder="Votre message ici..."></textarea></div>
+                            <input type="hidden" name="_subject" value="Nouveau message depuis le site MASOP"><input type="hidden" name="_language" value="fr">
+                            <button type="submit" id="contactSubmitBtn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700">Envoyer le message</button>
+                            <div id="contactStatus" class="mt-4 text-center text-sm hidden p-3 rounded-md"></div>
+                        </form>
+                        <p class="text-xs text-gray-500 mt-2">Ou contactez-nous directement: <a href="mailto:contact@masop.care" class="text-teal-600 hover:underline">contact@masop.care</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white pt-12 pb-8 mt-20"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><p class="text-center text-gray-500 text-sm">© 2026 MASOP - Tous droits reserves</p></div></footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

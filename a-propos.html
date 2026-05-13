@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A propos | MASOP</title>
+    <meta name="description" content="Decouvrez l'histoire, la mission et l'approche de MASOP pour la sante mentale en Haiti.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <button id="scrollToTopBtn" class="hidden fixed bottom-24 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 focus:outline-none" aria-label="Retour en haut">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center space-x-3 no-underline">
+                    <img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo">
+                    <div>
+                        <span class="text-2xl font-bold text-teal-700 block">MASOP</span>
+                        <span class="text-sm text-gray-600">Maison de Soins Psychologiques</span>
+                    </div>
+                </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="a-propos.html" class="text-teal-700 px-3 py-2 text-sm font-medium">A propos</a>
+                        <a href="services.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Services</a>
+                        <a href="nos-actions.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Actions</a>
+                        <a href="projet-repi-janvier-mars-2026.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Projet REPI</a>
+                        <a href="temoignages.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Temoignages</a>
+                        <a href="galerie.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Galerie</a>
+                        <a href="equipe.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Equipe</a>
+                        <a href="don.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Don</a>
+                        <a href="contact.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-teal-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" aria-hidden="true" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="a-propos.html" class="block px-3 py-2 text-base font-medium text-teal-700">A propos</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Services</a>
+                <a href="nos-actions.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Actions</a>
+                <a href="projet-repi-janvier-mars-2026.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Projet REPI</a>
+                <a href="temoignages.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Temoignages</a>
+                <a href="galerie.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Galerie</a>
+                <a href="equipe.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Equipe</a>
+                <a href="don.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Don</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 pt-24 pb-16">
+        <section class="py-12 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-teal-600">Presentation</p>
+                    <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Qui sommes-nous ?</h1>
+                    <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
+                    <div class="mt-8 max-w-4xl mx-auto rounded-2xl border border-teal-100 bg-gradient-to-r from-teal-50 to-cyan-50 px-6 py-7 shadow-sm">
+                        <p class="text-2xl md:text-3xl font-extrabold text-teal-800 leading-tight">MASOP : Votre bien-etre psychologique, notre priorite.</p>
+                        <p class="mt-3 text-base md:text-lg text-gray-700 text-justify">Un soutien psychologique accessible a tous, sans peur et sans jugement.</p>
+                        <div class="mt-5 flex flex-wrap justify-center gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white border border-teal-200 text-teal-700 text-sm font-semibold">Accompagnement humain</span>
+                            <span class="px-3 py-1 rounded-full bg-white border border-teal-200 text-teal-700 text-sm font-semibold">Ecoute confidentielle</span>
+                            <span class="px-3 py-1 rounded-full bg-white border border-teal-200 text-teal-700 text-sm font-semibold">Approche accessible</span>
+                        </div>
+                        <div class="mt-6 flex flex-wrap justify-center gap-3">
+                            <a href="contact.html" class="inline-flex w-full sm:w-auto justify-center items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300">
+                                Demander un accompagnement
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="services.html" class="inline-flex w-full sm:w-auto justify-center items-center border border-teal-600 text-teal-700 hover:bg-teal-50 font-semibold px-6 py-3 rounded-full transition duration-300">
+                                Voir nos services
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-10 items-start">
+                    <div>
+                        <img src="images/gallery/photo_activite_terrain_janvier_2026_1.jpeg" alt="Intervention psychosociale de MASOP aupres des communautes" class="rounded-3xl shadow-lg w-full h-auto object-contain" loading="lazy" decoding="async">
+                    </div>
+                    <div class="space-y-6">
+                        <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4">Notre histoire</h2>
+                            <p class="text-gray-600 leading-relaxed text-justify">Fondee en 2021 a Delmas, la Maison de Soins Psychologiques (MASOP) est une organisation haitienne a but non lucratif engagee dans la promotion de la sante mentale.</p>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="bg-white rounded-2xl p-6 border border-teal-100 shadow-sm">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Notre mission</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed text-justify">Rendre les soins psychologiques plus accessibles et accompagner les communautes avec des reponses adaptees, respectueuses et realistes.</p>
+                            </div>
+                            <div class="bg-white rounded-2xl p-6 border border-teal-100 shadow-sm">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Notre approche</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed text-justify">Une intervention de proximite, fondee sur l'ecoute, la confidentialite, la dignite et l'ancrage communautaire.</p>
+                            </div>
+                        </div>
+                        <div class="bg-teal-50 p-6 rounded-2xl border border-teal-100">
+                            <p class="text-teal-900 italic text-xl md:text-2xl font-semibold leading-relaxed text-justify">Construisons le mental haitien afin de mieux reconstruire le pays.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="index.html" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300">
+                        <span aria-hidden="true">&#8592;</span>
+                        Retour a l'accueil
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white pt-12 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-teal-500">MASOP</h3>
+                    <p class="text-gray-400">Maison de Soins Psychologiques - Sante mentale & protection en Haiti.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contacts</h3>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2 text-teal-500"></i> Bas Vivi Mitchell 14 #29, Petion-Ville, Haiti</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2 text-teal-500"></i> +509 3796-2464 / 4195-7895</p>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2 text-teal-500"></i> contact@masop.care</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Suivez-nous</h3>
+                    <div class="flex space-x-6 mt-4">
+                        <a href="https://x.com/MasopHaiti" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
+                            <i class="fa-brands fa-x-twitter text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/infomasop/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
+                            <i class="fa-brands fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                    <a href="don.html" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-bold mt-4 inline-block">Faire un don</a>
+                </div>
+            </div>
+            <hr class="border-gray-800 mb-8">
+            <p class="text-center text-gray-500 text-sm">© 2026 MASOP - Tous droits reserves</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
