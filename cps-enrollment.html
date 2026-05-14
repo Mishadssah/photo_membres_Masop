@@ -3,60 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | MASOP</title>
-    <meta name="description" content="Contactez MASOP pour toute demande d'information ou de collaboration.">
+    <title>CPS - Carte Psychologique Scolaire | MASOP</title>
+    <meta name="description" content="CPS - Carte Psychologique Scolaire de la MASOP : programme de couverture psychosociale pour les écoles, universités et centres professionnels en Haïti.">
+    <meta name="keywords" content="CPS, Carte Psychologique Scolaire, MASOP, santé mentale scolaire, soutien psychosocial, écoles Haïti, universités Haïti">
+    <meta name="author" content="MASOP - Maison de Soins Psychologiques">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CPS - Carte Psychologique Scolaire | MASOP">
+    <meta property="og:description" content="Un programme de couverture psychosociale scolaire pour protéger les élèves et les étudiants dans un contexte d’insécurité et de vulnérabilité socioéconomique.">
+    <meta property="og:image" content="https://masop.ht/logo_masop_rev2.png">
+    <meta property="og:locale" content="fr_HT">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CPS - Carte Psychologique Scolaire | MASOP">
+    <meta name="twitter:description" content="Programme de couverture psychosociale pour les établissements scolaires en Haïti.">
+    <meta name="twitter:image" content="https://masop.ht/logo_masop_rev2.png">
+    <link rel="canonical" href="https://masop.ht/cps-enrollment.html">
+    <link rel="icon" type="image/png" href="logo_masop_rev2.png">
+    <link rel="apple-touch-icon" href="logo_masop_rev2.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen">
-    <button id="scrollToTopBtn" class="hidden fixed bottom-24 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 focus:outline-none" aria-label="Retour en haut"><i class="fas fa-chevron-up"></i></button>
-    <nav class="fixed w-full bg-white shadow-md z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between h-20 items-center"><a href="index.html" class="flex-shrink-0 flex items-center space-x-3 no-underline"><img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo"><div><span class="text-2xl font-bold text-teal-700 block">MASOP</span><span class="text-sm text-gray-600">Maison de Soins Psychologiques</span></div></a><div class="hidden md:block"><div class="ml-10 flex items-baseline space-x-4"><a href="a-propos.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">A propos</a><a href="services.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Services</a><a href="nos-actions.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Actions</a><a href="galerie.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Galerie</a><a href="equipe.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Equipe</a><a href="don.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Don</a><a href="contact.html" class="text-teal-700 px-3 py-2 text-sm font-medium">Contact</a></div></div><div class="md:hidden"><button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-teal-500 focus:outline-none"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div></div></div><div id="mobile-menu" aria-hidden="true" class="hidden md:hidden bg-white shadow-lg"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="contact.html" class="block px-3 py-2 text-base font-medium text-teal-700">Contact</a><a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Services</a><a href="nos-actions.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Actions</a><a href="don.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Don</a></div></div></nav>
+<body class="bg-slate-50 flex flex-col min-h-screen text-gray-800">
+    <button id="scrollToTopBtn" class="hidden fixed bottom-24 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-400" aria-label="Retour en haut">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
 
-    <main class="flex-1 pt-24 pb-16">
-        <section class="py-12 md:py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Contactez-nous</h1>
-                    <div class="mt-4 h-1 w-20 bg-teal-500 mx-auto"></div>
-                    <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">Nous sommes a votre ecoute pour toute question ou demande de renseignement.</p>
+    <nav class="fixed w-full bg-white/95 backdrop-blur-md shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center space-x-3 no-underline">
+                    <img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo">
+                    <div>
+                        <span class="text-2xl font-bold text-teal-700 block">MASOP</span>
+                        <span class="text-sm text-gray-600">Maison de Soins Psychologiques</span>
+                    </div>
+                </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="a-propos.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">À propos</a>
+                        <a href="services.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Services</a>
+                        <a href="nos-actions.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Actions</a>
+                        <div class="relative group">
+                            <a href="nos-actions.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500 inline-flex items-center gap-1" aria-haspopup="true" aria-label="Nos projets et programmes">
+                                Nos projets et programmes
+                                <i class="fas fa-chevron-down text-xs" aria-hidden="true"></i>
+                            </a>
+                            <div class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50" role="menu" aria-label="Sous-menu projets et programmes">
+                                <a href="projet-repi-janvier-mars-2026.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700 rounded-t-lg">Projet REPI</a>
+                                <a href="cps-enrollment.html" class="block px-4 py-2 text-sm font-semibold text-teal-700 bg-teal-50 hover:text-teal-800 rounded-b-lg" aria-current="page">Programme CPS</a>
+                            </div>
+                        </div>
+                        <a href="temoignages.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Témoignages</a>
+                        <a href="equipe.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Équipe</a>
+                        <a href="don.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Don</a>
+                        <a href="contact.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Contact</a>
+                    </div>
                 </div>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <div class="mb-8">
-                            <h2 class="text-xl font-bold text-gray-800 mb-4">Nos coordonnees</h2>
-                            <div class="space-y-4">
-                                <p class="text-gray-600"><i class="fas fa-map-marker-alt mr-2 text-teal-600"></i> Bas Vivi Mitchell 14 #29, Petion-Ville, Haiti</p>
-                                <p class="text-gray-600"><i class="fas fa-envelope mr-2 text-teal-600"></i> contact@masop.care</p>
-                                <p class="text-gray-600"><i class="fas fa-phone mr-2 text-teal-600"></i> +509 3796-2464 / +509 4195-7895</p>
-                            </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-teal-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" aria-hidden="true" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="a-propos.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">À propos</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Services</a>
+                <a href="nos-actions.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Actions</a>
+                <div class="px-3 py-2">
+                    <a href="nos-actions.html" class="text-xs font-semibold uppercase tracking-wide text-gray-500 hover:text-teal-600">Nos projets et programmes</a>
+                    <a href="projet-repi-janvier-mars-2026.html" class="block pl-3 pr-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Projet REPI</a>
+                    <a href="cps-enrollment.html" class="block pl-3 pr-3 py-2 text-base font-semibold text-teal-700" aria-current="page">Programme CPS</a>
+                </div>
+                <a href="temoignages.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Témoignages</a>
+                <a href="equipe.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Équipe</a>
+                <a href="don.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Don</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20 flex-1">
+        <section class="relative overflow-hidden bg-gradient-to-br from-cyan-50 via-white to-teal-50 border-b border-cyan-100">
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute -top-24 -right-24 w-72 h-72 bg-teal-100/60 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-20 left-0 w-64 h-64 bg-cyan-100/70 rounded-full blur-3xl"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+                <div class="grid lg:grid-cols-2 gap-10 items-center">
+                    <div class="animate-fade-in">
+                        <h1 class="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight">
+                            CPS - Carte Psychologique Scolaire
+                        </h1>
+                        <p class="mt-5 text-lg text-gray-700 max-w-xl text-justify leading-8">
+                            La MASOP accompagne les établissements scolaires à travers une couverture psychosociale moderne destinée aux élèves et aux étudiants, dans un contexte marqué par l’insécurité, l’instabilité sociale et les fortes pressions socioéconomiques en Haïti.
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-3">
+                            <a href="#adhesion-form" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition">
+                                <i class="fas fa-file-signature" aria-hidden="true"></i>
+                                Demander une adhésion
+                            </a>
+                            <a href="mailto:contact@masop.care?subject=Presentation%20du%20programme%20CPS" class="inline-flex items-center gap-2 border border-teal-600 text-teal-700 hover:bg-teal-50 font-semibold px-6 py-3 rounded-full transition">
+                                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                                Programmer une présentation
+                            </a>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-4">Horaires d'ouverture</h3>
-                            <div class="bg-gray-50 p-4 rounded-lg">
-                                <div class="flex justify-between py-2 border-b border-gray-200"><span class="text-gray-600">Lundi - Vendredi</span><span class="font-medium">8:00 - 17:00</span></div>
-                                <div class="flex justify-between py-2"><span class="text-gray-600">Samedi</span><span class="font-medium">9:00 - 13:00</span></div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div id="cps-hero-photos" class="w-full max-w-3xl mx-auto" aria-label="Carrousel photos CPS"></div>
+                        <div class="bg-white rounded-3xl p-6 shadow-lg border border-teal-100 mt-8 w-full">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="rounded-2xl bg-teal-50 p-4 border border-teal-100">
+                                    <p class="text-sm text-gray-500">Couverture</p>
+                                    <p class="text-lg font-bold text-teal-700">Élèves & étudiants</p>
+                                </div>
+                                <div class="rounded-2xl bg-cyan-50 p-4 border border-cyan-100">
+                                    <p class="text-sm text-gray-500">Interventions</p>
+                                    <p class="text-lg font-bold text-cyan-700">Préventives & cliniques</p>
+                                </div>
+                                <div class="col-span-2 rounded-2xl bg-slate-900 text-white p-5">
+                                    <p class="text-sm text-teal-200">Vision MASOP</p>
+                                    <p class="mt-2 text-base leading-relaxed">Faire de chaque établissement un espace sécurisant, favorable à l’apprentissage et au bien-être psychologique.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
                     <div>
-                        <form id="contactForm" class="space-y-6" action="https://formspree.io/f/xyzgwprl" method="POST">
-                            <div><label for="name" class="block text-sm font-medium text-gray-700">Nom complet</label><input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
-                            <div><label for="email" class="block text-sm font-medium text-gray-700">Email</label><input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
-                            <div><label for="phone" class="block text-sm font-medium text-gray-700">Telephone (optionnel)</label><input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500"></div>
-                            <div><label for="message" class="block text-sm font-medium text-gray-700">Message</label><textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500" placeholder="Votre message ici..."></textarea></div>
-                            <input type="hidden" name="_subject" value="Nouveau message depuis le site MASOP"><input type="hidden" name="_language" value="fr">
-                            <button type="submit" id="contactSubmitBtn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700">Envoyer le message</button>
-                            <div id="contactStatus" class="mt-4 text-center text-sm hidden p-3 rounded-md"></div>
+                        <p class="text-sm uppercase tracking-[0.2em] text-teal-600 font-semibold">À propos du CPS</p>
+                        <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-gray-900">Un cadre structure pour la sante mentale en milieu scolaire</h2>
+                        <p class="mt-5 text-gray-700 leading-relaxed">Le programme CPS de la MASOP vise a renforcer durablement la protection psychosociale au sein des ecoles, universites et centres professionnels, en articulant prevention, intervention et accompagnement institutionnel.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <article class="bg-teal-50 border border-teal-100 rounded-2xl p-5">
+                            <h3 class="text-lg font-bold text-teal-800">Mission du programme</h3>
+                            <p class="mt-2 text-gray-700 text-justify leading-7">Rendre accessibles des services psychosociaux fiables, éthiques et adaptés à la réalité scolaire haïtienne.</p>
+                        </article>
+                        <article class="bg-cyan-50 border border-cyan-100 rounded-2xl p-5">
+                            <h3 class="text-lg font-bold text-cyan-800">Objectifs</h3>
+                            <p class="mt-2 text-gray-700 text-justify leading-7">Prévenir les risques psychosociaux, renforcer la résilience et outiller les équipes pédagogiques pour une prise en charge plus efficace et plus humaine.</p>
+                        </article>
+                        <article class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                            <h3 class="text-lg font-bold text-slate-800">Importance en milieu scolaire</h3>
+                            <p class="mt-2 text-gray-700 text-justify leading-7">La santé mentale conditionne la concentration, la réussite académique, la cohésion sociale et la prévention des crises dans l’établissement.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <p class="text-sm uppercase tracking-[0.2em] text-teal-600 font-semibold">Services inclus</p>
+                    <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-gray-900">Une offre complète pour vos élèves et étudiants</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-teal-200 hover:shadow-lg transition">
+                        <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-4"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i></div>
+                        <h3 class="text-lg font-bold text-gray-900">Soutien psychologique</h3>
+                        <p class="mt-2 text-gray-600 leading-relaxed text-justify">Accès à des consultations individuelles et de groupe pour les élèves et étudiants.</p>
+                    </article>
+                    <article class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-teal-200 hover:shadow-lg transition">
+                        <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-4"><i class="fas fa-headset" aria-hidden="true"></i></div>
+                        <h3 class="text-lg font-bold text-gray-900">Cellule d’écoute</h3>
+                        <p class="mt-2 text-gray-600 leading-relaxed text-justify">Dispositif de première écoute pour identifier rapidement les situations de détresse.</p>
+                    </article>
+                    <article class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-teal-200 hover:shadow-lg transition">
+                        <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-4"><i class="fas fa-shield-heart" aria-hidden="true"></i></div>
+                        <h3 class="text-lg font-bold text-gray-900">Prévention psychosociale</h3>
+                        <p class="mt-2 text-gray-600 leading-relaxed text-justify">Actions de sensibilisation contre la violence, le harcèlement et la stigmatisation.</p>
+                    </article>
+                    <article class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-teal-200 hover:shadow-lg transition">
+                        <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-4"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></div>
+                        <h3 class="text-lg font-bold text-gray-900">Gestion de crise</h3>
+                        <p class="mt-2 text-gray-600 leading-relaxed text-justify">Protocole d’intervention rapide en cas d’urgence psychosociale dans l’établissement.</p>
+                    </article>
+                    <article class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-teal-200 hover:shadow-lg transition">
+                        <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-4"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i></div>
+                        <h3 class="text-lg font-bold text-gray-900">Ateliers psychoéducatifs</h3>
+                        <p class="mt-2 text-gray-600 leading-relaxed text-justify">Sessions de formation pour élèves, enseignants et parents autour de la santé mentale.</p>
+                    </article>
+                    <article class="bg-white border border-gray-200 rounded-2xl p-6 hover:border-teal-200 hover:shadow-lg transition">
+                        <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-4"><i class="fas fa-route" aria-hidden="true"></i></div>
+                        <h3 class="text-lg font-bold text-gray-900">Orientation spécialisée</h3>
+                        <p class="mt-2 text-gray-600 leading-relaxed text-justify">Référence vers des services cliniques adaptés lorsque la situation nécessite un suivi avancé.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <p class="text-sm uppercase tracking-[0.2em] text-teal-600 font-semibold">Comment ça fonctionne</p>
+                    <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-gray-900">Un processus clair en 4 étapes</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <article class="bg-slate-50 border border-gray-200 rounded-2xl p-6">
+                        <span class="inline-flex w-10 h-10 rounded-full bg-teal-600 text-white font-bold items-center justify-center">01</span>
+                        <h3 class="mt-4 text-lg font-bold text-gray-900">Demande d’adhésion</h3>
+                        <p class="mt-2 text-gray-600 text-justify">Votre établissement complète le formulaire officiel de demande CPS.</p>
+                    </article>
+                    <article class="bg-slate-50 border border-gray-200 rounded-2xl p-6">
+                        <span class="inline-flex w-10 h-10 rounded-full bg-teal-600 text-white font-bold items-center justify-center">02</span>
+                        <h3 class="mt-4 text-lg font-bold text-gray-900">Analyse des besoins</h3>
+                        <p class="mt-2 text-gray-600 text-justify">Une équipe MASOP évalue le contexte psychosocial et vos priorités institutionnelles.</p>
+                    </article>
+                    <article class="bg-slate-50 border border-gray-200 rounded-2xl p-6">
+                        <span class="inline-flex w-10 h-10 rounded-full bg-teal-600 text-white font-bold items-center justify-center">03</span>
+                        <h3 class="mt-4 text-lg font-bold text-gray-900">Activation de la couverture</h3>
+                        <p class="mt-2 text-gray-600 text-justify">Le dispositif CPS est déployé avec des services adaptés à vos effectifs et à votre réalité institutionnelle.</p>
+                    </article>
+                    <article class="bg-slate-50 border border-gray-200 rounded-2xl p-6">
+                        <span class="inline-flex w-10 h-10 rounded-full bg-teal-600 text-white font-bold items-center justify-center">04</span>
+                        <h3 class="mt-4 text-lg font-bold text-gray-900">Accompagnement et suivi</h3>
+                        <p class="mt-2 text-gray-600 text-justify">Un suivi régulier garantit la qualité des interventions et la continuité du programme.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="adhesion-form" class="py-16 bg-gradient-to-b from-slate-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-2">
+                        <p class="text-sm uppercase tracking-[0.2em] text-teal-600 font-semibold">Demande d’adhésion</p>
+                        <h2 class="mt-3 text-3xl font-extrabold text-gray-900">Rejoindre le programme CPS</h2>
+                        <p class="mt-4 text-gray-700 text-justify leading-7">Complétez ce formulaire institutionnel. Notre équipe analysera votre demande et vous contactera pour la phase suivante afin d’évaluer les besoins réels de votre établissement, notamment les effets de l’insécurité et de la pression socioéconomique sur les élèves et les étudiants.</p>
+                        <div class="mt-6 bg-white border border-teal-100 rounded-2xl p-5 shadow-sm">
+                            <h3 class="font-bold text-gray-900">Ce que vous obtenez</h3>
+                            <ul class="mt-3 space-y-2 text-gray-700">
+                                <li><i class="fas fa-check text-teal-600 mr-2"></i>Un diagnostic initial des besoins psychosociaux</li>
+                                <li><i class="fas fa-check text-teal-600 mr-2"></i>Un plan de couverture adapté à votre établissement</li>
+                                <li><i class="fas fa-check text-teal-600 mr-2"></i>Un suivi régulier avec des indicateurs d’impact</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-3 bg-white rounded-3xl border border-gray-200 shadow-lg p-6 md:p-8">
+                        <form id="cpsForm" class="grid sm:grid-cols-2 gap-5" action="https://formspree.io/f/xyzgwprl" method="POST" novalidate>
+                            <div class="sm:col-span-2">
+                                <label for="etablissement" class="text-sm font-semibold text-gray-700">Nom de l’établissement</label>
+                                <input id="etablissement" name="etablissement" type="text" required class="mt-1 block w-full rounded-xl border border-gray-300 bg-white px-4 py-3 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200">
+                            </div>
+
+                            <div>
+                                <label for="typeEtablissement" class="text-sm font-semibold text-gray-700">Type d’établissement</label>
+                                <select id="typeEtablissement" name="typeEtablissement" required class="mt-1 block w-full rounded-xl border border-gray-300 bg-white px-4 py-3 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200">
+                                    <option value="">Selectionner</option>
+                                    <option value="Ecole fondamentale">École fondamentale</option>
+                                    <option value="Lycee">Lycée</option>
+                                    <option value="Universite">Université</option>
+                                    <option value="Centre professionnel">Centre professionnel</option>
+                                    <option value="Autre">Autre</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="nombreEleves" class="text-sm font-semibold text-gray-700">Nombre d’élèves</label>
+                                <input id="nombreEleves" name="nombreEleves" type="number" min="1" required class="mt-1 block w-full rounded-xl border border-gray-300 bg-white px-4 py-3 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200">
+                            </div>
+
+                            <div>
+                                <label for="responsable" class="text-sm font-semibold text-gray-700">Responsable administratif</label>
+                                <input id="responsable" name="responsable" type="text" required class="mt-1 block w-full rounded-xl border border-gray-300 bg-white px-4 py-3 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200">
+                            </div>
+
+                            <div>
+                                <label for="telephone" class="text-sm font-semibold text-gray-700">Téléphone</label>
+                                <input id="telephone" name="telephone" type="tel" required class="mt-1 block w-full rounded-xl border border-gray-300 bg-white px-4 py-3 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200">
+                            </div>
+
+                            <div>
+                                <label for="email" class="text-sm font-semibold text-gray-700">Email</label>
+                                <input id="email" name="email" type="email" required class="mt-1 block w-full rounded-xl border border-gray-300 bg-white px-4 py-3 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200">
+                            </div>
+
+                            <div>
+                                <label for="departement" class="text-sm font-semibold text-gray-700">Département</label>
+                                <select id="departement" name="departement" required class="mt-1 block w-full rounded-xl border border-gray-300 bg-white px-4 py-3 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200">
+                                    <option value="">Selectionner</option>
+                                    <option value="Ouest">Ouest</option>
+                                    <option value="Nord">Nord</option>
+                                    <option value="Nord-Est">Nord-Est</option>
+                                    <option value="Nord-Ouest">Nord-Ouest</option>
+                                    <option value="Artibonite">Artibonite</option>
+                                    <option value="Centre">Centre</option>
+                                    <option value="Sud">Sud</option>
+                                    <option value="Sud-Est">Sud-Est</option>
+                                    <option value="Nippes">Nippes</option>
+                                    <option value="Grand Anse">Grand Anse</option>
+                                </select>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="difficultes" class="text-sm font-semibold text-gray-700">Difficultés observées</label>
+                                <textarea id="difficultes" name="difficultes" rows="4" required class="mt-1 block w-full rounded-xl border border-gray-300 bg-white px-4 py-3 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200 text-justify" placeholder="Ex. : anxiété, violence, harcèlement, absentéisme, crises comportementales..."></textarea>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="message" class="text-sm font-semibold text-gray-700">Message complémentaire</label>
+                                <textarea id="message" name="message" rows="3" class="mt-1 block w-full rounded-xl border border-gray-300 bg-white px-4 py-3 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200 text-justify" placeholder="Informations additionnelles (optionnel)"></textarea>
+                            </div>
+
+                            <input type="hidden" name="_subject" value="Nouvelle demande d’adhésion CPS - MASOP">
+                            <input type="hidden" name="_language" value="fr">
+
+                            <div class="sm:col-span-2">
+                                <button type="submit" id="cpsSubmitBtn" class="w-full inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-xl transition">
+                                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                    Soumettre une demande
+                                </button>
+                            </div>
+
+                            <div id="cpsStatus" class="sm:col-span-2 mt-1 text-sm hidden p-3 rounded-xl" aria-live="polite"></div>
                         </form>
-                        <p class="text-xs text-gray-500 mt-2">Ou contactez-nous directement: <a href="mailto:contact@masop.care" class="text-teal-600 hover:underline">contact@masop.care</a></p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <p class="text-sm uppercase tracking-[0.2em] text-teal-600 font-semibold">FAQ</p>
+                    <h2 class="mt-3 text-3xl font-extrabold text-gray-900">Questions fréquentes</h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="border border-gray-200 rounded-2xl overflow-hidden">
+                        <summary class="cursor-pointer list-none px-5 py-4 bg-slate-50 hover:bg-teal-50 font-semibold text-gray-900">Comment fonctionne concrètement le programme CPS dans une école ?</summary>
+                        <div class="px-5 py-4 text-gray-700 bg-white text-justify leading-7">Après l’adhésion, MASOP met en place un plan de couverture incluant l’évaluation, la prévention, l’écoute, l’intervention et le suivi périodique avec votre administration.</div>
+                    </details>
+                    <details class="border border-gray-200 rounded-2xl overflow-hidden">
+                        <summary class="cursor-pointer list-none px-5 py-4 bg-slate-50 hover:bg-teal-50 font-semibold text-gray-900">Le programme CPS est-il payant ?</summary>
+                        <div class="px-5 py-4 text-gray-700 bg-white text-justify leading-7">Le coût dépend du type d’établissement, du nombre d’élèves et du niveau de services souhaité. Une proposition détaillée est soumise après l’analyse des besoins.</div>
+                    </details>
+                    <details class="border border-gray-200 rounded-2xl overflow-hidden">
+                        <summary class="cursor-pointer list-none px-5 py-4 bg-slate-50 hover:bg-teal-50 font-semibold text-gray-900">Les informations restent-elles confidentielles ?</summary>
+                        <div class="px-5 py-4 text-gray-700 bg-white text-justify leading-7">Oui. MASOP applique des protocoles stricts de confidentialité, d’éthique et de protection des données selon les bonnes pratiques en santé mentale.</div>
+                    </details>
+                    <details class="border border-gray-200 rounded-2xl overflow-hidden">
+                        <summary class="cursor-pointer list-none px-5 py-4 bg-slate-50 hover:bg-teal-50 font-semibold text-gray-900">MASOP intervient-elle en cas de crise urgente ?</summary>
+                        <div class="px-5 py-4 text-gray-700 bg-white text-justify leading-7">Oui. Le dispositif CPS comprend un volet de gestion de crise avec intervention prioritaire et orientation rapide vers les services appropriés.</div>
+                    </details>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-white pt-12 pb-8 mt-20"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><p class="text-center text-gray-500 text-sm">© 2026 MASOP - Tous droits reserves</p></div></footer>
+    <footer class="bg-gray-900 text-white pt-12 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-teal-500">MASOP</h3>
+                    <p class="text-gray-400 text-justify leading-7">Maison de Soins Psychologiques - santé mentale et protection en Haïti, avec une attention particulière aux jeunes exposés à l’insécurité, au stress chronique et aux fragilités socioéconomiques.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contacts</h3>
+                    <p class="text-gray-400 mb-2 text-justify"><i class="fas fa-map-marker-alt mr-2 text-teal-500"></i> Bas Vivi Mitchell 14 #29, Pétion-Ville, Haïti</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2 text-teal-500"></i> +509 3796-2464 / 4195-7895</p>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2 text-teal-500"></i> contact@masop.care</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Suivez-nous</h3>
+                    <div class="flex space-x-6 mt-4">
+                        <a href="https://x.com/MasopHaiti" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
+                            <i class="fa-brands fa-x-twitter text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/infomasop/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
+                            <i class="fa-brands fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                    <a href="don.html" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-bold">Faire un don</a>
+                </div>
+            </div>
+            <hr class="border-gray-800 mb-8">
+            <p class="text-center text-gray-500 text-sm">&copy; 2026 MASOP - Tous droits réservés | Réalisé par Mi-DAS Agency</p>
+        </div>
+    </footer>
+
+    <script src="js/cps-hero-gallery.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

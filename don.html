@@ -94,13 +94,21 @@
                         <a href="a-propos.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">À propos</a>
                         <a href="#services" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Services</a>
                         <a href="#activites" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Actions</a>
-                        <a href="projet-repi-janvier-mars-2026.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Projet REPI</a>
+                        <div class="relative group">
+                            <a href="nos-actions.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500 inline-flex items-center gap-1" aria-haspopup="true" aria-label="Nos projets et programmes">
+                                Nos projets et programmes
+                                <i class="fas fa-chevron-down text-xs" aria-hidden="true"></i>
+                            </a>
+                            <div class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50" role="menu" aria-label="Sous-menu projets et programmes">
+                                <a href="projet-repi-janvier-mars-2026.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700 rounded-t-lg">Projet REPI</a>
+                                <a href="cps-enrollment.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700 rounded-b-lg">Programme CPS</a>
+                            </div>
+                        </div>
                         <a href="temoignages.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Témoignages</a>
-                        <a href="galerie.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Galerie</a>
+
                         <a href="equipe.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Équipe</a>
                         <a href="don.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Don</a>
                         <a href="contact.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Contact</a>
-                        <a href="reports.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Rapports</a>
                     </div>
                 </div>
                 <div class="md:hidden">
@@ -118,13 +126,16 @@
                 <a href="a-propos.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">À propos</a>
                 <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Services</a>
                 <a href="#activites" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Actions</a>
-                <a href="projet-repi-janvier-mars-2026.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Projet REPI</a>
+                <div class="px-3 py-2">
+                    <a href="nos-actions.html" class="text-xs font-semibold uppercase tracking-wide text-gray-500 hover:text-teal-600">Nos projets et programmes</a>
+                    <a href="projet-repi-janvier-mars-2026.html" class="block pl-3 pr-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Projet REPI</a>
+                    <a href="cps-enrollment.html" class="block pl-3 pr-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Programme CPS</a>
+                </div>
                 <a href="temoignages.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Témoignages</a>
-                <a href="galerie.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Galerie</a>
+
                 <a href="equipe.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Équipe</a>
                 <a href="don.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Don</a>
                 <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Contact</a>
-                <a href="reports.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Rapports</a>
             </div>
         </div>
     </nav>
@@ -146,7 +157,7 @@
                 <div class="mt-4 h-1 w-20 bg-white mx-auto"></div>
                 <p class="mt-4 max-w-2xl text-xl mx-auto">Soutenez notre mission pour permettre à la MASOP de continuer ses actions en faveur de la santé mentale en Haïti.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-lg shadow-lg text-gray-800">
                     <h3 class="text-2xl font-bold mb-6 flex items-center"><i class="fas fa-mobile-alt text-blue-600 mr-3"></i> Paiement National</h3>
@@ -233,37 +244,6 @@
 
     </main>
 
-    <footer class="bg-gray-900 text-white pt-12 pb-8 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4 text-teal-500">MASOP</h3>
-                    <p class="text-gray-400">Maison de Soins Psychologiques - Santé mentale & protection en Haïti.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Contacts</h3>
-                    <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2 text-teal-500"></i> Bas Vivi Mitchell 14 #29, Pétion-Ville, Haïti</p>
-                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2 text-teal-500"></i> +509 3796-2464 / 4195-7895</p>
-                    <p class="text-gray-400"><i class="fas fa-envelope mr-2 text-teal-500"></i> contact@masop.care</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Suivez-nous</h3>
-                    <div class="flex space-x-6 mt-4">
-                        <a href="https://x.com/MasopHaiti" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
-                            <i class="fa-brands fa-x-twitter text-2xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/infomasop/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
-                            <i class="fa-brands fa-instagram text-2xl"></i>
-                        </a>
-                    </div>
-                    <a href="don.html" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-bold">Faire un don</a>
-                </div>
-            </div>
-            <hr class="border-gray-800 mb-8">
-            <p class="text-center text-gray-500 text-sm">© 2026 MASOP - Tous droits réservés | Réalisé par Mi-DAS Agency</p>
-        </div>
-    </footer>
-
     <div id="support-actions" class="fixed bottom-6 left-6 z-50 flex flex-col items-start space-y-3">
         <button id="chatToggleBtn" aria-expanded="false" class="inline-flex items-center gap-3 bg-teal-600 text-white px-4 py-3 rounded-full shadow-2xl hover:bg-teal-700 focus:outline-none">
             <i class="fas fa-comments"></i>
@@ -299,6 +279,37 @@
             </form>
         </div>
     </div>
+
+    <footer class="bg-gray-900 text-white pt-12 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-teal-500">MASOP</h3>
+                    <p class="text-gray-400">Maison de Soins Psychologiques - Santé mentale & protection en Haïti.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contacts</h3>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2 text-teal-500"></i> Bas Vivi Mitchell 14 #29, Pétion-Ville, Haïti</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2 text-teal-500"></i> +509 3796-2464 / 4195-7895</p>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2 text-teal-500"></i> contact@masop.care</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Suivez-nous</h3>
+                    <div class="flex space-x-6 mt-4">
+                        <a href="https://x.com/MasopHaiti" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
+                            <i class="fa-brands fa-x-twitter text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/infomasop/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-teal-400 transition-all">
+                            <i class="fa-brands fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                    <a href="don.html" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-bold">Faire un don</a>
+                </div>
+            </div>
+            <hr class="border-gray-800 mb-8">
+            <p class="text-center text-gray-500 text-sm">© 2026 MASOP - Tous droits réservés | Réalisé par Mi-DAS Agency</p>
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
     <script type="text/javascript">

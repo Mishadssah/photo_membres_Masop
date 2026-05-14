@@ -414,13 +414,20 @@
                         <a href="a-propos.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">À propos</a>
                         <a href="services.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Services</a>
                         <a href="index.html#activites" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Actions</a>
-                        <a href="projet-repi-janvier-mars-2026.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Projet REPI</a>
+                        <div class="relative group">
+                            <a href="nos-actions.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500 inline-flex items-center gap-1" aria-haspopup="true" aria-label="Nos projets et programmes">
+                                Nos projets et programmes
+                                <i class="fas fa-chevron-down text-xs" aria-hidden="true"></i>
+                            </a>
+                            <div class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50" role="menu" aria-label="Sous-menu projets et programmes">
+                                <a href="projet-repi-janvier-mars-2026.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700 rounded-t-lg">Projet REPI</a>
+                                <a href="cps-enrollment.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700 rounded-b-lg">Programme CPS</a>
+                            </div>
+                        </div>
                         <a href="temoignages.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Témoignages</a>
-                        <a href="galerie.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Galerie</a>
                         <a href="equipe.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Équipe</a>
                         <a href="don.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Don</a>
                         <a href="contact.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Contact</a>
-                        <a href="reports.html" class="text-gray-600 px-3 py-2 text-sm font-medium hover:text-teal-500">Rapports</a>
                     </div>
                 </div>
                 <div class="md:hidden">
@@ -438,13 +445,15 @@
                 <a href="a-propos.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">À propos</a>
                 <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Services</a>
                 <a href="index.html#activites" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Actions</a>
-                <a href="projet-repi-janvier-mars-2026.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Projet REPI</a>
+                <div class="px-3 py-2">
+                    <a href="nos-actions.html" class="text-xs font-semibold uppercase tracking-wide text-gray-500 hover:text-teal-600">Nos projets et programmes</a>
+                    <a href="projet-repi-janvier-mars-2026.html" class="block pl-3 pr-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Projet REPI</a>
+                    <a href="cps-enrollment.html" class="block pl-3 pr-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Programme CPS</a>
+                </div>
                 <a href="temoignages.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Témoignages</a>
-                <a href="galerie.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Galerie</a>
                 <a href="equipe.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Équipe</a>
                 <a href="don.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Don</a>
                 <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Contact</a>
-                <a href="reports.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-teal-500">Rapports</a>
             </div>
         </div>
     </nav>
@@ -567,9 +576,6 @@
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Maison de Soins Psychologiques (MASOP). Tous droits réservés. &nbsp;|&nbsp;
-        <a href="privacy-policy.html">Politique de confidentialité</a></p>
     <footer class="bg-gray-900 text-white pt-12 pb-8 mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -608,101 +614,5 @@
             this.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
         });
     </script>
-        emailjs.init("PI9MBIMLcH5e0CrvD");
-
-        // ── Form Logic ──
-        const form = document.getElementById("testimonialForm");
-        const submitBtn = document.getElementById("submitBtn");
-        const spinner = document.getElementById("spinner");
-        const btnText = document.getElementById("btnText");
-        const confirmation = document.getElementById("confirmation");
-        const errorBanner = document.getElementById("errorBanner");
-
-        function showError(id) {
-            document.getElementById(id).classList.add("show");
-        }
-        function hideError(id) {
-            document.getElementById(id).classList.remove("show");
-        }
-        function markInvalid(el) {
-            el.classList.add("invalid");
-        }
-        function markValid(el) {
-            el.classList.remove("invalid");
-        }
-
-        // Live validation on blur
-        document.getElementById("nom").addEventListener("blur", function () {
-            if (this.value.trim().length < 2) { markInvalid(this); showError("err-nom"); }
-            else { markValid(this); hideError("err-nom"); }
-        });
-        document.getElementById("email").addEventListener("blur", function () {
-            const v = this.value.trim();
-            if (v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { markInvalid(this); showError("err-email"); }
-            else { markValid(this); hideError("err-email"); }
-        });
-        document.getElementById("message").addEventListener("blur", function () {
-            if (this.value.trim().length < 10) { markInvalid(this); showError("err-message"); }
-            else { markValid(this); hideError("err-message"); }
-        });
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            let valid = true;
-            errorBanner.style.display = "none";
-
-            // Validate name
-            const nom = document.getElementById("nom");
-            if (nom.value.trim().length < 2) { markInvalid(nom); showError("err-nom"); valid = false; }
-            else { markValid(nom); hideError("err-nom"); }
-
-            // Validate note
-            const noteSelected = form.querySelector('input[name="note"]:checked');
-            if (!noteSelected) { showError("err-note"); valid = false; }
-            else { hideError("err-note"); }
-
-            // Validate email (optional but must be valid if filled)
-            const email = document.getElementById("email");
-            const emailVal = email.value.trim();
-            if (emailVal && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
-                markInvalid(email); showError("err-email"); valid = false;
-            } else { markValid(email); hideError("err-email"); }
-
-            // Validate message
-            const message = document.getElementById("message");
-            if (message.value.trim().length < 10) { markInvalid(message); showError("err-message"); valid = false; }
-            else { markValid(message); hideError("err-message"); }
-
-            if (!valid) return;
-
-            // Disable button & show spinner
-            submitBtn.disabled = true;
-            spinner.style.display = "block";
-            btnText.textContent = "Envoi en cours…";
-
-            const templateParams = {
-                from_name: nom.value.trim(),
-                note: noteSelected ? noteSelected.value + " / 5" : "—",
-                reply_to: emailVal || "non fourni",
-                message: message.value.trim(),
-                to_email: "contact@masop.care"
-            };
-
-            emailjs.send("service_ka4h251", "biolnof", templateParams)
-                .then(function () {
-                    form.reset();
-                    form.style.display = "none";
-                    confirmation.style.display = "block";
-                })
-                .catch(function () {
-                    errorBanner.style.display = "block";
-                    submitBtn.disabled = false;
-                    spinner.style.display = "none";
-                    btnText.textContent = "Envoyer mon témoignage";
-                });
-        });
-    </script>
-
 </body>
 </html>
