@@ -176,12 +176,40 @@ footer {
     border: 0;
 }
 
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    transform: translateY(-140%);
+    background: #0d9488;
+    color: #ffffff;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.5rem;
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.skip-link:focus-visible {
+    transform: translateY(0.5rem);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #0d9488;
+    outline-offset: 2px;
+}
+
 .project-section.hidden {
     display: none;
 }
 
 #chat-panel {
-    min-width: 20rem;
+    min-width: min(20rem, calc(100vw - 2rem));
+    max-width: calc(100vw - 2rem);
 }
 
 #chatMessages {
@@ -208,6 +236,12 @@ footer {
     display: block;
 }
 
+@media (max-width: 640px) {
+    .logo {
+        max-width: 72px;
+    }
+}
+
 /* CPS photos: mobile sizing and ordering */
 @media (max-width: 640px) {
     #cps-photos {
@@ -232,5 +266,16 @@ footer {
 
     #cps-photos .cps-photo-date {
         font-size: 0.7rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

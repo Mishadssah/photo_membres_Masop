@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos actions | MASOP</title>
     <meta name="description" content="Nos actions MASOP : activités passées avec filtres par année et par thème.">
+    <link rel="canonical" href="https://masop.ht/nos-actions.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://masop.ht/nos-actions.html">
+    <meta property="og:title" content="Nos actions | MASOP">
+    <meta property="og:description" content="Découvrez les actions de MASOP avec filtres par année et par thème.">
+    <meta property="og:image" content="https://masop.ht/logo_masop_rev2.png">
+    <meta property="og:locale" content="fr_HT">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nos actions | MASOP">
+    <meta name="twitter:description" content="Découvrez les actions de MASOP avec filtres par année et par thème.">
+    <meta name="twitter:image" content="https://masop.ht/logo_masop_rev2.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MASOP2026"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MASOP2026');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Nos actions | MASOP",
+        "url": "https://masop.ht/nos-actions.html",
+        "inLanguage": "fr-HT",
+        "description": "Activites passees de MASOP avec filtres par annee et par theme.",
+        "about": {
+            "@type": "Organization",
+            "name": "MASOP - Maison de Soins Psychologiques",
+            "url": "https://masop.ht"
+        }
+    }
+    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="css/styles.css">
         <script>window.tailwind={config:{corePlugins:{preflight:false}}};</script>
         <script src="https://cdn.tailwindcss.com"></script>
@@ -367,7 +404,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <a href="index.html" class="flex-shrink-0 flex items-center space-x-3 no-underline">
-                    <img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo">
+                    <img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo w-16 sm:w-auto">
                     <div>
                         <span class="text-2xl font-bold text-teal-700 block">MASOP</span>
                         <span class="text-sm text-gray-600">Maison de Soins Psychologiques</span>
@@ -543,73 +580,11 @@
             </div>
         </section>
 
-        <div id="photo-lightbox" class="photo-lightbox" aria-hidden="true">
+        <div id="photo-lightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="Agrandissement photo" aria-hidden="true">
             <button type="button" class="close-btn" id="lightbox-close" aria-label="Fermer l'image">×</button>
             <img id="lightbox-image" src="" alt="Agrandissement photo d'action MASOP">
         </div>
 
-        <!-- JavaScript pour les filtres -->
-        <script>
-            const buttons = document.querySelectorAll('.filter-btn');
-            const cards = document.querySelectorAll('.action-card');
-            
-            buttons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Mise a jour des classes actives
-                    buttons.forEach(b => {
-                        b.classList.remove('active', 'bg-teal-600', 'text-white');
-                        b.classList.add('bg-gray-200', 'text-gray-800');
-                    });
-                    btn.classList.add('active', 'bg-teal-600', 'text-white');
-                    btn.classList.remove('bg-gray-200', 'text-gray-800');
-                    
-                    const filter = btn.dataset.filter;
-                    
-                    cards.forEach(card => {
-                        if (filter === 'all') {
-                            card.style.display = '';
-                        } else {
-                            card.style.display = card.dataset.year === filter ? '' : 'none';
-                        }
-                    });
-                });
-            });
-
-            const lightbox = document.getElementById('photo-lightbox');
-            const lightboxImage = document.getElementById('lightbox-image');
-            const lightboxClose = document.getElementById('lightbox-close');
-            const galleryImages = document.querySelectorAll('#actions-container img');
-
-            galleryImages.forEach(img => {
-                img.addEventListener('click', () => {
-                    lightboxImage.src = img.src;
-                    lightboxImage.alt = img.alt || 'Photo d\'action MASOP';
-                    lightbox.classList.add('open');
-                    lightbox.setAttribute('aria-hidden', 'false');
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-
-            function closeLightbox() {
-                lightbox.classList.remove('open');
-                lightbox.setAttribute('aria-hidden', 'true');
-                lightboxImage.src = '';
-                document.body.style.overflow = '';
-            }
-
-            lightboxClose.addEventListener('click', closeLightbox);
-            lightbox.addEventListener('click', (event) => {
-                if (event.target === lightbox) {
-                    closeLightbox();
-                }
-            });
-
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape' && lightbox.classList.contains('open')) {
-                    closeLightbox();
-                }
-            });
-        </script>
     </main>
     <footer class="bg-gray-900 text-white pt-12 pb-8 mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -641,14 +616,7 @@
             <p class="text-center text-gray-500 text-sm">© 2026 MASOP - Tous droits réservés | Réalisé par Mi-DAS Agency</p>
         </div>
     </footer>
-    <script>
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const isHidden = mobileMenu.classList.toggle('hidden');
-            mobileMenu.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
-            this.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
 

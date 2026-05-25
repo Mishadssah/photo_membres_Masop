@@ -3,20 +3,22 @@
 // Scroll to Top Button
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
-window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.remove('hidden');
-    } else {
-        scrollToTopBtn.classList.add('hidden');
-    }
-});
-
-scrollToTopBtn.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+if (scrollToTopBtn) {
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.remove('hidden');
+        } else {
+            scrollToTopBtn.classList.add('hidden');
+        }
     });
-});
+
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // Scroll animations for sections
 const observerOptions = {
@@ -37,12 +39,22 @@ document.querySelectorAll('.fade-in-section').forEach(section => {
 });
 
 // Mobile menu toggle
-document.getElementById('menu-toggle').addEventListener('click', function() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const isHidden = mobileMenu.classList.toggle('hidden');
-    mobileMenu.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
-    this.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
-});
+const menuToggle = document.getElementById('menu-toggle');
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (!mobileMenu) return;
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        mobileMenu.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
+        this.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+    });
+}
+
+function safeTrack(eventName, params) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', eventName, params || {});
+}
 
 // Activity modals
 function openActivity(activity) {
@@ -138,6 +150,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const filters = document.querySelectorAll('.filter-btn');
     const items = Array.from(document.querySelectorAll('.gallery-item'));
     const counts = {};
+    const countAll = document.getElementById('count-all');
+    const currentMonthLabel = document.getElementById('currentMonthLabel');
+
+    if (!filters.length || !items.length || !countAll || !currentMonthLabel) return;
 
     function updateCounts(){
         // reset counts
@@ -147,7 +163,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             counts[m] = (counts[m] || 0) + 1;
         });
         // update UI
-        document.getElementById('count-all').textContent = counts['all'] || 0;
+        countAll.textContent = counts['all'] || 0;
         ['2025-12','2026-01','2026-02','2026-03'].forEach(k => {
             const el = document.getElementById('count-' + k.replace(/-/g, '-'));
             if(el) el.textContent = counts[k] || 0;
@@ -155,7 +171,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
 
     function showMonth(month){
-        document.getElementById('currentMonthLabel').textContent = (month === 'all') ? 'Tout' : (month === '2025-12' ? 'Décembre 2025' : month === '2026-01' ? 'Janvier 2026' : month === '2026-02' ? 'Février 2026' : month === '2026-03' ? 'Mars 2026' : month);
+        currentMonthLabel.textContent = (month === 'all') ? 'Tout' : (month === '2025-12' ? 'Décembre 2025' : month === '2026-01' ? 'Janvier 2026' : month === '2026-02' ? 'Février 2026' : month === '2026-03' ? 'Mars 2026' : month);
         let visible = 0;
         items.forEach(el => {
             if(month === 'all' || el.dataset.month === month){
@@ -195,6 +211,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const lightboxClose = document.getElementById('lightboxClose');
     const lightboxPrev = document.getElementById('lightboxPrev');
     const lightboxNext = document.getElementById('lightboxNext');
+
+    if (!lightbox || !lightboxImage || !lightboxCaption || !lightboxCounter || !lightboxClose || !lightboxPrev || !lightboxNext) return;
     
     let currentImageIndex = 0;
     let visibleItems = [];
@@ -283,47 +301,87 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener('DOMContentLoaded', function(){
     const contactForm = document.getElementById('contactForm');
     const contactStatus = document.getElementById('contactStatus');
-    if (!contactForm) return;
 
-    contactForm.addEventListener('submit', function(e){
-        e.preventDefault();
-        const action = contactForm.getAttribute('action');
-        // show loading
-        contactStatus.classList.remove('hidden');
-        contactStatus.classList.remove('text-green-600','text-red-600');
-        contactStatus.textContent = 'Envoi en cours...';
-
-        const formData = new FormData(contactForm);
-
-        fetch(action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                contactStatus.classList.add('text-green-600');
-                contactStatus.textContent = 'Merci — votre message a été envoyé.';
-                contactForm.reset();
-            } else {
-                response.json().then(data => {
-                    contactStatus.classList.add('text-red-600');
-                    if (data && data.errors) {
-                        contactStatus.textContent = data.errors.map(err => err.message).join(', ') || 'Erreur lors de l\'envoi.';
-                    } else {
-                        contactStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
-                    }
-                }).catch(() => {
-                    contactStatus.classList.add('text-red-600');
-                    contactStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
-                });
-            }
-        }).catch(() => {
-            contactStatus.classList.add('text-red-600');
-            contactStatus.textContent = 'Erreur réseau. Vérifiez votre connexion.';
+    document.querySelectorAll('a[href="don.html"], a[href$="/don.html"], button[data-track="donate"]').forEach(element => {
+        element.addEventListener('click', function() {
+            safeTrack('click_donate', {
+                page_path: window.location.pathname,
+                link_text: (this.textContent || '').trim()
+            });
         });
     });
+
+    if (contactForm && contactStatus) {
+        contactForm.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            if (!contactForm.checkValidity()) {
+                safeTrack('form_contact_error', {
+                    page_path: window.location.pathname,
+                    reason: 'validation'
+                });
+                contactForm.reportValidity();
+                const invalidField = contactForm.querySelector(':invalid');
+                if (invalidField) invalidField.focus();
+                return;
+            }
+
+            const action = contactForm.getAttribute('action');
+            safeTrack('form_contact_submit', {
+                page_path: window.location.pathname,
+                form_id: 'contactForm'
+            });
+            contactForm.setAttribute('aria-busy', 'true');
+            // show loading
+            contactStatus.classList.remove('hidden');
+            contactStatus.classList.remove('text-green-600','text-red-600');
+            contactStatus.textContent = 'Envoi en cours...';
+
+            const formData = new FormData(contactForm);
+
+            fetch(action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    contactForm.removeAttribute('aria-busy');
+                    contactStatus.classList.add('text-green-600');
+                    contactStatus.textContent = 'Merci — votre message a été envoyé.';
+                    contactForm.reset();
+                } else {
+                    safeTrack('form_contact_error', {
+                        page_path: window.location.pathname,
+                        reason: 'server_response'
+                    });
+                    response.json().then(data => {
+                        contactForm.removeAttribute('aria-busy');
+                        contactStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
+                        contactStatus.classList.add('text-red-600');
+                        if (data && data.errors) {
+                            contactStatus.textContent = data.errors.map(err => err.message).join(', ') || 'Erreur lors de l\'envoi.';
+                        } else {
+                            contactStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
+                        }
+                    }).catch(() => {
+                        contactForm.removeAttribute('aria-busy');
+                        contactStatus.classList.add('text-red-600');
+                        contactStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
+                    });
+                }
+            }).catch(() => {
+                safeTrack('form_contact_error', {
+                    page_path: window.location.pathname,
+                    reason: 'network'
+                });
+                contactForm.removeAttribute('aria-busy');
+                contactStatus.classList.add('text-red-600');
+                contactStatus.textContent = 'Erreur réseau. Vérifiez votre connexion.';
+            });
+        });
+    }
 
     // CPS enrollment form handler
     const cpsForm = document.getElementById('cpsForm');
@@ -331,7 +389,24 @@ document.addEventListener('DOMContentLoaded', function(){
     if (cpsForm) {
         cpsForm.addEventListener('submit', function(e){
             e.preventDefault();
+
+            if (!cpsForm.checkValidity()) {
+                safeTrack('form_cps_error', {
+                    page_path: window.location.pathname,
+                    reason: 'validation'
+                });
+                cpsForm.reportValidity();
+                const invalidField = cpsForm.querySelector(':invalid');
+                if (invalidField) invalidField.focus();
+                return;
+            }
+
             const action = cpsForm.getAttribute('action');
+            safeTrack('form_cps_submit', {
+                page_path: window.location.pathname,
+                form_id: 'cpsForm'
+            });
+            cpsForm.setAttribute('aria-busy', 'true');
             cpsStatus.classList.remove('hidden');
             cpsStatus.classList.remove('text-green-600','text-red-600');
             cpsStatus.textContent = 'Envoi en cours...';
@@ -346,11 +421,17 @@ document.addEventListener('DOMContentLoaded', function(){
                 }
             }).then(response => {
                 if (response.ok) {
+                    cpsForm.removeAttribute('aria-busy');
                     cpsStatus.classList.add('text-green-600');
                     cpsStatus.textContent = 'Merci — votre demande a été envoyée. Nous vous contacterons sous peu.';
                     cpsForm.reset();
                 } else {
+                    safeTrack('form_cps_error', {
+                        page_path: window.location.pathname,
+                        reason: 'server_response'
+                    });
                     response.json().then(data => {
+                        cpsForm.removeAttribute('aria-busy');
                         cpsStatus.classList.add('text-red-600');
                         if (data && data.errors) {
                             cpsStatus.textContent = data.errors.map(err => err.message).join(', ') || 'Erreur lors de l\'envoi.';
@@ -358,11 +439,17 @@ document.addEventListener('DOMContentLoaded', function(){
                             cpsStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
                         }
                     }).catch(() => {
+                        cpsForm.removeAttribute('aria-busy');
                         cpsStatus.classList.add('text-red-600');
                         cpsStatus.textContent = 'Erreur lors de l\'envoi. Veuillez réessayer.';
                     });
                 }
             }).catch(() => {
+                safeTrack('form_cps_error', {
+                    page_path: window.location.pathname,
+                    reason: 'network'
+                });
+                cpsForm.removeAttribute('aria-busy');
                 cpsStatus.classList.add('text-red-600');
                 cpsStatus.textContent = 'Erreur réseau. Vérifiez votre connexion.';
             });
@@ -372,6 +459,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
 // Donation payment options handler
 function openPaymentLink(method) {
+    safeTrack('donate_method_click', {
+        page_path: window.location.pathname,
+        method: method
+    });
+
     const messages = {
         moncash: {
             message: "Numéro MonCash à utiliser: 50938582420",
@@ -609,5 +701,77 @@ function switchTab(tab) {
         chatInput.value = '';
         const response = findResponse(message);
         setTimeout(() => addMessage(response, true), 500);
+    });
+})();
+
+// Actions page: year filters + dedicated lightbox
+(function(){
+    const actionCards = document.querySelectorAll('.action-card');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const actionsContainer = document.getElementById('actions-container');
+    const lightbox = document.getElementById('photo-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    if (!actionCards.length || !filterButtons.length || !actionsContainer || !lightbox || !lightboxImage || !lightboxClose) {
+        return;
+    }
+
+    let lastFocusedElement = null;
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active', 'bg-teal-600', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-800');
+            });
+
+            this.classList.add('active', 'bg-teal-600', 'text-white');
+            this.classList.remove('bg-gray-200', 'text-gray-800');
+
+            const yearFilter = this.dataset.filter;
+            actionCards.forEach(card => {
+                if (yearFilter === 'all' || card.dataset.year === yearFilter) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    actionsContainer.querySelectorAll('img').forEach(image => {
+        image.addEventListener('click', function() {
+            lastFocusedElement = document.activeElement;
+            lightboxImage.src = this.src;
+            lightboxImage.alt = this.alt || 'Photo d\'action MASOP';
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            lightboxClose.focus();
+        });
+    });
+
+    function closeActionsLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImage.src = '';
+        document.body.style.overflow = '';
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+            lastFocusedElement.focus();
+        }
+    }
+
+    lightboxClose.addEventListener('click', closeActionsLightbox);
+    lightbox.addEventListener('click', function(event) {
+        if (event.target === lightbox) {
+            closeActionsLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+            closeActionsLightbox();
+        }
     });
 })();

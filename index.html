@@ -36,6 +36,8 @@
         <!-- Preconnect -->
         <link rel="preconnect" href="https://cdn.tailwindcss.com">
         <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+        <link rel="preconnect" href="https://www.googletagmanager.com">
+        <link rel="preconnect" href="https://www.google-analytics.com">
     
         <!-- Schema.org Structured Data -->
         <script type="application/ld+json">
@@ -83,7 +85,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <a href="index.html" class="flex-shrink-0 flex items-center space-x-3 no-underline">
-                    <img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo">
+                    <img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo w-16 sm:w-auto">
                     <div>
                         <span class="text-2xl font-bold text-teal-700 block">MASOP</span>
                         <span class="text-sm text-gray-600">Maison de Soins Psychologiques</span>
@@ -167,7 +169,7 @@
                     <div class="absolute -inset-4 bg-gradient-to-br from-teal-200 to-cyan-200 rounded-3xl blur-xl opacity-60"></div>
                     <div id="carousel-hero" class="relative w-full max-w-xl mx-auto">
                         <div class="carousel-slide active">
-                            <img src="images/gallery/photo_femmes_lutte_droit_8_mars_2026.jpg" alt="Intervention MASOP femmes et filles" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="lazy" decoding="async">
+                            <img src="images/gallery/photo_femmes_lutte_droit_8_mars_2026.jpg" alt="Intervention MASOP femmes et filles" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="eager" fetchpriority="high" decoding="async">
                         </div>
                         <div class="carousel-slide">
                             <img src="images/gallery/photo_remise_certificat.jpeg" alt="Remise de certificat MASOP" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="lazy" decoding="async">
