@@ -167,15 +167,28 @@
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="absolute -inset-4 bg-gradient-to-br from-teal-200 to-cyan-200 rounded-3xl blur-xl opacity-60"></div>
-                    <div id="carousel-hero" class="relative w-full max-w-xl mx-auto">
-                        <div class="carousel-slide active">
+                    <div id="hero-campaign-narrative" class="hidden relative z-20 mb-4 rounded-2xl border border-teal-300 bg-white/95 px-4 py-3 text-left shadow-md" aria-live="polite">
+                        <p class="text-sm font-semibold uppercase tracking-wide text-teal-800">Campagne spéciale - Fête des mères</p>
+                        <p class="mt-1 text-sm md:text-base text-gray-900">À l'occasion de la Fête des mères, MASOP, l'OSFADAHA et l'OSCADH mettent à l'honneur les mères de Côte Plage 18 à travers une mobilisation axée sur l'écoute, la résilience et la santé mentale communautaire.</p>
+                    </div>
+                    <div class="absolute -inset-4 bg-gradient-to-br from-teal-200 to-cyan-200 rounded-3xl blur-xl opacity-60 z-0"></div>
+                    <div id="carousel-hero" class="relative z-10 w-full max-w-xl mx-auto">
+                        <div class="carousel-slide active" data-slider-group="fete-meres-2026">
+                            <img src="images/gallery/photo_fete_des_meres_2026_2.jpeg" alt="Agent MASOP en échange avec une dame âgée pendant la fête des mères" width="1280" height="853" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="eager" fetchpriority="high" decoding="async">
+                        </div>
+                        <div class="carousel-slide" data-slider-group="fete-meres-2026">
+                            <img src="images/gallery/photo_fete_des_meres_2026_14.jpeg" alt="Mobilisation de foule pendant l'activité fête des mères" width="1280" height="853" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide" data-slider-group="fete-meres-2026">
+                            <img src="images/gallery/photo_fete_des_meres_2026_12.jpeg" alt="Participants assis pendant la fête des mères avec vue d'ensemble de la foule" width="1280" height="853" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide" data-slider-group="default">
                             <img src="images/gallery/photo_femmes_lutte_droit_8_mars_2026.jpg" alt="Intervention MASOP femmes et filles" width="1280" height="853" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="eager" fetchpriority="high" decoding="async">
                         </div>
-                        <div class="carousel-slide">
+                        <div class="carousel-slide" data-slider-group="default">
                             <img src="images/gallery/photo_remise_certificat.jpeg" alt="Remise de certificat MASOP" width="1280" height="853" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="lazy" decoding="async">
                         </div>
-                        <div class="carousel-slide">
+                        <div class="carousel-slide" data-slider-group="default">
                             <img src="images/gallery/photo_activite_terrain_janvier_2026_1.jpeg" alt="Intervention de groupe MASOP" width="1280" height="853" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="lazy" decoding="async">
                         </div>
                     </div>
@@ -235,7 +248,34 @@
     <script>
     // Carousel auto défilement, fade transition, sans flèches
     (function() {
-        const slides = document.querySelectorAll('#carousel-hero .carousel-slide');
+        const allSlides = Array.from(document.querySelectorAll('#carousel-hero .carousel-slide'));
+        if (!allSlides.length) return;
+        const campaignNarrative = document.getElementById('hero-campaign-narrative');
+
+        // Campagne Fête des mères visible 15 jours, puis retour automatique au slider normal.
+        const campaignStart = new Date('2026-06-02T00:00:00');
+        const campaignEnd = new Date(campaignStart.getTime() + (15 * 24 * 60 * 60 * 1000));
+        const now = new Date();
+        const isCampaignActive = now >= campaignStart && now < campaignEnd;
+
+        const activeGroup = isCampaignActive ? 'fete-meres-2026' : 'default';
+        const slides = allSlides.filter(slide => slide.dataset.sliderGroup === activeGroup);
+
+        if (campaignNarrative) {
+            campaignNarrative.classList.toggle('hidden', !isCampaignActive);
+        }
+
+        allSlides.forEach(slide => {
+            if (slide.dataset.sliderGroup === activeGroup) {
+                slide.style.display = '';
+            } else {
+                slide.style.display = 'none';
+                slide.classList.remove('active');
+            }
+        });
+
+        if (!slides.length) return;
+
         let current = 0;
         function showSlide(idx) {
             slides.forEach((slide, i) => {

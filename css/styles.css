@@ -68,6 +68,73 @@ footer {
     background: rgba(0, 0, 0, 0.6);
 }
 
+/* Mini slider for actions cards */
+.mini-slider {
+    background: #0f172a;
+}
+
+.mini-slider .mini-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease;
+}
+
+.mini-slider .mini-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mini-slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    border: none;
+    background: rgba(15, 23, 42, 0.55);
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.mini-slider-btn.prev {
+    left: 0.5rem;
+}
+
+.mini-slider-btn.next {
+    right: 0.5rem;
+}
+
+.mini-slider-btn:hover {
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.mini-slider-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 0.5rem;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.4rem;
+    z-index: 2;
+}
+
+.mini-slider-dots .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    border: none;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+
+.mini-slider-dots .dot.is-active {
+    background: #14b8a6;
+}
+
 /* Scroll to Top Button */
 #scrollToTopBtn {
     animation: slideInRight 300ms ease-out;

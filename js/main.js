@@ -457,6 +457,60 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 });
 
+// Mini slider for action cards (e.g. May 2026)
+document.addEventListener('DOMContentLoaded', function() {
+    const sliders = document.querySelectorAll('.mini-slider');
+    if (!sliders.length) return;
+
+    sliders.forEach((slider) => {
+        const slides = Array.from(slider.querySelectorAll('.mini-slide'));
+        const dots = Array.from(slider.querySelectorAll('.dot'));
+        const prevBtn = slider.querySelector('.mini-slider-btn.prev');
+        const nextBtn = slider.querySelector('.mini-slider-btn.next');
+
+        if (!slides.length) return;
+
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const lastIndex = slides.length - 1;
+            if (index < 0) index = lastIndex;
+            if (index > lastIndex) index = 0;
+            currentIndex = index;
+
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('is-active', i === currentIndex);
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('is-active', i === currentIndex);
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                showSlide(currentIndex - 1);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                showSlide(currentIndex + 1);
+            });
+        }
+
+        dots.forEach((dot) => {
+            dot.addEventListener('click', function() {
+                const nextIndex = Number(dot.getAttribute('data-slide-index'));
+                if (Number.isNaN(nextIndex)) return;
+                showSlide(nextIndex);
+            });
+        });
+
+        showSlide(0);
+    });
+});
+
 // Donation payment options handler
 function openPaymentLink(method) {
     safeTrack('donate_method_click', {
@@ -740,16 +794,37 @@ function switchTab(tab) {
         });
     });
 
-    actionsContainer.querySelectorAll('img').forEach(image => {
-        image.addEventListener('click', function() {
-            lastFocusedElement = document.activeElement;
-            lightboxImage.src = this.src;
-            lightboxImage.alt = this.alt || 'Photo d\'action MASOP';
-            lightbox.classList.add('open');
-            lightbox.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-            lightboxClose.focus();
-        });
+    function openActionsLightboxFromImage(imageEl) {
+        if (!imageEl || !imageEl.src) return;
+        lastFocusedElement = document.activeElement;
+        lightboxImage.src = imageEl.src;
+        lightboxImage.alt = imageEl.alt || 'Photo d\'action MASOP';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        lightboxClose.focus();
+    }
+
+    actionsContainer.addEventListener('click', function(event) {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        // Keep carousel controls interactive without opening the lightbox.
+        if (target.closest('.mini-slider-btn, .mini-slider-dots .dot')) {
+            return;
+        }
+
+        const slider = target.closest('.mini-slider');
+        if (slider) {
+            const activeSlide = slider.querySelector('.mini-slide.is-active');
+            openActionsLightboxFromImage(activeSlide);
+            return;
+        }
+
+        const image = target.closest('img');
+        if (image && actionsContainer.contains(image)) {
+            openActionsLightboxFromImage(image);
+        }
     });
 
     function closeActionsLightbox() {
