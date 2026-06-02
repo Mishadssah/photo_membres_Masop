@@ -77,6 +77,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <button id="scrollToTopBtn" class="hidden fixed bottom-24 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg hover:bg-teal-700 focus:outline-none" aria-label="Retour en haut">
         <i class="fas fa-chevron-up"></i>
     </button>
@@ -85,7 +86,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <a href="index.html" class="flex-shrink-0 flex items-center space-x-3 no-underline">
-                    <img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo w-16 sm:w-auto">
+                    <img src="logo_masop_rev2.png" alt="Logo MASOP" width="120" height="120" class="logo w-16 sm:w-auto">
                     <div>
                         <span class="text-2xl font-bold text-teal-700 block">MASOP</span>
                         <span class="text-sm text-gray-600">Maison de Soins Psychologiques</span>
@@ -113,7 +114,7 @@
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-teal-500 focus:outline-none">
+                    <button id="menu-toggle" aria-label="Ouvrir le menu principal" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-teal-500 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -140,7 +141,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content" role="main">
     <!-- Hero Section -->
     <section id="home" class="pt-20 hero-gradient min-h-[60vh] md:min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
@@ -169,13 +170,13 @@
                     <div class="absolute -inset-4 bg-gradient-to-br from-teal-200 to-cyan-200 rounded-3xl blur-xl opacity-60"></div>
                     <div id="carousel-hero" class="relative w-full max-w-xl mx-auto">
                         <div class="carousel-slide active">
-                            <img src="images/gallery/photo_femmes_lutte_droit_8_mars_2026.jpg" alt="Intervention MASOP femmes et filles" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="eager" fetchpriority="high" decoding="async">
+                            <img src="images/gallery/photo_femmes_lutte_droit_8_mars_2026.jpg" alt="Intervention MASOP femmes et filles" width="1280" height="853" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="eager" fetchpriority="high" decoding="async">
                         </div>
                         <div class="carousel-slide">
-                            <img src="images/gallery/photo_remise_certificat.jpeg" alt="Remise de certificat MASOP" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="lazy" decoding="async">
+                            <img src="images/gallery/photo_remise_certificat.jpeg" alt="Remise de certificat MASOP" width="1280" height="853" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="lazy" decoding="async">
                         </div>
                         <div class="carousel-slide">
-                            <img src="images/gallery/photo_activite_terrain_janvier_2026_1.jpeg" alt="Intervention de groupe MASOP" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="lazy" decoding="async">
+                            <img src="images/gallery/photo_activite_terrain_janvier_2026_1.jpeg" alt="Intervention de groupe MASOP" width="1280" height="853" class="rounded-3xl shadow-2xl w-full h-80 object-cover" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <!-- Bloc de légende supprimé selon demande -->

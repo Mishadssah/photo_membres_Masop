@@ -399,12 +399,13 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50" style="top:0;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <a href="index.html" class="flex-shrink-0 flex items-center space-x-3 no-underline">
-                    <img src="logo_masop_rev2.png" alt="Logo MASOP" class="logo w-16 sm:w-auto">
+                    <img src="logo_masop_rev2.png" alt="Logo MASOP" width="120" height="120" class="logo w-16 sm:w-auto">
                     <div>
                         <span class="text-2xl font-bold text-teal-700 block">MASOP</span>
                         <span class="text-sm text-gray-600">Maison de Soins Psychologiques</span>
@@ -433,7 +434,7 @@
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-teal-500 focus:outline-none">
+                    <button id="menu-toggle" aria-label="Ouvrir le menu principal" aria-controls="mobile-menu" aria-expanded="false" class="text-gray-600 hover:text-teal-500 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -461,7 +462,7 @@
         </div>
     </nav>
 
-    <main class="container">
+    <main id="main-content" role="main" class="container">
         <section class="py-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 

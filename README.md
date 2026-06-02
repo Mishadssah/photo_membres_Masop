@@ -67,7 +67,8 @@ python -m http.server 8000
 ```
 photo_membres_Masop/
 ├── index.html              # Page principale
-├── reports.html            # Page des rapports
+├── mars-2026.html          # Rapport mensuel (mars 2026)
+├── projet-repi-janvier-mars-2026.html # Rapport détaillé projet REPI
 ├── css/
 │   └── styles.css         # Styles personnalisés
 ├── js/
@@ -181,7 +182,7 @@ Les contributions sont bienvenues ! Pour contribuer :
 - **Email** : contact@masop.care
 - **Téléphone** : +509 41957895 (MonCash)
 - **Adresse** : Delmas, Port-au-Prince, Haïti
-- **Site Web** : [masop.org](http://masop.org)
+- **Site Web** : [masop.ht](https://masop.ht)
 
 ## 📄 Licence
 

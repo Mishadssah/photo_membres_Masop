@@ -120,7 +120,7 @@ Google saura comment crawler votre site correctement ✅
 ## 5️⃣ AJOUTER MÉTADONNÉES SEO (15 min)
 
 ### Étape 1: Copier le fichier
-Ouvrir `SEO_IMPROVEMENTS.html`  
+Ouvrir `SEO_IMPROVEMENTS.md`  
 Copier TOUT le contenu
 
 ### Étape 2: Ajouter à index.html
@@ -260,7 +260,7 @@ Si vous bloquez sur une étape:
 1. **Google Analytics:** Chercher "GA4 setup tutorial YouTube"
 2. **Formspree:** Voir leur documentation en français
 3. **Image compression:** TinyPNG a interface très simple
-4. **SEO meta tags:** Copier-coller du fichier `SEO_IMPROVEMENTS.html`
+4. **SEO meta tags:** Copier-coller du fichier `SEO_IMPROVEMENTS.md`
 
 ---
 

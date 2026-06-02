@@ -10,7 +10,7 @@
 ### ✅ Tâche 1: Ajouter SEO au fichier `index.html` (30 min)
 
 1. Ouvrir `index.html`
-2. Dans la section `<head>`, ajouter le contenu du fichier `SEO_IMPROVEMENTS.html` (copier/coller les meta tags)
+2. Dans la section `<head>`, ajouter le contenu du fichier `SEO_IMPROVEMENTS.md` (copier/coller les meta tags)
 3. **Remplacer** `G-XXXXXXXXXX` par votre Google Analytics ID (créer un compte gratuit)
 4. Remplacer URL `https://masop.ht` par votre domaine réel
 5. Sauvegarder

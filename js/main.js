@@ -491,7 +491,7 @@ function openPaymentLink(method) {
         },
         paypal: {
             action: () => {
-                window.open('https://paypal.me/MASOPHT', '_blank');
+                window.location.href = 'mailto:contact@masop.care?subject=Don%20international%20-%20Compte%20PayPal%20en%20attente&body=Bonjour,%0A%0AJe souhaite faire un don international. J%27ai vu que le compte PayPal est en cours d%27activation.%0APouvez-vous me proposer une alternative temporaire ?%0A%0AMerci';
             }
         },
         transfer: {
