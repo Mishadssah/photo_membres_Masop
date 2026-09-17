@@ -1,0 +1,11 @@
+Phase 2 large image optimization report
+Timestamp: 2026-05-26 16:05:20
+
+images\\gallery\photo_femmes_lutte_droit_8_mars_2026.jpg|optimized|2921296|2868318|1.81%
+images\\gallery\photo groupe 8 mars 2026.jpg|optimized|2864630|1177037|58.91%
+images\\gallery\photo_activite_terrain_janvier_2026_1.jpeg|kept-original|752095|808487|0%
+images\\gallery\photoGroupeMasop.5.jpg|optimized|481976|107438|77.71%
+images\\gallery\photoGroupeMasop.3.jpg|optimized|357838|103852|70.98%
+images\\gallery\formation_prevention_suicide_pleniere_avril_2026.jpeg|kept-original|325970|353849|0%
+images\\gallery\photoGroupeMasop.4.jpg|optimized|273059|70901|74.03%
+images\\gallery\photoGroupeMasop.2.jpg|optimized|270859|69611|74.3%

@@ -1,0 +1,14 @@
+Phase 2 image optimization report
+Timestamp: 2026-05-26 16:04:05
+
+images\gallery\photo_femmes_lutte_droit_8_mars_2026.jpg|optimized|7260833|2921296|59.77%
+images\gallery\photo_remise_certificat.jpeg|kept-original|111599|148712|0%
+images\gallery\photo_activite_terrain_janvier_2026_1.jpeg|kept-original|752095|832909|0%
+images\gallery\photo_activite_terrain_janvier_2026.jpeg|kept-original|111964|147422|0%
+images\gallery\photo_formation_agent_protection_1.jpeg|kept-original|82941|108356|0%
+images\gallery\photo_formation_agent_protection_2.jpeg|kept-original|66198|86729|0%
+images\gallery\teleconsultationMasop.jpeg|kept-original|68761|88236|0%
+images\gallery\REPI_Sensibilisation_IMJMC_Groupe_Filles_06-09jan2026.jpeg|kept-original|83924|91561|0%
+images\gallery\REPI_Visite_Site_ENRE_IMJMC_Delmas_06-09jan2026.jpeg|kept-original|52401|57208|0%
+images\gallery\formation_prevention_suicide_equipe_avril_2026.jpeg|kept-original|95671|105230|0%
+images\team\UlrickEdouardPresidentMasop.jpeg|kept-original|40024|46652|0%
