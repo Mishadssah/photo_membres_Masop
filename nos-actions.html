@@ -608,6 +608,16 @@
                     
                 </div>
 
+                <section class="action-card bg-white rounded-lg shadow-md overflow-hidden p-4" aria-labelledby="coordination-oim-title">
+                    <h3 id="coordination-oim-title" class="text-xl font-bold">Chaque mois, sur le terrain : la coordination avec l'OIM</h3>
+                    <div class="gallery-grid mb-4">
+                        <img class="w-full h-48 object-cover" src="images/gallery/photo_rencontre_coordination_site_pdi.jpeg" alt="Rencontre de coordination avec l'OIM sur un site de personnes déplacées internes" loading="lazy" decoding="async">
+                        <img class="w-full h-48 object-cover" src="images/gallery/photo_rencontre_coordination_site_pdi_2.jpeg" alt="Deuxième rencontre de coordination avec l'OIM sur un site de personnes déplacées internes" loading="lazy" decoding="async">
+                    </div>
+                    <p class="text-gray-600 mt-2">Chaque mois, les équipes de MASOP retrouvent les autres acteurs humanitaires lors des rencontres de coordination organisées par l'Organisation Internationale pour les Migrations (OIM), sur les sites de personnes déplacées internes où nous intervenons.</p>
+                    <p class="text-gray-600 mt-2">Ces rencontres permettent d'ajuster en continu notre réponse psychosociale aux besoins réels du terrain : protection, référencement, appui aux familles déplacées. C'est cette coordination régulière, mois après mois, qui rend notre présence auprès des communautés à la fois cohérente et durable.</p>
+                </section>
+
                 <!-- BOUTON RETOUR -->
                 <div class="text-center mt-12">
                     <a href="index.html" class="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition duration-300">
@@ -654,6 +664,39 @@
             <p class="text-center text-gray-500 text-sm">© 2026 MASOP - Tous droits réservés | Réalisé par Mi-DAS Agency</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('photo-lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const actionImages = document.querySelectorAll('.action-card img');
+
+            if (!lightbox || !lightboxImage || !lightboxClose) return;
+
+            function closePhotoLightbox() {
+                lightbox.classList.remove('open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                lightboxImage.src = '';
+            }
+
+            actionImages.forEach(function(image) {
+                image.addEventListener('click', function() {
+                    lightboxImage.src = image.src;
+                    lightboxImage.alt = image.alt;
+                    lightbox.classList.add('open');
+                    lightbox.setAttribute('aria-hidden', 'false');
+                });
+            });
+
+            lightboxClose.addEventListener('click', closePhotoLightbox);
+            lightbox.addEventListener('click', function(event) {
+                if (event.target === lightbox) closePhotoLightbox();
+            });
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') closePhotoLightbox();
+            });
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
